@@ -53,7 +53,7 @@ hide:
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/software-ate-the-world-and-seems-to-be-creating-new-worlds-now-e71a3e599e4b)
 
 - :material-snowflake: **The Cold Start Problem: Using Network Effects to Scale Your Product**  
-  :simple-medium: <span class="post-meta">Dec 31, 2022 · CloudAtlas · ~6 min</span>  
+:simple-medium: <span class="post-meta">Dec 31, 2022 · CloudAtlas · ~5 min</span>  
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/the-cold-start-problem-using-network-effects-to-scale-your-product-67914353cc70)
 
 - :material-lightbulb-on-outline: **What should a startup build?**  
