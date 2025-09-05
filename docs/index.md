@@ -8,7 +8,7 @@ hide:
 
 <div class="hero">
   <h1>Learn. Build. Iterate.</h1>
-  <p>Concise notes on AI systems and patterns.</p>
+  <p>I’m an AI consultant focused on shipping reliable, user‑centered LLM apps.</p>
   <p class="cta">
     <a class="md-button md-button--primary" href="notes.md">Notes</a>
     <a class="md-button" href="tags.md">Tags</a>
@@ -22,17 +22,17 @@ hide:
 
 <div class="grid cards home-cards" markdown>
 
-- :material-notebook-outline: **Notes**  
-  Short, reusable learnings and references.  
-  [:octicons-arrow-right-16: Browse](notes.md)
+- :material-pencil: **Writing**  
+  Essays and deep dives on applied AI.  
+  [:octicons-arrow-right-16: Browse](writing/index.md)
 
-- :material-console: **Build it — Jupyter Notebooks**  
-  Hands-on notebooks you can run and adapt.  
-  [:octicons-arrow-right-16: Open](notebooks.md)
+- :material-school: **Courses**  
+  Hands‑on courses for teams and builders.  
+  [:octicons-arrow-right-16: Explore](courses/index.md)
 
-- :material-cards-outline: **Learn & Remember — Anki Cards**  
-  High-signal flashcards for spaced repetition.  
-  [:octicons-arrow-right-16: Explore](anki.md)
+- :material-account-tie: **Consulting**  
+  Strategy, prototyping, and productionization.  
+  [:octicons-arrow-right-16: Learn more](consulting/index.md)
 
 </div>
 

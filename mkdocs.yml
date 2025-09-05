@@ -13,6 +13,8 @@ theme:
     code: JetBrains Mono
   features:
     - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
     - navigation.top
@@ -95,6 +97,21 @@ extra:
 copyright: "Copyright © 2025 Ozgur Guler"
 
 nav:
+  - Home:
+      - Overview: index.md
+      - Investments: investments.md
+      - Top AI Resources: top-ai-resources.md
+      - Books: books.md
+      - Other: other.md
+  - Writing: writing/index.md
+  - Courses: courses/index.md
+  - Consulting:
+      - Overview: consulting/index.md
+      - Services: consulting/services.md
+      - Workshops: consulting/workshops.md
+      - Case Studies: consulting/case-studies.md
+      - Contact: consulting/contact.md
+      - Jump on a Call: consulting/jump-on-a-call.md
   - AI Prime Directive - Learn building with AI:
       - Overview: index.md
       - Notes: notes.md
@@ -126,12 +143,3 @@ nav:
           - Google’s PAIR: google-pair.md
       - AI Safety:
           - Overview: ai-safety.md
-  - AI Investments & Trends: ai-investments-trends.md
-  - Writing: writing/index.md
-  - Consulting:
-      - Overview: consulting/index.md
-      - Services: consulting/services.md
-      - Workshops: consulting/workshops.md
-      - Case Studies: consulting/case-studies.md
-      - Contact: consulting/contact.md
-      - Jump on a Call: consulting/jump-on-a-call.md
