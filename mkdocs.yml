@@ -89,6 +89,8 @@ extra:
 nav:
   - Home: index.md
   - Notes: notes.md
+  - Notebooks: notebooks.md
+  - Anki Cards: anki.md
   - Tags: tags.md
   - Foundations:
       - Reasoning Models: reasoning-models.md

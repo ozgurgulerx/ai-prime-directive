@@ -16,6 +16,22 @@ hide:
   </p>
 </div>
 
+<div class="grid cards home-cards" markdown>
+
+- :material-notebook-outline: **Notes**  
+  Short, reusable learnings and references.  
+  [:octicons-arrow-right-16: Browse](notes.md)
+
+- :material-console: **Build it — Jupyter Notebooks**  
+  Hands-on notebooks you can run and adapt.  
+  [:octicons-arrow-right-16: Open](notebooks.md)
+
+- :material-cards-outline: **Learn & Remember — Anki Cards**  
+  High-signal flashcards for spaced repetition.  
+  [:octicons-arrow-right-16: Explore](anki.md)
+
+</div>
+
 ---
 
 ## Working style
