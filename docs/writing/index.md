@@ -12,15 +12,6 @@ hide:
   
 </p>
 
-<div class="writing-layout" markdown>
-
-<aside class="filters" markdown>
-### Filter by year
-<form id="year-filter"></form>
-<a href="#" id="clear-years">Clear</a>
-</aside>
-
-<section>
 ## Latest writing
 
 <div class="grid cards" markdown>
@@ -84,9 +75,5 @@ hide:
 - :material-lightbulb-on-outline: **What should a startup build?**  
   :simple-medium: <span class="post-meta">Dec 31, 2022 · CloudAtlas · ~5 min</span>  
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/what-should-a-startup-build-519181d50b49)
-
- </div>
-
-</section>
 
 </div>
