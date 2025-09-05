@@ -10,8 +10,8 @@ hide:
   <h1>Learn. Build. Iterate.</h1>
   <p>A concise, evolving notebook of my AI and engineering learnings.</p>
   <p class="cta">
-    <a class="md-button md-button--primary" href="notes/">Browse Notes</a>
-    <a class="md-button md-button--primary" href="tags/">Browse Tags</a>
+    <a class="md-button md-button--primary" href="notes.md">Browse Notes</a>
+    <a class="md-button md-button--primary" href="tags.md">Browse Tags</a>
     <a class="md-button md-button--primary" href="https://github.com/ozgurgulerx/ai-prime-directive">View on GitHub</a>
   </p>
   <p>Small pages, sensible patterns, and fast recall when I need it.</p>
@@ -40,11 +40,11 @@ hide:
 
 - :material-note-edit-outline: **All Notes**  
   Browse the full notes index.  
-  [:octicons-arrow-right-16: Open](notes/)
+  [:octicons-arrow-right-16: Open](notes.md)
 
 - :material-tag-text-outline: **Tags**  
   Discover topics by tag.  
-  [:octicons-arrow-right-16: Explore](tags/)
+  [:octicons-arrow-right-16: Explore](tags.md)
 
 - :material-magnify: **Search**  
   Find anything instantly with the search bar.  

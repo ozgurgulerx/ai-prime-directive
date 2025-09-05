@@ -49,7 +49,6 @@ theme:
 
 plugins:
   - search
-  - tags
   - mkdocs-jupyter:
       execute: false
       allow_errors: false
