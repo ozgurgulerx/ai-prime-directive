@@ -21,7 +21,7 @@ hide:
   [:octicons-arrow-right-16: Read](https://medium.com/@343544/the-missing-piece-in-graph-rag-graph-attention-networks-f50cb9857895)
 
 - :material-tree: **Tackle Complex LLM Decision-Making with Language Agent Tree Search (LATS) & GPT-4o**  
-  :simple-towardsdatascience: <span class="post-meta">Aug 26, 2024 · TDS Archive · ~7 min</span>  
+  :simple-medium: <span class="post-meta">Aug 26, 2024 · TDS Archive · ~7 min</span>  
   [:octicons-arrow-right-16: Read](https://medium.com/data-science/tackle-complex-llm-decision-making-with-language-agent-tree-search-lats-gpt4-o-0bc648c46ea4)
 
 - :material-filter-variant: **Boost RAG Performance: Enhance Vector Search with Metadata Filters in Azure AI Search**  
