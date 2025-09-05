@@ -13,8 +13,6 @@ theme:
     code: JetBrains Mono
   features:
     - navigation.instant
-    - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
     - navigation.top
