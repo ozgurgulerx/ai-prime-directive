@@ -65,7 +65,7 @@ hide:
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/how-to-build-a-basic-recommender-system-using-azure-openai-embeddings-2188e172338)
 
 - :material-brain: **ReACT — Reason & ACT implementations for LLM Agency**  
-  :simple-medium: <span class="post-meta">Aug 17, 2023 · CloudAtlas · ~6 min</span>  
+  :simple-medium: <span class="post-meta">Jun 5, 2023 · CloudAtlas · ~6 min</span>  
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/react-reason-act-implementations-for-llm-agency-7dbe0ad584c8)
 
 - :material-robot-outline: **The Open Source Model Zoo: A Spirited Journey Towards GPT-Level Performance**  
