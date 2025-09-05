@@ -68,23 +68,7 @@ markdown_extensions:
   - md_in_html
 
 nav:
-  - Home: index.md
-  - Start here: start.md
-  - Prime Directive:
-      - Overview: prime-directive/README.md
-      - Foundations:
-          - prime-directive/foundations/README.md
-      - RAG:
-          - RAG 2.0: prime-directive/rag/rag-2-0.md
-          - Graph RAG: prime-directive/graph/graph-rag.md
-      - Agents & Memory:
-          - Agent Memory: prime-directive/agents/agent-memory.md
-      - EvalOps:
-          - prime-directive/evalops/evalops.md
-      - Product & UX:
-          - prime-directive/product-ux/README.md
-  - Writing: blog/index.md
-  - Newsletter: newsletter.md
-  - Speaking: speaking.md
-  - Courses: courses.md
-  - Consulting: consulting.md
+  - Home:
+      - Home: index.md
+      - My Prime Directive: my-prime-directive.md
+      - Books: books.md
