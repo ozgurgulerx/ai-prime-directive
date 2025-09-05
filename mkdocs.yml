@@ -103,8 +103,10 @@ nav:
       - Agent Memory: agent-apps-memory-engineering.md
       - Agent Frameworks: agent-frameworks.md
       - MCP: mcp.md
+      - Tools — Prompt KV Caching: tools-prompt-kv-caching.md
   - Ops:
       - EvalOps: evalops.md
+      - LLM Apps in Production: llm-apps-in-production.md
   - Product:
       - AI UX Design Patterns: ai-ux-design-patterns.md
       - Microsoft HAX Framework: microsoft-hax-framework.md
