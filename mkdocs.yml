@@ -1,6 +1,6 @@
 site_name: AI Prime Directive — Learn, Build, Iterate.
-site_url: https://YOUR_GH_USERNAME.github.io/YOUR_REPO_NAME
-repo_url: https://github.com/YOUR_GH_USERNAME/YOUR_REPO_NAME
+site_url: https://ozgurgulerx.github.io/ai-prime-directive
+repo_url: https://github.com/ozgurgulerx/ai-prime-directive
 copyright: © 2025 Ozgur Guler
 
 # Theme configuration for MkDocs Material
@@ -89,4 +89,3 @@ nav:
   - Speaking: speaking.md
   - Courses: courses.md
   - Consulting: consulting.md
-
