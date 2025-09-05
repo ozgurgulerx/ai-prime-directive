@@ -170,3 +170,18 @@
 @media (min-width: 1280px) {
   .md-typeset .grid.cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* ---------- Branded newsletter buttons ---------- */
+/* Substack brand (orange) */
+.md-typeset .md-button.md-button--substack {
+  background: #ff6719;
+  color: #fff;
+}
+.md-typeset .md-button.md-button--substack:hover { filter: brightness(0.95); }
+
+/* LinkedIn brand (blue) */
+.md-typeset .md-button.md-button--linkedin {
+  background: #0A66C2;
+  color: #fff;
+}
+.md-typeset .md-button.md-button--linkedin:hover { filter: brightness(0.95); }
