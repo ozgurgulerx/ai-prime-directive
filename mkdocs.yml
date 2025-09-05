@@ -30,9 +30,9 @@ theme:
   custom_dir: overrides
 
 extra_css:
-  - styles/extra.css
+  - assets/styles/extra.css
 extra_javascript:
-  - js/extra.js
+  - assets/js/extra.js
 
 plugins:
   - search
