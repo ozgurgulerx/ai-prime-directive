@@ -56,4 +56,8 @@ hide:
   :simple-medium: <span class="post-meta">CloudAtlas · ~6 min</span>  
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/the-cold-start-problem-using-network-effects-to-scale-your-product-67914353cc70)
 
+- :material-lightbulb-on-outline: **What should a startup build?**  
+  :simple-medium: <span class="post-meta">CloudAtlas · ~5 min</span>  
+  [:octicons-arrow-right-16: Read](https://cloudatlas.me/what-should-a-startup-build-519181d50b49)
+
 </div>
