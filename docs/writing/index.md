@@ -21,7 +21,7 @@ hide:
   [:octicons-arrow-right-16: Read](https://medium.com/@343544/the-missing-piece-in-graph-rag-graph-attention-networks-f50cb9857895)
 
 - :material-tree: **Tackle Complex LLM Decision-Making with Language Agent Tree Search (LATS) & GPT-4o**  
-  <span class="post-meta"><span class="publisher">:simple-towardsdatascience:</span> Aug 26, 2024 · TDS Archive · ~7 min</span>  
+  :simple-towardsdatascience: <span class="post-meta">Aug 26, 2024 · TDS Archive · ~7 min</span>  
   [:octicons-arrow-right-16: Read](https://medium.com/data-science/tackle-complex-llm-decision-making-with-language-agent-tree-search-lats-gpt4-o-0bc648c46ea4)
 
 - :material-filter-variant: **Boost RAG Performance: Enhance Vector Search with Metadata Filters in Azure AI Search**  
@@ -29,7 +29,7 @@ hide:
   [:octicons-arrow-right-16: Read](https://medium.com/@343544/improve-rag-performance-with-document-metadata-filters-for-vector-search-on-azureai-3af3bce6708c)
 
 - :material-update: **Incrementally Indexing documents with AzureAI Search Integrated Vectorisation**  
-  <span class="post-meta"><span class="publisher">:simple-microsoftazure:</span> Mar 11, 2024 · Microsoft Azure · ~5 min</span>  
+  :simple-microsoftazure: <span class="post-meta">Mar 11, 2024 · Microsoft Azure · ~5 min</span>  
   [:octicons-arrow-right-16: Read](https://medium.com/microsoftazure/incrementally-indexing-documents-with-azureai-search-integrated-vectorization-6f7150556f62)
 
 - :material-chart-line: **How to improve RAG peformance — Advanced RAG Patterns — Part2**  

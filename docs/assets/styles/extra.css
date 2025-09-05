@@ -157,6 +157,9 @@
   margin-bottom: .5rem;
 }
 
+/* Ensure emoji/Simple Icons align nicely before meta */
+.md-typeset .twemoji { vertical-align: text-bottom; margin-right: .25rem; }
+
 /* ---------- Responsive columns ---------- */
 /* 2 columns by default on laptops; 3 only when very wide */
 @media (min-width: 700px) and (max-width: 1279px) {
