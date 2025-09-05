@@ -91,3 +91,9 @@
   border-radius: .9rem;
   box-shadow: 0 6px 20px rgba(2,6,23,.06);
 }
+
+/* Subscribe embed container */
+.subscribe-embed {
+  max-width: 640px;
+  margin: 0 auto 1rem auto;
+}

@@ -90,6 +90,7 @@ nav:
   - AI Prime Directive - Learn building with AI:
       - Overview: index.md
       - Notes: notes.md
+      - Subscribe: subscribe.md
       - Notebooks: notebooks.md
       - Anki Cards: anki.md
       - Tags: tags.md
