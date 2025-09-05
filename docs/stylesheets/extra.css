@@ -48,6 +48,44 @@
   border-radius: .8rem;
 }
 
+/* Admonition tint (info/note/tip) */
+.md-typeset .admonition.info,
+.md-typeset details.info { border-left-color: var(--md-accent-fg-color); background: rgba(6,182,212,.06); }
+.md-typeset .admonition.note,
+.md-typeset details.note { border-left-color: var(--md-primary-fg-color); background: rgba(99,102,241,.06); }
+/* Brand palette overrides (Material CSS variables) */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #4F46E5;         /* indigo-600 */
+  --md-primary-fg-color--light: #6366F1;  /* indigo-500 */
+  --md-primary-fg-color--dark: #3730A3;   /* indigo-800 */
+  --md-accent-fg-color: #06B6D4;          /* cyan-500 */
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #818CF8;         /* indigo-400 */
+  --md-primary-fg-color--light: #A5B4FC;  /* indigo-300 */
+  --md-primary-fg-color--dark: #4F46E5;   /* indigo-600 */
+  --md-accent-fg-color: #22D3EE;          /* cyan-400 */
+}
+
+/* Link styling: readable + colorful */
+.md-typeset a {
+  color: var(--md-primary-fg-color);
+  text-underline-offset: 2px;
+}
+.md-typeset a:hover { color: var(--md-accent-fg-color); }
+
+/* Selection color */
+::selection { background: rgba(79,70,229,.18); }
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip { border-left-color: #22C55E; background: rgba(34,197,94,.06); }
+
+/* Sidebar active link accent */
+.md-sidebar--primary .md-nav__link--active, .md-sidebar--primary .md-nav__item--active > .md-nav__link {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
 /* Home cards: slightly larger, subtle elevation */
 .home-cards .card {
   border-radius: .9rem;
