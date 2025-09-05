@@ -16,6 +16,10 @@ hide:
   </p>
 </div>
 
+<div class="subscribe-embed" style="margin-top: 1rem;">
+  <iframe src="https://generativefrontier.substack.com/embed" style="width:100%; height:280px; border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+</div>
+
 <div class="grid cards home-cards" markdown>
 
 - :material-notebook-outline: **Notes**  
