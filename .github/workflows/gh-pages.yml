@@ -1,0 +1,41 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs and plugins
+        run: |
+          pip install --upgrade pip
+          pip install mkdocs-material mkdocs-rss-plugin mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin mkdocs-privacy
+
+      - name: Build site
+        run: mkdocs build --strict
+
+      - name: Read CNAME (if present)
+        id: cname
+        shell: bash
+        run: |
+          if [[ -f CNAME ]]; then
+            echo "cname=$(cat CNAME)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          cname: ${{ steps.cname.outputs.cname }}
+

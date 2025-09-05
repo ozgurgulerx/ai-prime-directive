@@ -1,0 +1,94 @@
+{#
+  Custom marketing homepage for MkDocs Material.
+  Renders a hero, value cards, social proof, and recent blog posts.
+  Keep one primary CTA for clarity.
+#}
+
+{% extends "main.html" %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero__inner">
+      <h1>Ship reliable, user-centered LLM apps.</h1>
+      <p class="hero__sub">Opinionated patterns, reference templates, and eval-driven checklists.</p>
+      <div class="hero__ctas">
+        <a href="{{ base_url }}/start/" class="md-button md-button--primary">Start here</a>
+        <a href="{{ base_url }}/consulting/" class="md-button">Hire me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="persona">
+    <div class="persona__inner">
+      <label for="persona-select">I am a</label>
+      <select id="persona-select" data-persona>
+        <option value="builder">Builder</option>
+        <option value="product">Product Lead</option>
+        <option value="exec">Exec</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="cards" data-card-grid>
+    <article class="card" data-card="patterns">
+      <h3>Patterns</h3>
+      <p>Opinionated recipes for reliable LLM systems.</p>
+      <a href="{{ base_url }}/prime-directive/" class="md-button">Explore</a>
+    </article>
+    <article class="card" data-card="guides">
+      <h3>Guides</h3>
+      <p>Step-by-step walkthroughs with evals and UX notes.</p>
+      <a href="{{ base_url }}/start/" class="md-button">Start</a>
+    </article>
+    <article class="card" data-card="templates">
+      <h3>Templates</h3>
+      <p>Reference prompts, suites, and checklists to copy.</p>
+      <a href="{{ base_url }}/prime-directive/evalops/evalops/" class="md-button">Use</a>
+    </article>
+  </section>
+
+  <section class="proof">
+    <ul class="proof__list">
+      <li>Reduced time-to-first-merge for eval suites by 60%.</li>
+      <li>Lifted answer accuracy +18 pts with RAG 2.0 policies.</li>
+      <li>Cut incident rate in half with UX guardrails.</li>
+    </ul>
+  </section>
+
+  <section class="recent">
+    <h2>Recent writing</h2>
+    <ul class="recent__list">
+      {# Render latest 3 posts from blog #}
+      {% set posts = [] %}
+      {% for page in pages %}
+        {% if page.meta and page.file.src_path.startswith('blog/') and not page.is_homepage %}
+          {% set _ = posts.append(page) %}
+        {% endif %}
+      {% endfor %}
+      {% for post in posts|sort(attribute='meta.date', reverse=true)[:3] %}
+        <li>
+          <a href="{{ post.url | url }}">{{ post.title }}</a>
+          {% if post.meta and post.meta.date %}
+            <span class="recent__date">— {{ post.meta.date }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="newsletter-inline">
+    <div class="newsletter-inline__inner">
+      <h3>Get the weekly rundown</h3>
+      <p>Patterns, templates, and teardown notes — no fluff.</p>
+      <a class="md-button md-button--primary" href="https://SUBSTACK_URL">Subscribe</a>
+    </div>
+  </section>
+
+  <footer class="home-footer">
+    <div class="home-footer__inner">
+      <p>© {{ config.copyright | default('Ozgur Guler') }} · <a href="https://github.com/{{ config.repo_url | default('') | replace('https://github.com/', '') }}">GitHub</a></p>
+      <p>Ozgur Guler — AI consultant. Helping teams ship reliable, user-centered LLM apps.</p>
+    </div>
+  </footer>
+{% endblock %}
+

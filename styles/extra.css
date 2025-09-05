@@ -1,0 +1,65 @@
+/*
+  Extra styles for gentle gradients, cards, forms, and focus.
+  Keep accessible contrast and visible focus rings.
+*/
+
+:root {
+  --apd-accent: #10b981; /* emerald */
+  --apd-hero-start: #EEF2FF; /* indigo-50 */
+  --apd-hero-end: #ECFDF5;   /* emerald-50 */
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--apd-hero-start), var(--apd-hero-end));
+  padding: 4rem 1rem;
+  border-radius: 0.75rem;
+  margin: 0 0 1rem 0;
+}
+.hero__inner { max-width: 880px; margin: 0 auto; text-align: center; }
+.hero h1 { margin: 0 0 .5rem; }
+.hero__sub { color: var(--md-default-fg-color--light); font-size: 1.1rem; }
+.hero__ctas { margin-top: 1rem; display: flex; gap: .75rem; justify-content: center; }
+
+.persona { padding: .5rem 0; }
+.persona__inner { max-width: 880px; margin: 0 auto; display: flex; gap: .5rem; align-items: center; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem; margin: 1.5rem 0;
+}
+.card { border: 1px solid var(--md-default-fg-color--lighter); border-radius: .75rem; padding: 1rem; background: var(--md-default-bg-color);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+.card h3 { margin-top: 0; }
+
+.proof { margin: 2rem 0; }
+.proof__list { display: grid; gap: .5rem; list-style: none; padding: 0; }
+.proof__list li { padding: .5rem .75rem; border-left: 3px solid var(--apd-accent); background: var(--md-default-bg-color); }
+
+.recent__list { list-style: none; padding: 0; }
+.recent__list li { margin: .25rem 0; }
+.recent__date { color: var(--md-default-fg-color--light); margin-left: .5rem; }
+
+.newsletter-inline { margin: 2rem 0; }
+.newsletter-inline__inner { border: 1px dashed var(--md-default-fg-color--lighter); border-radius: .75rem; padding: 1rem; display: grid; gap: .5rem; }
+
+.home-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--md-default-fg-color--lighter); }
+.home-footer__inner { max-width: 880px; margin: 0 auto; font-size: .9rem; color: var(--md-default-fg-color--light); }
+
+/* Forms */
+.lead-form, .mini-form { display: grid; gap: .75rem; }
+.lead-form .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; }
+.lead-form input, .lead-form textarea, .lead-form select,
+.mini-form input { width: 100%; }
+.lead-form .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-note { color: var(--md-default-fg-color--light); font-size: .9rem; }
+
+/* Focus styles */
+*:focus { outline: 2px solid var(--apd-accent); outline-offset: 2px; }
+
+/* Dark mode tweaks */
+[data-md-color-scheme="slate"] .hero {
+  background: linear-gradient(135deg, #0b1220, #0e1a14);
+}
+

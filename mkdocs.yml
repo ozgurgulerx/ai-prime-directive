@@ -1,146 +1,92 @@
-site_name: AI Prime Directive — Living Document
-site_description: A living knowledge base of learnings, notes, and references.
-site_url: https://ozgurgulerx.github.io/ai-prime-directive
-repo_url: https://github.com/ozgurgulerx/ai-prime-directive
-repo_name: ozgurgulerx/ai-prime-directive
-edit_uri: edit/main/docs/
+site_name: AI Prime Directive — Learn, Build, Iterate.
+site_url: https://YOUR_GH_USERNAME.github.io/YOUR_REPO_NAME
+repo_url: https://github.com/YOUR_GH_USERNAME/YOUR_REPO_NAME
+copyright: © 2025 Ozgur Guler
 
+# Theme configuration for MkDocs Material
 theme:
   name: material
   language: en
-  font:
-    text: Inter
-    code: JetBrains Mono
+  logo: images/logo.svg
+  icon:
+    logo: material/school
   features:
-    - navigation.instant
     - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.sections
-    - navigation.indexes
+    - navigation.instant
     - navigation.top
-    - navigation.footer
-    - toc.follow
-    - search.suggest
-    - search.highlight
-    - search.share
     - content.code.copy
-    - content.code.annotate
-    - content.action.view
-    - content.action.edit
-    - content.tabs.link
-    - announce.dismiss
-    - icon.admonition
+    - content.tooltips
+    - toc.follow
+    - header.autohide
   palette:
     - scheme: default
       primary: indigo
-      accent: cyan
-      toggle:
-        icon: material/weather-night
-        name: Dark mode
+      accent: emerald
     - scheme: slate
       primary: indigo
-      accent: cyan
-      toggle:
-        icon: material/weather-sunny
-        name: Light mode
-  icon:
-    logo: material/school
-  favicon: material/library
+      accent: emerald
+  custom_dir: overrides
+
+extra_css:
+  - styles/extra.css
+extra_javascript:
+  - js/extra.js
 
 plugins:
   - search
-  - mkdocs-jupyter:
-      execute: false
-      allow_errors: false
-      kernel_name: python3
-      ignore_h1_titles: true
-      include: ["*.ipynb", "*.py"]
-      include_source: true
-      include_requirejs: true
+  - blog:
+      blog_dir: blog
+      blog_toc: true
+      pagination_per_page: 10
+      authors_file: null
+      post_date_format: '%Y-%m-%d'
+      draft_on_serve: true
+  - tags:
+      tags_file: blog/tags.md
+  - rss:
+      match_path: blog/.*
+      date_from_meta:
+        as_creation: date
+        as_update: false
+      categories:
+        - tags
+  - git-revision-date-localized:
+      type: timeago
+  - minify:
+      minify_html: true
+  - privacy
 
 markdown_extensions:
   - admonition
-  - attr_list
-  - md_in_html
-  - toc:
-      permalink: true
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.critic
-  - pymdownx.snippets
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-extra_javascript:
-  - javascripts/progress.js
-
-extra_css:
-  - stylesheets/extra.css
-  - stylesheets/progress.css
-
-extra:
-  social:
-    - icon: fontawesome/brands/x-twitter
-      link: https://x.com/home
-    - icon: fontawesome/brands/github
-      link: https://github.com/ozgurgulerx
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/ozguler/
-    - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/@ozgurgulerx
-
-copyright: "Copyright © 2025 Ozgur Guler"
+  - attr_list
+  - footnotes
+  - def_list
+  - md_in_html
 
 nav:
-  - Home:
-      - Overview: index.md
-      - Investments: investments.md
-      - Top AI Resources: top-ai-resources.md
-      - Books: books.md
-      - Other: other.md
-  - Writing: writing/index.md
-  - Speaking: speaking/index.md
-  - Courses: courses/index.md
-  - Consulting:
-      - Overview: consulting/index.md
-      - Services: consulting/services.md
-      - Workshops: consulting/workshops.md
-      - Case Studies: consulting/case-studies.md
-      - Contact: consulting/contact.md
-      - Jump on a Call: consulting/jump-on-a-call.md
-  - AI Prime Directive - Learn building with AI:
-      - Overview: index.md
-      - Notes: notes.md
-      - Subscribe: subscribe.md
-      - Notebooks: notebooks.md
-      - Anki Cards: anki.md
-      - Tags: tags.md
+  - Home: index.md
+  - Start here: start.md
+  - Prime Directive:
+      - Overview: prime-directive/README.md
       - Foundations:
-          - Reasoning Models: reasoning-models.md
-          - RL in LLMs: rl-in-llms.md
+          - prime-directive/foundations/README.md
       - RAG:
-          - Context Engineering: context-engineering.md
-          - Graph RAG: graphrag.md
-          - RAG 2.0 — Agentic RAG: rag-2-agentic-rag.md
-      - Build Patterns:
-          - LLM Build Patterns: build-patterns-llms.md
-          - OpenAI Agent SDK: openai-agent-sdk.md
-          - Microsoft Semantic Kernel: microsoft-semantic-kernel.md
-          - Agent Memory: agent-apps-memory-engineering.md
-          - Agent Frameworks: agent-frameworks.md
-          - MCP: mcp.md
-          - Tools — Prompt KV Caching: tools-prompt-kv-caching.md
-      - Ops:
-          - EvalOps: evalops.md
-          - LLM Apps in Production: llm-apps-in-production.md
-      - Product:
-          - AI UX Design Patterns: ai-ux-design-patterns.md
-          - Microsoft HAX Framework: microsoft-hax-framework.md
-          - Google’s PAIR: google-pair.md
-      - AI Safety:
-          - Overview: ai-safety.md
+          - RAG 2.0: prime-directive/rag/rag-2-0.md
+          - Graph RAG: prime-directive/graph/graph-rag.md
+      - Agents & Memory:
+          - Agent Memory: prime-directive/agents/agent-memory.md
+      - EvalOps:
+          - prime-directive/evalops/evalops.md
+      - Product & UX:
+          - prime-directive/product-ux/README.md
+  - Writing: blog/index.md
+  - Newsletter: newsletter.md
+  - Speaking: speaking.md
+  - Courses: courses.md
+  - Consulting: consulting.md
+
