@@ -88,7 +88,7 @@ extra:
 
 nav:
   - AI Prime Directive - Learn building with AI:
-      - Home: index.md
+      - Overview: index.md
       - Notes: notes.md
       - Notebooks: notebooks.md
       - Anki Cards: anki.md
@@ -125,3 +125,4 @@ nav:
       - Workshops: consulting/workshops.md
       - Case Studies: consulting/case-studies.md
       - Contact: consulting/contact.md
+      - Jump on a Call: consulting/jump-on-a-call.md
