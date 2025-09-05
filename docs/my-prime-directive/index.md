@@ -7,5 +7,5 @@ hide:
 template: home.html
 ---
 
-<!-- Homepage uses overrides/home.html; keep Markdown empty. -->
+<!-- Homepage uses the custom template at overrides/home.html. -->
 

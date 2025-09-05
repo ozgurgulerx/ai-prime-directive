@@ -12,7 +12,7 @@
       <h1>Ship reliable, user-centered LLM apps.</h1>
       <p class="hero__sub">Opinionated patterns, reference templates, and eval-driven checklists.</p>
       <div class="hero__ctas">
-        <a href="{{ base_url }}/start/" class="md-button md-button--primary">Start here</a>
+        <a href="{{ base_url }}/my-prime-directive/start/" class="md-button md-button--primary">Start here</a>
         <a href="{{ base_url }}/consulting/" class="md-button">Hire me</a>
       </div>
     </div>
@@ -33,7 +33,7 @@
     <article class="card" data-card="patterns">
       <h3>Patterns</h3>
       <p>Opinionated recipes for reliable LLM systems.</p>
-      <a href="{{ base_url }}/prime-directive/" class="md-button">Explore</a>
+      <a href="{{ base_url }}/my-prime-directive/" class="md-button">Explore</a>
     </article>
     <article class="card" data-card="guides">
       <h3>Guides</h3>
@@ -43,7 +43,7 @@
     <article class="card" data-card="templates">
       <h3>Templates</h3>
       <p>Reference prompts, suites, and checklists to copy.</p>
-      <a href="{{ base_url }}/prime-directive/evalops/evalops/" class="md-button">Use</a>
+      <a href="{{ base_url }}/my-prime-directive/evalops/" class="md-button">Use</a>
     </article>
   </section>
 
@@ -65,13 +65,16 @@
           {% set _ = posts.append(page) %}
         {% endif %}
       {% endfor %}
-      {% for post in posts|sort(attribute='meta.date', reverse=true)[:3] %}
-        <li>
-          <a href="{{ post.url | url }}">{{ post.title }}</a>
-          {% if post.meta and post.meta.date %}
-            <span class="recent__date">— {{ post.meta.date }}</span>
-          {% endif %}
-        </li>
+      {% set sorted_posts = posts|sort(attribute='meta.date', reverse=true) %}
+      {% for post in sorted_posts %}
+        {% if loop.index <= 3 %}
+          <li>
+            <a href="{{ post.url | url }}">{{ post.title }}</a>
+            {% if post.meta and post.meta.date %}
+              <span class="recent__date">— {{ post.meta.date }}</span>
+            {% endif %}
+          </li>
+        {% endif %}
       {% endfor %}
     </ul>
   </section>
@@ -91,4 +94,3 @@
     </div>
   </footer>
 {% endblock %}
-

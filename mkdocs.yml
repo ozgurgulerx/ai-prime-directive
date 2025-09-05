@@ -13,6 +13,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.indexes
     - navigation.instant
     - navigation.top
     - content.code.copy
@@ -42,8 +43,7 @@ plugins:
       authors_file: null
       post_date_format: '%Y-%m-%d'
       draft_on_serve: true
-  - tags:
-      tags_file: blog/tags.md
+  - tags
   - rss:
       match_path: blog/.*
       date_from_meta:
@@ -68,34 +68,34 @@ markdown_extensions:
   - md_in_html
 
 nav:
-  - Home:
-      - Home: index.md
-      - My Prime Directive:
-          - AI Prime Directive - Learn building with AI: my-prime-directive.md
-          - Notes: notes.md
-          - Subscribe: subscribe.md
-          - Notebooks: notebooks.md
-          - Anki Cards: anki.md
-          - Tags: tags.md
-          - Foundations:
-              - Reasoning Models: reasoning-models.md
-              - RL in LLMs: rl-in-llms.md
-          - RAG:
-              - Context Engineering: context-engineering.md
-              - Graph RAG: graphrag.md
-              - RAG 2.0 — Agentic RAG: rag-2-agentic-rag.md
-          - Build Patterns:
-              - LLM Build Patterns: build-patterns-llms.md
-              - OpenAI Agent SDK: openai-agent-sdk.md
-              - Microsoft Semantic Kernel: microsoft-semantic-kernel.md
-              - Agent Memory: agent-apps-memory-engineering.md
-              - Agent Frameworks: agent-frameworks.md
-              - MCP: mcp.md
-              - Tools — Prompt KV Caching: tools-prompt-kv-caching.md
-          - Ops:
-              - EvalOps: evalops.md
-              - LLM Apps in Production: llm-apps-in-production.md
-          - Product:
-              - AI UX Design Patterns: ai-ux-design-patterns.md
-              - Microsoft HAX Framework: microsoft-hax-framework.md
-      - Books: books.md
+  - Home: index.md
+  - Writing: writing/index.md
+  - Speaking: speaking/index.md
+  - Courses: courses/index.md
+  - Consulting: consulting/index.md
+  - My Prime Directive:
+      - Overview: my-prime-directive/index.md
+      - Notes: my-prime-directive/notes.md
+      - Start here: my-prime-directive/start.md
+      - Foundations:
+          - Reasoning Models: my-prime-directive/reasoning-models.md
+          - RL in LLMs: my-prime-directive/rl-in-llms.md
+      - RAG:
+          - Context Engineering: my-prime-directive/context-engineering.md
+          - Graph RAG: my-prime-directive/graphrag.md
+          - RAG 2.0 — Agentic RAG: my-prime-directive/rag-2-agentic-rag.md
+      - Build Patterns:
+          - LLM Build Patterns: my-prime-directive/build-patterns-llms.md
+          - OpenAI Agent SDK: my-prime-directive/openai-agent-sdk.md
+          - Microsoft Semantic Kernel: my-prime-directive/microsoft-semantic-kernel.md
+          - Agent Memory: my-prime-directive/agent-apps-memory-engineering.md
+          - Agent Frameworks: my-prime-directive/agent-frameworks.md
+          - MCP: my-prime-directive/mcp.md
+          - Tools — Prompt KV Caching: my-prime-directive/tools-prompt-kv-caching.md
+      - Ops:
+          - EvalOps: my-prime-directive/evalops.md
+          - LLM Apps in Production: my-prime-directive/llm-apps-in-production.md
+      - Product:
+          - AI UX Design Patterns: my-prime-directive/ai-ux-design-patterns.md
+          - Microsoft HAX Framework: my-prime-directive/microsoft-hax-framework.md
+  - Books: my-prime-directive/books.md
