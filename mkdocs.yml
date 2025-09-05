@@ -12,16 +12,21 @@ theme:
     text: Inter
     code: JetBrains Mono
   features:
+    - navigation.instant
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
+    - navigation.indexes
     - navigation.top
     - navigation.footer
-    - content.code.copy
-    - content.action.view
-    - content.action.edit
     - toc.follow
     - search.suggest
     - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.view
+    - content.action.edit
     - content.tabs.link
     - announce.dismiss
     - icon.admonition
@@ -44,6 +49,7 @@ theme:
 
 plugins:
   - search
+  - tags
   - mkdocs-jupyter:
       execute: false
       allow_errors: false
@@ -86,4 +92,4 @@ extra:
 nav:
   - Home: index.md
   - Notes: notes.md
-
+  - Tags: tags.md
