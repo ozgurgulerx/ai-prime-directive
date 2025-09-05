@@ -83,13 +83,13 @@ extra_css:
 
 extra:
   social:
-    - icon: simple/x
+    - icon: fontawesome/brands/twitter
       link: https://x.com/home
-    - icon: simple/github
+    - icon: fontawesome/brands/github
       link: https://github.com/ozgurgulerx
-    - icon: simple/linkedin
+    - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/ozguler/
-    - icon: simple/youtube
+    - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/@ozgurgulerx
 
 copyright: "Copyright © 2025 Ozgur Guler"
