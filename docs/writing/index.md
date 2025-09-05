@@ -1,6 +1,7 @@
 ---
 title: Writing
 hide:
+  - navigation
   - toc
 ---
 

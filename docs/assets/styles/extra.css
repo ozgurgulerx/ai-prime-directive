@@ -168,12 +168,14 @@
 /* Fallback publisher icon alignment (inline <img>) */
 .md-typeset img.publisher-icon { height: 1em; width: 1em; vertical-align: text-bottom; margin-right: .25rem; }
 
-/* ---------- Responsive columns (roomier) ---------- */
-/* Default: single column for comfortable reading */
+/* ---------- Responsive columns for Writing ---------- */
+/* 1 column on mobile, 2 on tablets, 3 on wide screens */
 .md-typeset .grid.cards { grid-template-columns: 1fr; }
-/* Two columns only on wider screens */
-@media (min-width: 1100px) {
+@media (min-width: 700px) {
   .md-typeset .grid.cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1100px) {
+  .md-typeset .grid.cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* ---------- Branded newsletter buttons ---------- */
