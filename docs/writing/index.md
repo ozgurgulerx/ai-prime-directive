@@ -44,4 +44,8 @@ hide:
   <span class="post-meta"><span class="publisher">:simple-medium:</span> Jul 25, 2023 · Medium · ~6 min</span>  
   [:octicons-arrow-right-16: Read](https://medium.com/@343544/azures-new-guard-content-safety-and-promptflow-for-responsible-ai-6ed5cfd43402)
 
+- :material-cloud-outline: **Building a SaaS Application on Azure AKS with GitHub Actions**  
+  :simple-microsoftazure: <span class="post-meta">Feb 8, 2023 · Azure Tech Community — Apps on Azure Blog · ~6 min</span>  
+  [:octicons-arrow-right-16: Read](https://techcommunity.microsoft.com/blog/appsonazureblog/building-a-saas-application-on-azure-aks-with-github-actions/3736641)
+
 </div>
