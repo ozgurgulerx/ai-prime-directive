@@ -34,6 +34,10 @@ hide:
   Strategy, prototyping, and productionization.  
   [:octicons-arrow-right-16: Learn more](consulting/index.md)
 
+- :material-microphone: **Speaking**  
+  Conference talks, meetups, and workshops.  
+  [:octicons-arrow-right-16: View](speaking/index.md)
+
 </div>
 
 ---
