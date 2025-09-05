@@ -83,7 +83,7 @@ extra_css:
 
 extra:
   social:
-    - icon: fontawesome/brands/twitter
+    - icon: fontawesome/brands/x-twitter
       link: https://x.com/home
     - icon: fontawesome/brands/github
       link: https://github.com/ozgurgulerx
