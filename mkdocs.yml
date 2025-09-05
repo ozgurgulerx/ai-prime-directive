@@ -96,6 +96,7 @@ nav:
       - Reasoning Models: reasoning-models.md
       - RL in LLMs: rl-in-llms.md
   - RAG:
+      - Context Engineering: context-engineering.md
       - Graph RAG: graphrag.md
       - RAG 2.0 — Agentic RAG: rag-2-agentic-rag.md
   - Build Patterns:
