@@ -1,4 +1,7 @@
+mkdocs>=1.5
 mkdocs-material>=9.5
-mkdocs-jupyter>=0.24
-jupytext>=1.16
+mkdocs-rss-plugin>=1.6
+mkdocs-git-revision-date-localized-plugin>=1.2
+mkdocs-minify-plugin>=0.7
+mkdocs-privacy>=0.4
 

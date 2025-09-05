@@ -19,7 +19,7 @@ jobs:
       - name: Install MkDocs and plugins
         run: |
           pip install --upgrade pip
-          pip install mkdocs-material mkdocs-rss-plugin mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin mkdocs-privacy
+          pip install -r requirements.txt
 
       - name: Build site
         run: mkdocs build --strict
@@ -38,4 +38,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           cname: ${{ steps.cname.outputs.cname }}
-
