@@ -49,7 +49,7 @@ hide:
   [:octicons-arrow-right-16: Read](https://techcommunity.microsoft.com/blog/appsonazureblog/building-a-saas-application-on-azure-aks-with-github-actions/3736641)
 
 - :material-earth: **Software ate the world (and seems to be creating new worlds now)…**  
-  :simple-medium: <span class="post-meta">Dec 31, 2022 · CloudAtlas · ~5 min</span>  
+  :simple-medium: <span class="post-meta">Dec 31, 2022 · CloudAtlas · ~3 min</span>  
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/software-ate-the-world-and-seems-to-be-creating-new-worlds-now-e71a3e599e4b)
 
 - :material-snowflake: **The Cold Start Problem: Using Network Effects to Scale Your Product**  
