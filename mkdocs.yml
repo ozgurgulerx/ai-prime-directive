@@ -1,0 +1,89 @@
+site_name: AI Prime Directive — Living Document
+site_description: A living knowledge base of learnings, notes, and references.
+site_url: https://ozgurgulerx.github.io/ai-prime-directive
+repo_url: https://github.com/ozgurgulerx/ai-prime-directive
+repo_name: ozgurgulerx/ai-prime-directive
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.action.view
+    - content.action.edit
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - announce.dismiss
+    - icon.admonition
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+  icon:
+    logo: material/school
+  favicon: material/library
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      execute: false
+      allow_errors: false
+      kernel_name: python3
+      ignore_h1_titles: true
+      include: ["*.ipynb", "*.py"]
+      include_source: true
+      include_requirejs: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.critic
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - javascripts/progress.js
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/progress.css
+
+extra:
+  social:
+    - icon: simple/github
+      link: https://github.com/ozgurgulerx
+
+nav:
+  - Home: index.md
+  - Notes: notes.md
+

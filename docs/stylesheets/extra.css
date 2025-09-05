@@ -1,0 +1,39 @@
+/* Simple, tasteful hero styling */
+.hero {
+  padding: 3.25rem 1.25rem 2.25rem;
+  text-align: center;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(99,102,241,.12), rgba(16,185,129,.10));
+  box-shadow: 0 8px 30px rgba(2,6,23,.06);
+  margin-bottom: 1.75rem;
+}
+.hero h1 {
+  margin: 0 0 .5rem 0;
+  font-size: clamp(2.4rem, 4.5vw, 3.2rem);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: rgb(17,24,39);
+}
+.hero p {
+  margin: 0.25rem 0;
+  font-size: 1.05rem;
+}
+.hero .cta .md-button {
+  margin: .4rem .3rem;
+}
+/* All buttons have same hover effect */
+.hero .cta .md-button--primary:hover {
+  opacity: 0.9;
+}
+
+/* Tighten code blocks a touch for density */
+.md-typeset pre > code {
+  font-size: 0.85rem;
+}
+
+/* Subtle card look for admonitions */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: .8rem;
+}
+
