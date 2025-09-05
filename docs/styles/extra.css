@@ -47,6 +47,9 @@
 .home-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--md-default-fg-color--lighter); }
 .home-footer__inner { max-width: 880px; margin: 0 auto; font-size: .9rem; color: var(--md-default-fg-color--light); }
 
+/* Publisher icon next to source name */
+.publisher { vertical-align: text-bottom; margin-right: .25rem; }
+
 /* Forms */
 .lead-form, .mini-form { display: grid; gap: .75rem; }
 .lead-form .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; }
@@ -62,4 +65,3 @@
 [data-md-color-scheme="slate"] .hero {
   background: linear-gradient(135deg, #0b1220, #0e1a14);
 }
-
