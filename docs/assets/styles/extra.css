@@ -42,7 +42,13 @@
 .recent__date { color: var(--md-default-fg-color--light); margin-left: .5rem; }
 
 .newsletter-inline { margin: 2rem 0; }
-.newsletter-inline__inner { border: 1px dashed var(--md-default-fg-color--lighter); border-radius: .75rem; padding: 1rem; display: grid; gap: .5rem; }
+.newsletter-inline__inner { border: 1px dashed var(--md-default-fg-color--lighter); border-radius: .75rem; padding: 1rem; display: grid; gap: 1rem; }
+/* Align explanatory copy vertically centered with action buttons */
+.newsletter-inline__inner { grid-template-columns: 1fr minmax(320px, auto); align-items: center; }
+@media (max-width: 700px) {
+  .newsletter-inline__inner { grid-template-columns: 1fr; align-items: start; }
+}
+.newsletter-copy p { margin: .25rem 0 0; color: var(--md-default-fg-color--light); }
 
 .home-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--md-default-fg-color--lighter); }
 .home-footer__inner { max-width: 880px; margin: 0 auto; font-size: .9rem; color: var(--md-default-fg-color--light); }
