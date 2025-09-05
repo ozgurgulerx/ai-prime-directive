@@ -60,4 +60,8 @@ hide:
   :simple-medium: <span class="post-meta">CloudAtlas · ~5 min</span>  
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/what-should-a-startup-build-519181d50b49)
 
+- :material-robot-outline: **How to build a basic recommender system using Azure OpenAI Embeddings…**  
+  :simple-medium: <span class="post-meta">CloudAtlas · ~6 min</span>  
+  [:octicons-arrow-right-16: Read](https://cloudatlas.me/how-to-build-a-basic-recommender-system-using-azure-openai-embeddings-2188e172338)
+
 </div>
