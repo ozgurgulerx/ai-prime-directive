@@ -33,6 +33,7 @@ extra_css:
   - assets/styles/extra.css
 extra_javascript:
   - assets/js/extra.js
+  - assets/js/writing-filters.js
 
 plugins:
   - search
