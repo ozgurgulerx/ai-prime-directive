@@ -1,19 +1,21 @@
-# AI Prime Directive — Living Document
+# AI Prime Directive
 
-This repository is a living knowledge base where I capture learnings, notes, and references about AI, systems, and engineering.
+Lean, evolving notes on AI systems, patterns, and practice.
 
-It is powered by MkDocs with the Material theme and mirrors the clean aesthetics I use in `openai-katas`.
+[![Build](https://github.com/ozgurgulerx/ai-prime-directive/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/ozgurgulerx/ai-prime-directive/actions)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-0A66C2)](https://ozgurgulerx.github.io/ai-prime-directive)
 
-## Local development
+## Quickstart
 
-- Install dependencies: `pip install -r requirements.txt`
-- Serve locally: `mkdocs serve` then open `http://127.0.0.1:8000/`
+- Install: `pip install -r requirements.txt`
+- Develop: `mkdocs serve` → http://127.0.0.1:8000
+- Build: `mkdocs build` (outputs to `site/`)
 
-## Structure
+## Docs
 
-- `mkdocs.yml` — site configuration and theme settings
-- `docs/` — markdown content, assets (`stylesheets/`, `javascripts/`)
+- Live site: https://ozgurgulerx.github.io/ai-prime-directive
+- Source: `mkdocs.yml`, `docs/` (with minimal CSS/JS aesthetics)
 
 ## Deploy
 
-Push to `main` and GitHub Actions publishes to GitHub Pages. You can also build locally with `mkdocs build` to generate the static site into `site/`.
+Push to `main` and GitHub Actions publishes to GitHub Pages.

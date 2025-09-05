@@ -32,6 +32,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build MkDocs site
+        env:
+          JUPYTER_PLATFORM_DIRS: "1"
         run: mkdocs build
 
       - name: Setup Pages
@@ -52,4 +54,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
