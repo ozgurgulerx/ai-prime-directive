@@ -114,7 +114,7 @@
 
 /* Wider page to reduce crowding */
 .md-grid {
-  max-width: 72rem; /* ≈1152px */
+  max-width: 90rem; /* ≈1440px for roomier 3-column writing */
 }
 
 /* ---------- Writing layout (grid + sticky filters) ---------- */
