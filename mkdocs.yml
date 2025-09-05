@@ -127,7 +127,7 @@ nav:
       - AI Safety:
           - Overview: ai-safety.md
   - AI Investments & Trends: ai-investments-trends.md
-  - Writing: https://jxnl.co/writing/
+  - Writing: writing/index.md
   - Consulting:
       - Overview: consulting/index.md
       - Services: consulting/services.md
