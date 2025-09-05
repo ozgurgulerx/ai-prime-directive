@@ -31,8 +31,10 @@ theme:
 
 extra_css:
   - assets/styles/extra.css
+  - assets/styles/home.css
 extra_javascript:
   - assets/js/extra.js
+  - assets/js/home.js
 
 plugins:
   - search
