@@ -9,6 +9,10 @@ hide:
 <p class="cta" style="margin: .25rem 0 1rem 0;">
   <a class="md-button md-button--substack" href="https://generativefrontier.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a>
   <a class="md-button md-button--linkedin" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601" target="_blank" rel="noopener">Subscribe on LinkedIn</a>
+  <span class="pills">
+    <span class="pill pill--substack">Frontier AI Tech</span>
+    <span class="pill pill--linkedin">AI Investment Trends</span>
+  </span>
   <a class="md-button" href="https://x.com/ozgurgulerx" target="_blank" rel="noopener">Follow me on X</a>
   
 </p>
