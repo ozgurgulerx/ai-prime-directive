@@ -10,7 +10,7 @@ Short, practical posts on patterns, evals, and product decisions.
 > Privacy note: the embed below loads assets from Substack. If you prefer, open it in a new tab.
 
 [Open Substack in a new tab](https://generativefrontier.substack.com){ .md-button .md-button--substack }
-[Subscribe on LinkedIn](https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601){ .md-button .md-button--linkedin }
+[Subscribe to LinkedIn newsletter](https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601){ .md-button .md-button--linkedin }
 <div class="pills" aria-label="Newsletter identities">
   <span class="pill pill--substack">Frontier AI Tech</span>
   <span class="pill pill--linkedin">AI Investment Trends</span>

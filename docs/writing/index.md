@@ -12,7 +12,7 @@ hide:
     <span class="pills"><span class="pill pill--substack">Frontier AI Tech</span></span>
   </div>
   <div class="cta-item">
-    <a class="md-button md-button--linkedin" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601" target="_blank" rel="noopener">Subscribe on LinkedIn</a>
+    <a class="md-button md-button--linkedin" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601" target="_blank" rel="noopener">Subscribe to LinkedIn newsletter</a>
     <span class="pills"><span class="pill pill--linkedin">AI Investment Trends</span></span>
   </div>
   <div class="cta-item">
