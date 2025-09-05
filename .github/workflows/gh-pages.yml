@@ -23,10 +23,10 @@ jobs:
 
       - name: Verify plugin installation
         run: |
+          python -m pip show mkdocs-material || true
           python -m pip show mkdocs-rss-plugin || true
           python -m pip show mkdocs-git-revision-date-localized-plugin || true
           python -m pip show mkdocs-minify-plugin || true
-          python -m pip show mkdocs-privacy || true
 
       - name: Build site
         run: python -m mkdocs build --strict
