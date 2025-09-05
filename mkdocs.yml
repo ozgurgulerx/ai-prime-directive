@@ -87,32 +87,41 @@ extra:
       link: https://github.com/ozgurgulerx
 
 nav:
-  - Home: index.md
-  - Notes: notes.md
-  - Notebooks: notebooks.md
-  - Anki Cards: anki.md
-  - Tags: tags.md
-  - Foundations:
-      - Reasoning Models: reasoning-models.md
-      - RL in LLMs: rl-in-llms.md
-  - RAG:
-      - Context Engineering: context-engineering.md
-      - Graph RAG: graphrag.md
-      - RAG 2.0 — Agentic RAG: rag-2-agentic-rag.md
-  - Build Patterns:
-      - LLM Build Patterns: build-patterns-llms.md
-      - OpenAI Agent SDK: openai-agent-sdk.md
-      - Microsoft Semantic Kernel: microsoft-semantic-kernel.md
-      - Agent Memory: agent-apps-memory-engineering.md
-      - Agent Frameworks: agent-frameworks.md
-      - MCP: mcp.md
-      - Tools — Prompt KV Caching: tools-prompt-kv-caching.md
-  - Ops:
-      - EvalOps: evalops.md
-      - LLM Apps in Production: llm-apps-in-production.md
-  - Product:
-      - AI UX Design Patterns: ai-ux-design-patterns.md
-      - Microsoft HAX Framework: microsoft-hax-framework.md
-      - Google’s PAIR: google-pair.md
-  - AI Safety:
-      - Overview: ai-safety.md
+  - AI Prime Directive - Learn building with AI:
+      - Home: index.md
+      - Notes: notes.md
+      - Notebooks: notebooks.md
+      - Anki Cards: anki.md
+      - Tags: tags.md
+      - Foundations:
+          - Reasoning Models: reasoning-models.md
+          - RL in LLMs: rl-in-llms.md
+      - RAG:
+          - Context Engineering: context-engineering.md
+          - Graph RAG: graphrag.md
+          - RAG 2.0 — Agentic RAG: rag-2-agentic-rag.md
+      - Build Patterns:
+          - LLM Build Patterns: build-patterns-llms.md
+          - OpenAI Agent SDK: openai-agent-sdk.md
+          - Microsoft Semantic Kernel: microsoft-semantic-kernel.md
+          - Agent Memory: agent-apps-memory-engineering.md
+          - Agent Frameworks: agent-frameworks.md
+          - MCP: mcp.md
+          - Tools — Prompt KV Caching: tools-prompt-kv-caching.md
+      - Ops:
+          - EvalOps: evalops.md
+          - LLM Apps in Production: llm-apps-in-production.md
+      - Product:
+          - AI UX Design Patterns: ai-ux-design-patterns.md
+          - Microsoft HAX Framework: microsoft-hax-framework.md
+          - Google’s PAIR: google-pair.md
+      - AI Safety:
+          - Overview: ai-safety.md
+  - AI Investments & Trends: ai-investments-trends.md
+  - Writing: https://jxnl.co/writing/
+  - Consulting:
+      - Overview: consulting/index.md
+      - Services: consulting/services.md
+      - Workshops: consulting/workshops.md
+      - Case Studies: consulting/case-studies.md
+      - Contact: consulting/contact.md
