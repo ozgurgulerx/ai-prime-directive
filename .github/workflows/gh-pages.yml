@@ -18,11 +18,18 @@ jobs:
 
       - name: Install MkDocs and plugins
         run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Verify plugin installation
+        run: |
+          python -m pip show mkdocs-rss-plugin || true
+          python -m pip show mkdocs-git-revision-date-localized-plugin || true
+          python -m pip show mkdocs-minify-plugin || true
+          python -m pip show mkdocs-privacy || true
 
       - name: Build site
-        run: mkdocs build --strict
+        run: python -m mkdocs build --strict
 
       - name: Read CNAME (if present)
         id: cname
