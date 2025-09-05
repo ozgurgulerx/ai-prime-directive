@@ -68,4 +68,8 @@ hide:
   :simple-medium: <span class="post-meta">CloudAtlas · ~6 min</span>  
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/react-reason-act-implementations-for-llm-agency-7dbe0ad584c8)
 
+- :material-robot-outline: **The Open Source Model Zoo: A Spirited Journey Towards GPT-Level Performance**  
+  :simple-medium: <span class="post-meta">CloudAtlas · ~6 min</span>  
+  [:octicons-arrow-right-16: Read](https://cloudatlas.me/the-open-source-model-zoo-a-spirited-journey-towards-gpt-level-performance-acb08ce6b4d0)
+
 </div>
