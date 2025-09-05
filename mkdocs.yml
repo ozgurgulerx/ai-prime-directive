@@ -92,3 +92,11 @@ nav:
   - Home: index.md
   - Notes: notes.md
   - Tags: tags.md
+  - MCP: mcp.md
+  - GraphRAG: graphrag.md
+  - Build Patterns with LLMs — Structured Outputs & Types: build-patterns-llms.md
+  - Tools — Prompt KV Caching: tools-prompt-kv-caching.md
+  - Building Agent Apps — Memory Engineering: agent-apps-memory-engineering.md
+  - LLM Apps in Production: llm-apps-in-production.md
+  - AI UX Design Patterns: ai-ux-design-patterns.md
+  - AI Safety: ai-safety.md
