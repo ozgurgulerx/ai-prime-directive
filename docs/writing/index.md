@@ -7,7 +7,7 @@ hide:
 # Writing
 
 <p class="cta" style="margin: .25rem 0 1rem 0;">
-  <a class="md-button md-button--primary" href="/my-prime-directive/subscribe/">Subscribe to my newsletter</a>
+  <a class="md-button md-button--primary" href="https://generativefrontier.substack.com" target="_blank" rel="noopener">Subscribe to my newsletter</a>
   <a class="md-button" href="https://x.com/ozgurgulerx" target="_blank" rel="noopener">Follow me on X</a>
   
 </p>
