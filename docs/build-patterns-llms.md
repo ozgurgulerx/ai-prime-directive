@@ -1,8 +1,7 @@
----
-title: Build Patterns with LLMs — Structured Outputs & Types
+title: LLM Build Patterns
 ---
 
-# Build Patterns with LLMs — Structured Outputs & Types
+# LLM Build Patterns
 
 > Contracts, schemas, and validation for reliable LLM apps.
 
@@ -19,4 +18,3 @@ TBD — JSON modes, function/tool calling, schema enforcement.
 ## References
 
 - Libraries, articles, and examples
-

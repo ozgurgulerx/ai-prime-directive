@@ -14,6 +14,7 @@ theme:
   features:
     - navigation.instant
     - navigation.sections
+    - navigation.expand
     - navigation.indexes
     - navigation.top
     - navigation.footer
@@ -90,11 +91,15 @@ nav:
   - Home: index.md
   - Notes: notes.md
   - Tags: tags.md
-  - MCP: mcp.md
-  - GraphRAG: graphrag.md
-  - Build Patterns with LLMs — Structured Outputs & Types: build-patterns-llms.md
-  - Tools — Prompt KV Caching: tools-prompt-kv-caching.md
-  - Building Agent Apps — Memory Engineering: agent-apps-memory-engineering.md
-  - LLM Apps in Production: llm-apps-in-production.md
-  - AI UX Design Patterns: ai-ux-design-patterns.md
-  - AI Safety: ai-safety.md
+  - Foundations:
+      - MCP: mcp.md
+      - Graph RAG: graphrag.md
+      - RAG 2.0 — Agentic RAG: rag-2-agentic-rag.md
+  - Build Patterns:
+      - LLM Build Patterns: build-patterns-llms.md
+      - Agent Memory: agent-apps-memory-engineering.md
+      - Agent Frameworks: agent-frameworks.md
+  - Product & Ops:
+      - AI UX Design Patterns: ai-ux-design-patterns.md
+      - AI Safety: ai-safety.md
+      - EvalOps: evalops.md
