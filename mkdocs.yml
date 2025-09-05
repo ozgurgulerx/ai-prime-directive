@@ -83,8 +83,16 @@ extra_css:
 
 extra:
   social:
+    - icon: simple/x
+      link: https://x.com/home
     - icon: simple/github
       link: https://github.com/ozgurgulerx
+    - icon: simple/linkedin
+      link: https://www.linkedin.com/in/ozguler/
+    - icon: simple/youtube
+      link: https://www.youtube.com/@ozgurgulerx
+
+copyright: "Copyright © 2025 Ozgur Guler"
 
 nav:
   - AI Prime Directive - Learn building with AI:
