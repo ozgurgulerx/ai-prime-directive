@@ -29,7 +29,7 @@ hide:
   [:octicons-arrow-right-16: Read](https://medium.com/@343544/improve-rag-performance-with-document-metadata-filters-for-vector-search-on-azureai-3af3bce6708c)
 
 - :material-update: **Incrementally Indexing documents with AzureAI Search Integrated Vectorisation**  
-  :simple-microsoftazure: <span class="post-meta">Mar 11, 2024 · Microsoft Azure · ~5 min</span>  
+  <img class="publisher-icon" src="/images/publishers/azure.svg" alt="Microsoft Azure" /> <span class="post-meta">Mar 11, 2024 · Microsoft Azure · ~5 min</span>  
   [:octicons-arrow-right-16: Read](https://medium.com/microsoftazure/incrementally-indexing-documents-with-azureai-search-integrated-vectorization-6f7150556f62)
 
 - :material-chart-line: **How to improve RAG peformance — Advanced RAG Patterns — Part2**  
@@ -61,7 +61,7 @@ hide:
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/how-to-build-a-basic-recommender-system-using-azure-openai-embeddings-2188e172338)
 
 - :material-cloud-outline: **Building a SaaS Application on Azure AKS with GitHub Actions**  
-  :simple-microsoftazure: <span class="post-meta">Feb 8, 2023 · Azure Tech Community — Apps on Azure Blog · ~6 min</span>  
+  <img class="publisher-icon" src="/images/publishers/azure.svg" alt="Microsoft Azure" /> <span class="post-meta">Feb 8, 2023 · Azure Tech Community — Apps on Azure Blog · ~6 min</span>  
   [:octicons-arrow-right-16: Read](https://techcommunity.microsoft.com/blog/appsonazureblog/building-a-saas-application-on-azure-aks-with-github-actions/3736641)
 
 - :material-earth: **Software ate the world (and seems to be creating new worlds now)…**  

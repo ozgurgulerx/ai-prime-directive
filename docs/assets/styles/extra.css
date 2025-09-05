@@ -159,6 +159,8 @@
 
 /* Ensure emoji/Simple Icons align nicely before meta */
 .md-typeset .twemoji { vertical-align: text-bottom; margin-right: .25rem; }
+/* Fallback publisher icon alignment (inline <img>) */
+.md-typeset img.publisher-icon { height: 1em; width: 1em; vertical-align: text-bottom; margin-right: .25rem; }
 
 /* ---------- Responsive columns ---------- */
 /* 2 columns by default on laptops; 3 only when very wide */
