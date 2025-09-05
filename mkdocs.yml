@@ -92,14 +92,23 @@ nav:
   - Notes: notes.md
   - Tags: tags.md
   - Foundations:
-      - MCP: mcp.md
+      - Reasoning Models: reasoning-models.md
+      - RL in LLMs: rl-in-llms.md
+  - RAG:
       - Graph RAG: graphrag.md
       - RAG 2.0 — Agentic RAG: rag-2-agentic-rag.md
   - Build Patterns:
       - LLM Build Patterns: build-patterns-llms.md
+      - OpenAI Agent SDK: openai-agent-sdk.md
+      - Microsoft Semantic Kernel: microsoft-semantic-kernel.md
       - Agent Memory: agent-apps-memory-engineering.md
       - Agent Frameworks: agent-frameworks.md
-  - Product & Ops:
-      - AI UX Design Patterns: ai-ux-design-patterns.md
-      - AI Safety: ai-safety.md
+      - MCP: mcp.md
+  - Ops:
       - EvalOps: evalops.md
+  - Product:
+      - AI UX Design Patterns: ai-ux-design-patterns.md
+      - Microsoft HAX Framework: microsoft-hax-framework.md
+      - Google’s PAIR: google-pair.md
+  - AI Safety:
+      - Overview: ai-safety.md
