@@ -72,4 +72,8 @@ hide:
   :simple-medium: <span class="post-meta">CloudAtlas · ~6 min</span>  
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/the-open-source-model-zoo-a-spirited-journey-towards-gpt-level-performance-acb08ce6b4d0)
 
+- :material-function-variant: **Run your AzureOpenAI apps Azure Functions**  
+  <span class="post-meta">AiMind · ~5 min</span>  
+  [:octicons-arrow-right-16: Read](https://pub.aimind.so/azureopenai-app-runnin-on-azure-functions-784c44b528db)
+
 </div>
