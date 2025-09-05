@@ -61,7 +61,7 @@ hide:
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/what-should-a-startup-build-519181d50b49)
 
 - :material-robot-outline: **How to build a basic recommender system using Azure OpenAI Embeddings…**  
-  :simple-medium: <span class="post-meta">Aug 17, 2023 · CloudAtlas · ~6 min</span>  
+  :simple-medium: <span class="post-meta">Apr 4, 2023 · CloudAtlas · ~6 min</span>  
   [:octicons-arrow-right-16: Read](https://cloudatlas.me/how-to-build-a-basic-recommender-system-using-azure-openai-embeddings-2188e172338)
 
 - :material-brain: **ReACT — Reason & ACT implementations for LLM Agency**  
