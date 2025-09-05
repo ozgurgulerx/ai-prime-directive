@@ -48,4 +48,8 @@ hide:
   :simple-microsoftazure: <span class="post-meta">Feb 8, 2023 · Azure Tech Community — Apps on Azure Blog · ~6 min</span>  
   [:octicons-arrow-right-16: Read](https://techcommunity.microsoft.com/blog/appsonazureblog/building-a-saas-application-on-azure-aks-with-github-actions/3736641)
 
+- :material-earth: **Software ate the world (and seems to be creating new worlds now)…**  
+  :simple-medium: <span class="post-meta">CloudAtlas · ~5 min</span>  
+  [:octicons-arrow-right-16: Read](https://cloudatlas.me/software-ate-the-world-and-seems-to-be-creating-new-worlds-now-e71a3e599e4b)
+
 </div>
