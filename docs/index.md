@@ -1,6 +1,7 @@
 # I build successful AI products.
 
-I focus on learning and codifying **LLM build patterns**, **AI UX design**, **EvalOps**, and the unglamorous production work (guardrails, cost/latency tuning, observability, safety).  
+Hi, 
+I am Ozgur Guler. I focus on learning and codifying **LLM build patterns**, **AI UX design**, **EvalOps**, and the unglamorous production work (guardrails, cost/latency tuning, observability, safety).  
 This page is my container of **assets** and **distilled notes** to quickly *teach* others what I learn—so you can ship faster.
 
 <div class="cta-row">
@@ -56,3 +57,16 @@ See **testimonials** → [testimonials/](testimonials/index.md)
 - [Graph RAG in practice](writing/graph-rag/index.md)
 
 Prefer a starter pack? Grab the **LLM Reliability Starter Kit** → [starter/](starter/index.md)
+
+---
+
+## Connect
+
+<div class="subscribe-cta" markdown="1">
+[Email me](mailto:ozgur@graph-atlas.com){ .subscribe-box }
+[Book a talk](mailto:ozgur@graph-atlas.com?subject=AI%20Talk&body=Hi%20Ozgur,%0A%0AI%27m%20interested%20in%20booking%20a%20talk.%0A%0AVenue:%0ADate:%0AAudience%20details:%0AFormat%20(Keynote%20or%20Tech%20Talk):%0AEvent%20theme:%0A%0AAdditional%20notes:%0A){ .subscribe-box .subscribe-box--outline }
+[Follow on X](https://x.com/ozgurgulerx){ .subscribe-box target="_blank" rel="noopener" }
+[LinkedIn newsletter](https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601){ .subscribe-box .subscribe-box--outline target="_blank" rel="noopener" }
+[Substack](https://generativefrontier.substack.com){ .subscribe-box .subscribe-box--outline target="_blank" rel="noopener" }
+[GitHub](https://github.com/ozgurgulerx){ .subscribe-box .subscribe-box--outline target="_blank" rel="noopener" }
+</div>
