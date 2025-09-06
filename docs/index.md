@@ -4,8 +4,8 @@ I focus on learning and codifying **LLM build patterns**, **AI UX design**, **Ev
 This page is my container of **assets** and **distilled notes** to quickly *teach* others what I learn—so you can ship faster.
 
 <div class="cta-row">
-  <a id="start-btn" href="start/builder/" class="md-button md-button--primary">Start here</a>
-  <a href="consulting/" class="md-button">Work with me</a>
+  <a id="start-btn" href="my-prime-directive/start.md" class="md-button md-button--primary">Start here</a>
+  <a href="consulting/index.md" class="md-button">Work with me</a>
 </div>
 
 <div class="role-switch">
@@ -46,13 +46,13 @@ This page is my container of **assets** and **distilled notes** to quickly *teac
 - Improved answer quality **+12–18 pts** on real products.  
 - Trained 300+ builders; 20+ shipped features using these playbooks.
 
-See **testimonials** → [testimonials/](testimonials/)
+See **testimonials** → [testimonials/](testimonials/index.md)
 
 ---
 
 ## Latest writing
-- [Why evals fail in real products](writing/evals-in-prod/)
-- [LLM UX patterns that don’t scale](writing/ux-donts/)
-- [Graph RAG in practice](writing/graph-rag/)
+- [Why evals fail in real products](writing/evals-in-prod/index.md)
+- [LLM UX patterns that don’t scale](writing/ux-donts/index.md)
+- [Graph RAG in practice](writing/graph-rag/index.md)
 
-Prefer a starter pack? Grab the **LLM Reliability Starter Kit** → [starter/](starter/)
+Prefer a starter pack? Grab the **LLM Reliability Starter Kit** → [starter/](starter/index.md)
