@@ -13,6 +13,7 @@ theme:
   features:
     - navigation.top
     - navigation.tabs
+    - navigation.footer
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -44,12 +45,37 @@ extra_css:
   - assets/styles/extra.css?v=20250906-1514
   - assets/styles/home.css?v=20250906-1514
   - assets/styles/site.css?v=20250906-1514
+  - assets/styles/social.css
 extra_javascript:
   - assets/js/extra.js?v=20250906-1514
   - assets/js/home.js?v=20250906-1514
   - assets/js/filters.js?v=20250906-1514
   - assets/js/writing.js?v=20250906-1514
   - assets/js/speaking.js?v=20250906-1514
+
+extra:
+  social:
+    - icon: fontawesome/solid/rss
+      link: /rss.xml
+      name: RSS
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/ozgurgulerx
+      name: Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/ozgurgulerx
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601
+      name: LinkedIn
+    - icon: simple/substack
+      link: https://generativefrontier.substack.com
+      name: Substack
+    - icon: fontawesome/solid/envelope
+      link: mailto:ozgur@graph-atlas.com
+      name: Email
+    - icon: fontawesome/solid/calendar-check
+      link: "mailto:ozgur@graph-atlas.com?subject=AI%20Talk&body=Hi%20Ozgur,%0A%0AI%27m%20interested%20in%20booking%20a%20talk.%0A%0AVenue:%0ADate:%0AAudience%20details:%0AFormat%20(Keynote%20or%20Tech%20Talk):%0AEvent%20theme:%0A%0AAdditional%20notes:%0A"
+      name: Book a talk
 
 plugins:
   - search
@@ -58,15 +84,18 @@ plugins:
       blog_toc: true
       pagination_per_page: 10
       authors_file: null
-      post_date_format: '%Y-%m-%d'
+      post_date_format: 'yyyy-MM-dd'
       draft_on_serve: true
   - tags
   - rss:
       match_path: blog/.*
-      date_from_meta:
-        as_creation: date
+      abstract_chars: 280
       categories:
         - tags
+      date_from_meta:
+        as_creation: 'date'
+      feed_title: "CloudAtlas Blog"
+      length: 20
   - git-revision-date-localized:
       type: timeago
   - minify:
@@ -93,7 +122,7 @@ nav:
   - Speaking: speaking/index.md
   - Courses: courses/index.md
   - Consulting: consulting/index.md
-  - My Prime Directive:
+  - AI Prime Directive:
       - Overview: my-prime-directive/index.md
       - Notes: my-prime-directive/notes.md
       - Start here: my-prime-directive/start.md
@@ -119,3 +148,4 @@ nav:
           - AI UX Design Patterns: my-prime-directive/ai-ux-design-patterns.md
           - Microsoft HAX Framework: my-prime-directive/microsoft-hax-framework.md
   - Books: my-prime-directive/books.md
+  - Blog: blog/index.md

@@ -6,7 +6,8 @@ title: Speaking
 
 # Speaking
 
-Talks & workshops on agentic AI, GraphRAG, AI UX, and EvalOps — practical playbooks for builders.
+I deliver hands-on talks and workshops on Agentic AI, GraphRAG-style data integration, AI UX, and EvalOps—practical playbooks for builders. My current focus: the tech + GTM patterns that ship successful AI products, with AI UX that drives adoption.
+
 
 <div class="speaking-cta" markdown="1">
 [Book a talk](mailto:ozgur@graph-atlas.com?subject=AI%20Talk&body=Hi%20Ozgur,%0A%0AI%27m%20interested%20in%20booking%20a%20talk.%0A%0AVenue:%0ADate:%0AAudience%20details:%0AFormat%20(Keynote%20or%20Tech%20Talk):%0AEvent%20theme:%0A%0AAdditional%20notes:%0A){ .subscribe-box }

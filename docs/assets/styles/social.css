@@ -1,0 +1,24 @@
+/* Footer social icon tuning */
+:root {
+  --icon-opacity: .8;
+  --icon-opacity-hover: 1;
+}
+
+.md-footer .md-social {
+  gap: 0.9rem;
+}
+
+.md-footer .md-social__link {
+  opacity: var(--icon-opacity);
+  transition: opacity .2s ease, transform .12s ease;
+}
+
+.md-footer .md-social__link:hover {
+  opacity: var(--icon-opacity-hover);
+  transform: translateY(-1px);
+}
+
+/* Keep icons crisp on dark footers */
+.md-footer .md-icon {
+  filter: none;
+}

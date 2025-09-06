@@ -13,7 +13,6 @@
       <p class="hero__sub">Opinionated patterns, reference templates, and eval-driven checklists.</p>
       <div class="hero__ctas">
         <a href="{{ base_url }}/my-prime-directive/start/" class="md-button md-button--primary">Start here</a>
-        <a href="{{ base_url }}/consulting/" class="md-button">Hire me</a>
       </div>
     </div>
   </section>
@@ -102,16 +101,11 @@
     </div>
   </section>
 
-  <section class="connect">
-    <div class="subscribe-cta">
-      <a class="subscribe-box" href="mailto:ozgur@graph-atlas.com">Email me</a>
-      <a class="subscribe-box subscribe-box--outline" href="mailto:ozgur@graph-atlas.com?subject=AI%20Talk&body=Hi%20Ozgur,%0A%0AI%27m%20interested%20in%20booking%20a%20talk.%0A%0AVenue:%0ADate:%0AAudience%20details:%0AFormat%20(Keynote%20or%20Tech%20Talk):%0AEvent%20theme:%0A%0AAdditional%20notes:%0A">Book a talk</a>
-    </div>
-  </section>
+  
 
   <footer class="home-footer">
     <div class="home-footer__inner">
-      <p>© {{ config.copyright | default('Ozgur Guler') }} · <a href="https://github.com/{{ config.repo_url | default('') | replace('https://github.com/', '') }}">GitHub</a></p>
+      <p>© {{ config.copyright | default('Ozgur Guler') }}</p>
       <p>Ozgur Guler — AI consultant. Helping teams ship reliable, user-centered LLM apps.</p>
     </div>
   </footer>
