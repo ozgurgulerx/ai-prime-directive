@@ -123,29 +123,13 @@ nav:
   - Courses: courses/index.md
   - Consulting: consulting/index.md
   - AI Prime Directive:
-      - Overview: my-prime-directive/index.md
-      - Notes: my-prime-directive/notes.md
-      - Start here: my-prime-directive/start.md
-      - Foundations:
-          - Reasoning Models: my-prime-directive/reasoning-models.md
-          - RL in LLMs: my-prime-directive/rl-in-llms.md
-      - RAG:
-          - Context Engineering: my-prime-directive/context-engineering.md
-          - Graph RAG: my-prime-directive/graphrag.md
-          - RAG 2.0 — Agentic RAG: my-prime-directive/rag-2-agentic-rag.md
-      - Build Patterns:
-          - LLM Build Patterns: my-prime-directive/build-patterns-llms.md
-          - OpenAI Agent SDK: my-prime-directive/openai-agent-sdk.md
-          - Microsoft Semantic Kernel: my-prime-directive/microsoft-semantic-kernel.md
-          - Agent Memory: my-prime-directive/agent-apps-memory-engineering.md
-          - Agent Frameworks: my-prime-directive/agent-frameworks.md
-          - MCP: my-prime-directive/mcp.md
-          - Tools — Prompt KV Caching: my-prime-directive/tools-prompt-kv-caching.md
-      - Ops:
-          - EvalOps: my-prime-directive/evalops.md
-          - LLM Apps in Production: my-prime-directive/llm-apps-in-production.md
-      - Product:
-          - AI UX Design Patterns: my-prime-directive/ai-ux-design-patterns.md
-          - Microsoft HAX Framework: my-prime-directive/microsoft-hax-framework.md
-  - Books: my-prime-directive/books.md
+      - Overview: prime-directive/index.md
+      - LLM Foundations: prime-directive/foundations/index.md
+      - RAG: prime-directive/rag/index.md
+      - Agents: prime-directive/agents/index.md
+      - EvalOps: prime-directive/evalops/index.md
+      - AI Safety & Security: prime-directive/ai-safety-security/index.md
+      - AI UX: prime-directive/product-ux/index.md
+      - Graph: prime-directive/graph/index.md
+  - Books: books.md
   - Blog: blog/index.md

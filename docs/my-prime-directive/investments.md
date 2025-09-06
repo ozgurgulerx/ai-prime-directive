@@ -1,6 +1,0 @@
----
-title: Investments
----
-
-# Investments
-

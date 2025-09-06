@@ -1,6 +1,0 @@
----
-title: Books
----
-
-# Books
-
