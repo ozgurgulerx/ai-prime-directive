@@ -2,29 +2,77 @@
 title: Speaking
 ---
 
+<div class="page-speaking" markdown="1">
+
 # Speaking
 
-Talks, conference sessions, and workshops.
+Talks & workshops on agentic AI, GraphRAG, AI UX, and EvalOps — practical playbooks for builders.
 
-## Johannesburg — Jan 2025
+<div class="speaking-cta" markdown="1">
+[Book a talk](/contact){ .subscribe-box target="_blank" rel="noopener" }
+[Speaker one-pager](/assets/speaker-onepager.pdf){ .subscribe-box .subscribe-box--outline target="_blank" rel="noopener" }
+</div>
 
-Endeavor × Microsoft Digital Natives — keynote on Evolving GenAI Use Cases: Trends and Insights.
+## Upcoming & recent
 
-![Johannesburg — Endeavor × Microsoft Digital Natives](../assets/speaking/johannesburg-endeavor-2025-placeholder.svg){ width=260 align=left loading=lazy }
+<div class="talk-grid" markdown="0">
+  <!-- DUPLICATE this .talk-card per event -->
+  <div class="talk-card"
+       data-date="2025-01-20"
+       data-year="2025"
+       data-type="Keynote"
+       data-location="Johannesburg, ZA"
+       data-tags="Agents,GraphRAG,EvalOps">
+    <img src="../assets/speaking/1737525328675.jpeg" alt="Johannesburg — Jan 2025 keynote photo" loading="lazy" />
+    <h3>Johannesburg — Jan 2025</h3>
+    <div class="talk-meta">Endeavor × Microsoft Digital Natives · Keynote · Johannesburg, South Africa</div>
+    <div class="badges">
+      <span class="badge">Reasoning Models</span>
+      <span class="badge">Graph </span>
+      <span class="badge">Agents</span>
+    </div>
+    <details style="margin-top:8px;">
+      <summary><strong>Highlights</strong></summary>
+      <ul>
+        <li>Product-led AI engineering patterns for real-world apps.</li>
+        <li>Designing agent workflows, tooluse, and memory.</li>
+        <li>From prototype to production: evals and observability.</li>
+      </ul>
+    </details>
+    
+  </div>
 
-Highlights
+  <div class="talk-card"
+       data-date="2025-05-27"
+       data-year="2025"
+       data-type="Workshop"
+       data-location="Istanbul, TR"
+       data-tags="Builder Patterns,AI UX,Agents">
 
-- Levels of capability: assistants → digital workforce → multi‑modal → advanced reasoning use‑cases.
-- From RAG to GraphRAG to agentic patterns; when to use each.
-- Evaluations, observability, and safety as core production disciplines.
-- Practical takeaways for founders: build data feedback loops, memory, and tool use into your roadmap.
+    <img src="../assets/speaking/zeophoto.png" alt="DigitalZone Exclusive Talks — Istanbul — May 2025" loading="lazy" />
 
-Details
+    <h3>Istanbul — May 2025</h3>
+    <div class="talk-meta">DigitalZone Exclusive Talks · Workshop · Istanbul, Turkey</div>
 
-- Date: January 2025
-- Location: Johannesburg, South Africa
-- Event: Endeavor × Microsoft Digital Natives
-- Slides: coming soon
-- Recording: —
+    <div class="badges">
+      <span class="badge">Builder Patterns</span>
+      <span class="badge">AI UX</span>
+      <span class="badge">Agents</span>
+    </div>
 
-<div style="clear: both"></div>
+    <details style="margin-top:8px;">
+      <summary><strong>Highlights</strong></summary>
+      <ul>
+        <li>Product-led AI engineering patterns for real-world apps.</li>
+        <li>Designing agent workflows, tooluse, and memory.</li>
+        <li>From prototype to production: evals and observability.</li>
+      </ul>
+    </details>
+
+    <p style="margin-top:6px;">
+      <a class="read" href="/contact">Request this talk</a>
+    </p>
+  </div>
+</div>
+
+

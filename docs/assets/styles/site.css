@@ -20,6 +20,40 @@
   border: 1px solid color-mix(in oklab, var(--md-default-fg-color), transparent 85%);
 }
 
+/* Writing/Speaking: subscription CTA boxes */
+.subscribe-cta, .speaking-cta{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin: 12px 0 20px; }
+.subscribe-cta .subscribe-note, .speaking-cta .subscribe-note{ opacity:.85; font-size:.95rem; }
+.subscribe-box{
+  display:inline-block; font-weight:600; text-decoration:none; cursor:pointer;
+  padding:12px 16px; border-radius:12px;
+  border:1px solid var(--md-primary-fg-color);
+  background: var(--md-primary-fg-color);
+  color: #fff;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease, box-shadow .15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.subscribe-box--outline{
+  background: var(--md-primary-fg-color);
+  border:1px solid var(--md-primary-fg-color);
+  color: #fff;
+}
+.subscribe-box:hover,
+.subscribe-box--outline:hover{
+  background: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: #000;
+  box-shadow: 0 6px 16px color-mix(in oklab, var(--md-accent-fg-color), transparent 70%);
+}
+
+/* Ensure white text by default under Material link rules */
+.md-typeset a.subscribe-box,
+.md-typeset a.subscribe-box:visited,
+.md-typeset a.subscribe-box.subscribe-box--outline,
+.md-typeset a.subscribe-box.subscribe-box--outline:visited { color: #fff !important; }
+/* And black text on hover for both variants */
+.md-typeset a.subscribe-box:hover,
+.md-typeset a.subscribe-box.subscribe-box--outline:hover { color: #000 !important; }
+
 /* -------- Sticky filter/search/sort bar -------- */
 .filter-bar{
   position: sticky; top: 64px; z-index: 2;
@@ -28,7 +62,7 @@
   align-items: center;
   gap: 12px;
   padding: 10px 12px; margin: 8px auto 18px;  /* auto centers the bar */
-  max-width: 960px;                           /* same visual width as hero */
+  max-width: var(--writing-max, 1100px);      /* align with writing width */
   border-radius: 12px;
   background: color-mix(in oklab, var(--md-default-bg-color), white 3%);
   border: 1px solid color-mix(in oklab, var(--md-default-fg-color), transparent 92%);
@@ -114,16 +148,24 @@
    (Drop-in overrides; MkDocs Material-safe)
    ========================================================== */
 
-/* 1) Make the page grid symmetric on Writing page only */
-/* Center the content column between two equal gutters */
-body.page-writing-active .md-main__inner,
-body:has(.page-writing) .md-main__inner{
-  display: grid; /* keep Material’s grid */
-  grid-template-columns: minmax(0, 1fr) minmax(0, var(--page-stage, 1200px)) minmax(0, 1fr) !important;
-}
+/* Keep Material's default grid; do not override .md-main__inner on Writing */
 
 /* If there is no right ToC on a page, don’t leave a phantom gutter */
 .md-sidebar--secondary:empty { display: none; }
+
+/* Writing: use left sidebar for filters, hide default nav on this page only */
+body.page-writing-active .md-sidebar--primary .md-nav:not(.writing-filter){ display: none; }
+/* Speaking: same behavior for speaking page */
+body.page-speaking-active .md-sidebar--primary .md-nav:not(.speaking-filter){ display: none; }
+
+/* Left filter panel styles */
+.writing-filter, .speaking-filter{ padding: 8px 6px; }
+.writing-filter__section, .speaking-filter__section{ margin-bottom: 14px; }
+.writing-filter__title, .speaking-filter__title{ font-weight: 600; font-size: .92rem; opacity: .85; margin: 6px 0 6px; }
+.writing-filter__list, .speaking-filter__list{ list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.writing-filter__list a, .speaking-filter__list a{ display:block; padding: 4px 8px; border-radius: 6px; text-decoration: none; color: inherit; }
+.writing-filter__list a:hover, .speaking-filter__list a:hover{ background: color-mix(in oklab, var(--md-default-fg-color), transparent 93%); }
+.writing-filter__list a.is-active, .speaking-filter__list a.is-active{ background: color-mix(in oklab, var(--md-default-fg-color), transparent 90%); font-weight: 600; }
 
 /* 2) Center hero + filter as a block */
 /* A visually centered “header zone” */
@@ -131,6 +173,7 @@ body:has(.page-writing) .md-main__inner{
   --row-max: 960px;          /* header zone width */
   --card-gap: 28px;          /* grid gap */
   --card-w: 420px;           /* target card width on 2-col */
+  --writing-max: 1100px;     /* comfortable reading width for Writing page */
 }
 
 .hero,
@@ -141,7 +184,7 @@ body:has(.page-writing) .md-main__inner{
 }
 
 /* Writing page wrapper: ensure its block is centered and wide enough */
-.page-writing{ max-width: var(--page-stage, 1200px); margin-inline: auto; padding-inline: clamp(12px, 3vw, 24px); }
+.page-writing{ max-width: min(var(--writing-max, 1100px), 100%); margin-inline: auto; padding-inline: clamp(12px, 3vw, 24px); }
 
 /* 3) Center the grids by bounding their own width to exact column math */
 /* two columns by default; three on XL */
@@ -170,7 +213,7 @@ body:has(.page-writing) .md-main__inner{
 
 /* 4) Optional—align the H1 with the centered header zone on Writing page */
 body.page-writing-active .md-typeset h1,
-body:has(.page-writing) .md-typeset h1{ max-width: var(--row-max); margin-inline: auto; }
+body:has(.page-writing) .md-typeset h1{ max-width: min(var(--writing-max, 1100px), 100%); margin-inline: auto; }
 
 /* --- Speaking cards (mirrors Writing) --- */
 .talk-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }

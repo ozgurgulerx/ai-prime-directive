@@ -1,9 +1,8 @@
-/* Compact, readable home styling */
-.hero, .md-content { max-width: 920px; margin: 0 auto; }
+/* Compact, readable home styling (scope to hero only) */
+.hero { max-width: 920px; margin: 0 auto; }
 .cta-row { display: flex; gap: 12px; margin: 12px 0 8px; }
 .role-switch { margin: 4px 0 24px; opacity: .9; font-size: 0.95rem; }
 .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .pillar { border: 1px solid var(--md-default-fg-color--lightest); border-radius: 14px; padding: 18px; text-decoration: none; }
 .pillar:hover { border-color: var(--md-primary-fg-color); transform: translateY(-1px); }
 h1 { font-size: clamp(32px, 5vw, 44px); line-height: 1.1; }
-

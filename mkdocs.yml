@@ -11,30 +11,45 @@ theme:
   icon:
     logo: material/school
   features:
+    - navigation.top
     - navigation.tabs
+    - search.suggest
+    - search.highlight
+    - content.code.copy
     - navigation.sections
     - navigation.indexes
     - navigation.instant
-    - navigation.top
-    - content.code.copy
     - content.tooltips
     - toc.follow
     - header.autohide
   palette:
     - scheme: default
       primary: indigo
-      accent: emerald
+      accent: orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
     - scheme: slate
       primary: indigo
-      accent: emerald
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   custom_dir: overrides
+  font:
+    text: Inter
+    code: JetBrains Mono
 
 extra_css:
-  - assets/styles/extra.css
-  - assets/styles/home.css
+  - assets/styles/extra.css?v=20250906
+  - assets/styles/home.css?v=20250906
+  - assets/styles/site.css?v=20250906
 extra_javascript:
-  - assets/js/extra.js
-  - assets/js/home.js
+  - assets/js/extra.js?v=20250906
+  - assets/js/home.js?v=20250906
+  - assets/js/filters.js?v=20250906
+  - assets/js/writing.js?v=20250906
+  - assets/js/speaking.js?v=20250906
 
 plugins:
   - search

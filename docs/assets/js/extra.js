@@ -47,13 +47,17 @@
 })();
 
 // Page-scoped helpers ---------------------------------------------------
-// Add a body class when the Writing page is present, so CSS can target it
-// without relying solely on the :has() selector (for older browsers).
-document.addEventListener('DOMContentLoaded', function(){
-  if (document.querySelector('.page-writing')) {
-    document.body.classList.add('page-writing-active');
-  } else {
-    document.body.classList.remove('page-writing-active');
+// Add a body class when specific pages are present, so CSS can target them.
+// Hook into Material's instant navigation (document$) and the initial load.
+(function(){
+  function setPageClasses(){
+    document.body.classList.toggle('page-writing-active', !!document.querySelector('.page-writing'));
+    document.body.classList.toggle('page-speaking-active', !!document.querySelector('.page-speaking'));
   }
-});
+  if (window.document$) {
+    window.document$.subscribe(setPageClasses);
+  } else {
+    document.addEventListener('DOMContentLoaded', setPageClasses);
+  }
+})();
 
