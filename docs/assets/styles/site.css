@@ -114,9 +114,9 @@
    (Drop-in overrides; MkDocs Material-safe)
    ========================================================== */
 
-/* 1) Make the page grid symmetric (kills global left bias) */
+/* 1) Make the page grid symmetric on Writing page only */
 /* Center the content column between two equal gutters */
-.md-main__inner{
+body:has(.page-writing) .md-main__inner{
   display: grid; /* keep Material’s grid */
   grid-template-columns: minmax(0, 1fr) minmax(0, var(--page-stage, 1200px)) minmax(0, 1fr) !important;
 }
@@ -167,13 +167,8 @@
 /* If your pinned section uses <div class="grid pinned">, this centers it too */
 .md-typeset .grid.pinned{ margin-inline: auto; }
 
-/* 4) Optional—align the H1 with the centered header zone (purely aesthetic) */
-.md-typeset h1{ max-width: var(--row-max); margin-inline: auto; }
-
-/* Hide primary sidebar only when the Writing page is present (prevents left bias) */
-@media (min-width: 1024px){
-  body:has(.page-writing) .md-sidebar--primary{ display: none !important; }
-}
+/* 4) Optional—align the H1 with the centered header zone on Writing page */
+body:has(.page-writing) .md-typeset h1{ max-width: var(--row-max); margin-inline: auto; }
 
 /* --- Speaking cards (mirrors Writing) --- */
 .talk-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
