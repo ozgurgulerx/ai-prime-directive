@@ -216,8 +216,15 @@ body.page-writing-active .md-typeset h1,
 body:has(.page-writing) .md-typeset h1{ max-width: min(var(--writing-max, 1100px), 100%); margin-inline: auto; }
 
 /* --- Speaking cards (mirrors Writing) --- */
-.talk-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
-@media (max-width:920px){ .talk-grid { grid-template-columns:1fr; } }
+.talk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  justify-content: center; /* keep two cards centered in wide containers */
+}
+@media (max-width: 700px){
+  .talk-grid { grid-template-columns: 1fr; }
+}
 
 .talk-card{
   padding:18px; border:1px solid rgba(0,0,0,.06); border-radius:14px;
@@ -235,4 +242,25 @@ body:has(.page-writing) .md-typeset h1{ max-width: min(var(--writing-max, 1100px
 }
 
 /* speaking thumbs */
-.talk-card img{ width:100%; height:auto; border-radius:10px; margin-bottom:8px; }
+.talk-card img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  margin-bottom:8px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* Ensure details/summary work properly in talk cards */
+.talk-card details {
+  display: block;
+  margin-top: 8px;
+}
+.talk-card summary {
+  display: list-item;
+  cursor: pointer;
+  list-style: disclosure-closed;
+}
+.talk-card details[open] summary {
+  list-style: disclosure-open;
+}

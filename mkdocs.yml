@@ -41,15 +41,15 @@ theme:
     code: JetBrains Mono
 
 extra_css:
-  - assets/styles/extra.css?v=20250906
-  - assets/styles/home.css?v=20250906
-  - assets/styles/site.css?v=20250906
+  - assets/styles/extra.css?v=20250906-1514
+  - assets/styles/home.css?v=20250906-1514
+  - assets/styles/site.css?v=20250906-1514
 extra_javascript:
-  - assets/js/extra.js?v=20250906
-  - assets/js/home.js?v=20250906
-  - assets/js/filters.js?v=20250906
-  - assets/js/writing.js?v=20250906
-  - assets/js/speaking.js?v=20250906
+  - assets/js/extra.js?v=20250906-1514
+  - assets/js/home.js?v=20250906-1514
+  - assets/js/filters.js?v=20250906-1514
+  - assets/js/writing.js?v=20250906-1514
+  - assets/js/speaking.js?v=20250906-1514
 
 plugins:
   - search
