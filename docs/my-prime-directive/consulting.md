@@ -27,7 +27,7 @@ Launch faster and reduce risk with experienced guidance across architecture, pro
 - Integrate evals, observability, fallbacks, and UX hardening.
 - Compliance, privacy, and performance tuned for real users.
 
-[Book a discovery call](CALENDLY_URL){ .md-button .md-button--primary }
+[Book a discovery call](https://calendly.com/your-handle/discovery-call){ .md-button .md-button--primary }
 
 ---
 

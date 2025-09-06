@@ -8,19 +8,19 @@ description: A practical, opinionated path to move from idea to reliable LLM app
 Follow this sequence to reduce risk and iterate with confidence:
 
 1) Framing — align on value, constraints, and acceptance criteria  
-   - See: [Foundations](/prime-directive/foundations/)
+   - See: [Foundations](reasoning-models.md) and [RL in LLMs](rl-in-llms.md)
 
 2) Data / RAG — ground responses with your data  
-   - See: [RAG 2.0](/prime-directive/rag/rag-2-0/) and [Graph RAG](/prime-directive/graph/graph-rag/)
+   - See: [RAG 2.0 — Agentic RAG](rag-2-agentic-rag.md) and [Graph RAG](graphrag.md)
 
 3) Reasoning & Memory — maintain context and intent through flows  
-   - See: [Agent Memory](/prime-directive/agents/agent-memory/)
+   - See: [Agent Memory](agent-apps-memory-engineering.md)
 
 4) EvalOps — measure, compare, and regress safely  
-   - See: [EvalOps](/prime-directive/evalops/evalops/)
+   - See: [EvalOps](evalops.md)
 
 5) Ship — UX that guides users and guards quality  
-   - See: [Product & UX](/prime-directive/product-ux/)
+   - See: [AI UX Design Patterns](ai-ux-design-patterns.md)
 
 Primary calls-to-action:
 

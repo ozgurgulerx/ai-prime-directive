@@ -20,5 +20,5 @@ Engaging talks and workshops for product, data, and engineering teams.
 - 2–3 hour workshop with hands-on labs and templates
 - Full-day deep dive: strategy, architecture, and eval-driven build
 
-[Book a discovery call](CALENDLY_URL){ .md-button .md-button--primary }
+[Book a discovery call](https://calendly.com/your-handle/discovery-call){ .md-button .md-button--primary }
 
