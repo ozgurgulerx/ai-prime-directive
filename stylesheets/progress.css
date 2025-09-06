@@ -1,0 +1,11 @@
+/* Completion badge (generic, optional) */
+.md-typeset .card.done { position: relative; opacity: .96; }
+.md-typeset .card.done::after {
+  content: "✓ Completed";
+  position: absolute; top: .6rem; right: .8rem;
+  font-weight: 700; padding: .12rem .6rem;
+  border-radius: .6rem; border: 2px solid currentColor;
+}
+/* Hide solution blocks until completed (if used) */
+.solution.locked { display: none; }
+
