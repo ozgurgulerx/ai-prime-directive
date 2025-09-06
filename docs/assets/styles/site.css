@@ -1,0 +1,198 @@
+/* -------- Typographic scale & rhythm -------- */
+.md-typeset { font-size: 19px; line-height: 1.7; }
+.md-typeset h1 { font-size: 42px; letter-spacing: -0.015em; margin: 16px 0 14px; }
+.md-typeset h2 { font-size: 30px; letter-spacing: -0.01em;  margin: 34px 0 16px; }
+.md-content__inner{
+  max-width: clamp(1000px, 88vw, 1200px);
+  padding-inline: clamp(12px, 3vw, 24px);
+}
+
+/* -------- Hero -------- */
+.hero {
+  margin: 12px 0 10px; padding: 20px 24px; border-radius: 16px;
+  border: 1px solid color-mix(in oklab, var(--md-default-fg-color), transparent 90%);
+  background: color-mix(in oklab, var(--md-default-bg-color), white 4%);
+  max-width: 960px; margin-inline: auto;
+}
+.cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top: 12px; }
+.md-button--ghost {
+  background: transparent;
+  border: 1px solid color-mix(in oklab, var(--md-default-fg-color), transparent 85%);
+}
+
+/* -------- Sticky filter/search/sort bar -------- */
+.filter-bar{
+  position: sticky; top: 64px; z-index: 2;
+  display: grid;
+  grid-template-columns: auto auto auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px; margin: 8px auto 18px;  /* auto centers the bar */
+  max-width: 960px;                           /* same visual width as hero */
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--md-default-bg-color), white 3%);
+  border: 1px solid color-mix(in oklab, var(--md-default-fg-color), transparent 92%);
+}
+.filter-bar select,
+.filter-bar input[type="search"]{
+  font: inherit; padding: 6px 10px; border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--md-default-fg-color), transparent 85%);
+  background: transparent;
+}
+.filter-bar input[type="search"]{ min-width: 260px; }
+
+/* -------- Grid & cards -------- */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 1fr)); /* fixed track width centers nicely */
+  justify-content: center;  /* equal left/right gutters when total width < container */
+  gap: 28px;
+}
+@media (max-width: 980px){ .grid{ grid-template-columns: 1fr; } }
+@media (min-width: 1360px){ .grid{ grid-template-columns: repeat(3, minmax(360px, 1fr)); } }
+
+.post-card, .talk-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklab, var(--md-default-fg-color), transparent 90%);
+  background: var(--md-default-bg-color);
+  transition: transform .08s ease, box-shadow .08s ease, border-color .08s ease;
+  outline: none;
+}
+.post-card:hover, .talk-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px color-mix(in oklab, black, transparent 92%);
+  border-color: color-mix(in oklab, var(--md-default-fg-color), transparent 80%);
+}
+.post-card h3, .talk-card h3 { margin: 2px 0 6px; font-size: 1.05rem; }
+.post-meta, .talk-meta { font-size: .9rem; opacity: .72; }
+
+/* Whole-card click cue without breaking links */
+.post-card a.read, .talk-card a.read { text-decoration: none; opacity: .85; }
+
+/* Tight centered pinned row layout (optional) */
+.pinned .grid{ grid-template-columns: repeat(2, minmax(420px, 1fr)); justify-content: center; }
+@media (min-width: 1360px){ .pinned .grid{ grid-template-columns: repeat(3, minmax(360px, 1fr)); } }
+/* Also support elements with both classes on the same node */
+.grid.pinned{ grid-template-columns: repeat(2, minmax(420px, 1fr)); justify-content: center; }
+@media (min-width: 1360px){ .grid.pinned{ grid-template-columns: repeat(3, minmax(360px, 1fr)); } }
+
+/* -------- Topic badges -------- */
+.badges { display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
+.badge {
+  font-size: .80rem; padding: 2px 8px; border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--md-default-fg-color), transparent 85%);
+}
+
+/* -------- Subtle topic accent (left bar) -------- */
+.post-card::before, .talk-card::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  border-radius: 14px 0 0 14px; background: var(--card-accent, transparent);
+  opacity: .35;
+}
+/* Map primary topics to tasteful accents (extend as needed) */
+.post-card[data-primary="GraphRAG"] { --card-accent: #0ea5a0; }   /* teal */
+.post-card[data-primary="Agents"]   { --card-accent: #7c3aed; }   /* purple */
+.post-card[data-primary="Azure"]    { --card-accent: #2563eb; }   /* blue */
+.post-card[data-primary="EvalOps"]  { --card-accent: #f59e0b; }   /* amber */
+.post-card[data-primary="AI UX"]    { --card-accent: #10b981; }   /* emerald */
+
+/* -------- Pinned row: slightly elevated -------- */
+.pinned .post-card {
+  border-color: color-mix(in oklab, var(--md-accent-fg-color), transparent 75%);
+  box-shadow: 0 6px 14px color-mix(in oklab, black, transparent 94%);
+}
+
+/* -------- Keyboard/a11y -------- */
+.post-card:focus-within, .talk-card:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--md-accent-fg-color), transparent 50%);
+}
+
+/* ==========================================================
+   Symmetric page + hard-centered hero/filter and card grids
+   (Drop-in overrides; MkDocs Material-safe)
+   ========================================================== */
+
+/* 1) Make the page grid symmetric (kills global left bias) */
+/* Center the content column between two equal gutters */
+.md-main__inner{
+  display: grid; /* keep Material’s grid */
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--page-stage, 1200px)) minmax(0, 1fr) !important;
+}
+
+/* If there is no right ToC on a page, don’t leave a phantom gutter */
+.md-sidebar--secondary:empty { display: none; }
+
+/* 2) Center hero + filter as a block */
+/* A visually centered “header zone” */
+:root{
+  --row-max: 960px;          /* header zone width */
+  --card-gap: 28px;          /* grid gap */
+  --card-w: 420px;           /* target card width on 2-col */
+}
+
+.hero,
+.filter-bar{
+  width: 100%;
+  max-width: var(--row-max);
+  margin-inline: auto;
+}
+
+/* Writing page wrapper: ensure its block is centered and wide enough */
+.page-writing{ max-width: var(--page-stage, 1200px); margin-inline: auto; padding-inline: clamp(12px, 3vw, 24px); }
+
+/* 3) Center the grids by bounding their own width to exact column math */
+/* two columns by default; three on XL */
+.md-typeset .grid{
+  --cols: 2;
+  display: grid;
+  gap: var(--card-gap);
+  grid-template-columns: repeat(var(--cols), minmax(var(--card-w), 1fr));
+  max-width: calc(var(--cols) * var(--card-w) + (var(--cols) - 1) * var(--card-gap));
+  margin-inline: auto;             /* center the grid block */
+  justify-content: center;         /* center tracks when under max */
+}
+@media (min-width: 1360px){
+  .md-typeset .grid{ --cols: 3; }  /* 3 cols: width = 3*card + 2*gaps = 1136px */
+}
+@media (max-width: 980px){
+  .md-typeset .grid{
+    --cols: 1;
+    grid-template-columns: 1fr;
+    max-width: 720px;              /* keep a pleasant single-col measure */
+  }
+}
+
+/* If your pinned section uses <div class="grid pinned">, this centers it too */
+.md-typeset .grid.pinned{ margin-inline: auto; }
+
+/* 4) Optional—align the H1 with the centered header zone (purely aesthetic) */
+.md-typeset h1{ max-width: var(--row-max); margin-inline: auto; }
+
+/* Hide primary sidebar only when the Writing page is present (prevents left bias) */
+@media (min-width: 1024px){
+  body:has(.page-writing) .md-sidebar--primary{ display: none !important; }
+}
+
+/* --- Speaking cards (mirrors Writing) --- */
+.talk-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
+@media (max-width:920px){ .talk-grid { grid-template-columns:1fr; } }
+
+.talk-card{
+  padding:18px; border:1px solid rgba(0,0,0,.06); border-radius:14px;
+  transition:transform .06s ease, box-shadow .06s ease; cursor:pointer;
+}
+.talk-card:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,.06); }
+.talk-card h3{ margin:2px 0 6px; }
+.talk-meta{ font-size:.9rem; opacity:.7; }
+
+/* badges */
+.badges{ display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
+.badge{
+  font-size:.8rem; padding:3px 8px; border-radius:999px;
+  border:1px solid rgba(0,0,0,.08);
+}
+
+/* speaking thumbs */
+.talk-card img{ width:100%; height:auto; border-radius:10px; margin-bottom:8px; }
