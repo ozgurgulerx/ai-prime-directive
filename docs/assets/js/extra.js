@@ -46,3 +46,14 @@
   }
 })();
 
+// Page-scoped helpers ---------------------------------------------------
+// Add a body class when the Writing page is present, so CSS can target it
+// without relying solely on the :has() selector (for older browsers).
+document.addEventListener('DOMContentLoaded', function(){
+  if (document.querySelector('.page-writing')) {
+    document.body.classList.add('page-writing-active');
+  } else {
+    document.body.classList.remove('page-writing-active');
+  }
+});
+

@@ -116,6 +116,7 @@
 
 /* 1) Make the page grid symmetric on Writing page only */
 /* Center the content column between two equal gutters */
+body.page-writing-active .md-main__inner,
 body:has(.page-writing) .md-main__inner{
   display: grid; /* keep Material’s grid */
   grid-template-columns: minmax(0, 1fr) minmax(0, var(--page-stage, 1200px)) minmax(0, 1fr) !important;
@@ -168,6 +169,7 @@ body:has(.page-writing) .md-main__inner{
 .md-typeset .grid.pinned{ margin-inline: auto; }
 
 /* 4) Optional—align the H1 with the centered header zone on Writing page */
+body.page-writing-active .md-typeset h1,
 body:has(.page-writing) .md-typeset h1{ max-width: var(--row-max); margin-inline: auto; }
 
 /* --- Speaking cards (mirrors Writing) --- */
