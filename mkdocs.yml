@@ -131,5 +131,5 @@ nav:
       - AI Safety & Security: prime-directive/ai-safety-security/index.md
       - AI UX: prime-directive/product-ux/index.md
       - Graph: prime-directive/graph/index.md
-  - Books: books.md
+  - Books: books/index.md
   - Blog: blog/index.md
