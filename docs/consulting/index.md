@@ -9,6 +9,7 @@ If you'd like to work with me, drop me an email at [ozgur@graph-atlas.com](mailt
 ## Services
 
 - AI product strategy and roadmapping
+- AI Prototyping and proof-of-concepts
 - RAG/data architecture and retrieval pipelines
 - Agentic AI automation and workflow design
 - AI UX and evaluation (EvalOps)

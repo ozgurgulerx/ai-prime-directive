@@ -121,7 +121,10 @@ nav:
   - Writing: writing/index.md
   - Speaking: speaking/index.md
   - Courses: courses/index.md
-  - Consulting: consulting/index.md
+  - Consulting:
+      - Overview: consulting/index.md
+      - Services: consulting/services.md
+      - Case Studies: consulting/case-studies.md
   - AI Prime Directive:
       - Overview: prime-directive/index.md
       - LLM Foundations: prime-directive/foundations/index.md
