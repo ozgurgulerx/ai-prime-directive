@@ -15,10 +15,10 @@ If you'd like to work with me, drop me an email at [ozgur@graph-atlas.com](mailt
 - AI UX and evaluation (EvalOps)
 - Training and workshops for teams
 
-[See all services →](services/)
+[See all services →](services.md)
 
 ## Case Studies
 
 Brief write-ups on recent engagements and outcomes.
 
-[Explore case studies →](case-studies/)
+[Explore case studies →](case-studies.md)
