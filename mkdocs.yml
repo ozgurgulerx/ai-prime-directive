@@ -128,8 +128,10 @@ nav:
   - AI Prime Directive:
       - Overview: prime-directive/index.md
       - LLM Foundations: prime-directive/foundations/index.md
+      - Reasoning LLMs: prime-directive/reasoning-llms/index.md
       - RAG: prime-directive/rag/index.md
       - Agents: prime-directive/agents/index.md
+      - Open-Source Models: prime-directive/open-source-models/index.md
       - EvalOps: prime-directive/evalops/index.md
       - AI Safety & Security: prime-directive/ai-safety-security/index.md
       - AI UX: prime-directive/product-ux/index.md

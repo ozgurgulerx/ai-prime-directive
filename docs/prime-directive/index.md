@@ -10,8 +10,10 @@ Use this page to jump into any topic. The left sidebar is the section navigation
 ## Sections
 
 - [LLM Foundations](foundations/index.md)
+- [Reasoning LLMs](reasoning-llms/index.md)
 - [RAG](rag/index.md)
 - [Agents](agents/index.md)
+- [Open-Source Models](open-source-models/index.md)
 - [EvalOps](evalops/index.md)
 - [AI Safety & Security](ai-safety-security/index.md)
 - [AI UX](product-ux/index.md)
