@@ -9,3 +9,10 @@ tags:
 
 ### Evolution of Builder Tools 
 
+Agents are simply your instructions + context + tools. 
+
+- Design: Agent Design, AI UX, Product Design 
+- Architecture: Memory, Context Engineering, Tool Use
+- Production: EvalOps, AI Safety / Security 
+
+
