@@ -208,3 +208,9 @@
 .cta--newsletters { display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
 .cta--newsletters .cta-item { display: flex; flex-direction: column; gap: .35rem; }
 .cta--newsletters .md-button { min-width: 16rem; justify-content: center; }
+
+/* Hide blog index list in main content; keep ToC populated */
+.blog-index-list { display: none; }
+
+/* Hide right sidebar ToC on Speaking page */
+.page-speaking ~ .md-sidebar--secondary { display: none; }

@@ -1,8 +1,13 @@
 ---
-title: What these shifts demand from Data
+title: AI Paradigm Shifts and their Data Requirements
 description: Agentic AI, AI Assisted Coding, and AI Security & Governance — key data requirements from the reference slide.
 date: 2025-10-01
 ---
+
+Below is from a presentation I delivered at the hub mapping AI paradigm shift's data requirements to Data.
+Data narrative is mostly about unification and organization.
+
+What I am really happy about is Microsoft embracing Graphs in GenAI context within Fabric to be able to build better AI products.
 
 ![What these shifts demand from Data slide](../../assets/img/ai-data-requirements.png)
 
@@ -24,4 +29,4 @@ date: 2025-10-01
 - Unified Policy & Risk
 - Lineage & Provenance
 
-Microsoft Fabric Unifies your Data
+Microsoft Fabric Unifies your Data and Graph support organizes it by turning Data -> Knowledge.
