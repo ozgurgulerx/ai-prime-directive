@@ -10,4 +10,12 @@ tags:
 ## Copilot Studio
 
 Copilot Studio is the SaaS agent builder from Microsoft. 
-It is a no-Code and can be a low-Code tool 
+It is a no-Code and can be a low-Code tool and in essence lets you integrate your data with llm's and create agents with NLP input without writing code.
+
+### Key Features
+
+- MCP & A2A Integration 
+- Bing Grounding 
+- Message moderation - Automated Prompt / Generation filtering 
+- Query Optimization 
+
