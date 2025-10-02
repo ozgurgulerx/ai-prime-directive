@@ -31,7 +31,24 @@ Prompt based generation as well as external data integration using advanced mode
 
 *(Skip this part if you are not building an LLM but using existing LLMs from frontier labs)*. 
 
-This is mostly about choosing or training a model which will accomodate the length of the context as by definition LLMs have a fixed context length. This can be done using state-space models, or models using sparse-attention or positional encoding tricks to handle long sequences. 
+Is mostly about bringing structured, semi-structured and unstructured data together...
+
+- Marrying structured, semi structured, and unstructured data
+JSON, video, and columnar data should all be candidates for the context. Vector search and smart WHERE clauses with Postgres and pgvector is all you really need. You don't need fancy vector DBs like Qdrant or Pinecone. 
+
+- Unstructured Data
+Videos should be properly summarized to not flood the context window. Context windows are expanding here but costs are still per token so summarizing is still a very smart thing to do even though it does cause a loss of detail. Depending on your AI's needs, you might have to keep the entire context (e.g. legal documents)
+
+- Semi-structured data
+JSON data is notoriously messy and includes keys and data you don't always need. Being smart about the keys and values that the AI actually needs will help overcome hallucinates and memory issues. 
+
+- Structured data
+You can't inject every single row of data into the context window. Proper aggregate tables with WHERE clause can do wonders for getting the right data in front of AI without overwhelming it. 
+
+Balancing relevance and completeness is the key to proper context engineering and it's 100% the future of data engineering
+
+
+Another important task here is mostly  choosing or training a model which will accomodate the length of the context as by definition LLMs have a fixed context length. This can be done using state-space models, or models using sparse-attention or positional encoding tricks to handle long sequences. 
 
 3. Context Management 
 
