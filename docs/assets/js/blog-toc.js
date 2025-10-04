@@ -1,32 +1,51 @@
 (function(){
-  function isBlogIndex(){
-    return !!document.querySelector('article.md-post--excerpt');
+  function isBlogSection(){
+    return window.location.pathname.includes('/blog/');
   }
 
-  function blogBaseUrl(){
+  function blogRootUrl(){
     const { origin, pathname } = window.location;
-    const path = pathname.endsWith('/') ? pathname : `${pathname}/`;
-    return `${origin}${path}`;
+    const idx = pathname.indexOf('/blog/');
+    if (idx === -1) return null;
+    const base = pathname.slice(0, idx + '/blog/'.length);
+    return `${origin}${base}`;
   }
 
   function collectPosts(root, baseHref){
     const items = [];
-    const anchors = root.querySelectorAll('article.md-post a.toclink');
-    anchors.forEach(anchor => {
+
+    // 1) MkDocs Material blog plugin cards
+    const cardAnchors = root.querySelectorAll('article.md-post a.toclink, article.md-post a');
+    cardAnchors.forEach(anchor => {
       const rawHref = anchor.getAttribute('href') || '';
       if (!rawHref || rawHref.includes('#')) return;
+      // Accept only blog post links
+      if (!(rawHref.includes('/blog/posts/') || rawHref.startsWith('posts/'))) return;
       const title = anchor.textContent.trim();
       if (!title) return;
       const article = anchor.closest('article.md-post');
       const timeEl = article ? article.querySelector('time') : null;
       const dateISO = timeEl ? timeEl.getAttribute('datetime') || '' : '';
       const url = new URL(rawHref, baseHref);
-      items.push({
-        title,
-        href: url.pathname + url.search + url.hash,
-        dateISO
-      });
+      items.push({ title, href: url.pathname, dateISO });
     });
+
+    // 2) Custom index list: <li><time>...</time> — <strong><a href="posts/...">Title</a></strong></li>
+    if (items.length === 0) {
+      const listAnchors = root.querySelectorAll('li a[href*="posts/"]');
+      listAnchors.forEach(anchor => {
+        const rawHref = anchor.getAttribute('href') || '';
+        if (!rawHref || rawHref.includes('#')) return;
+        const title = anchor.textContent.trim();
+        if (!title) return;
+        const li = anchor.closest('li');
+        const timeEl = li ? li.querySelector('time') : null;
+        const dateISO = timeEl ? (timeEl.getAttribute('datetime') || '') : '';
+        const url = new URL(rawHref, baseHref);
+        items.push({ title, href: url.pathname, dateISO });
+      });
+    }
+
     return items;
   }
 
@@ -35,7 +54,8 @@
     const sidebar = document.querySelector('.md-sidebar--secondary');
     if (!sidebar) return;
 
-    sidebar.querySelectorAll('nav.md-nav--secondary').forEach(nav => nav.remove());
+    // Remove any existing blog ToC to avoid duplicates
+    sidebar.querySelectorAll('nav.blog-toc').forEach(nav => nav.remove());
 
     const nav = document.createElement('nav');
     nav.className = 'md-nav md-nav--secondary blog-toc';
@@ -53,12 +73,14 @@
       const clean = iso.includes('T') ? iso : iso.replace(' ', 'T');
       const date = new Date(clean);
       if (Number.isNaN(date.getTime())) return '';
-      const yy = String(date.getFullYear()).slice(-2);
-      const mm = String(date.getMonth() + 1).padStart(2, '0');
-      const dd = String(date.getDate()).padStart(2, '0');
-      return `${yy}${mm}${dd}`;
+      try {
+        return new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).format(date);
+      } catch (_) {
+        return date.toISOString().slice(0,10);
+      }
     };
 
+    const currentPath = window.location.pathname;
     posts.forEach(post => {
       const li = document.createElement('li');
       li.className = 'md-nav__item';
@@ -66,19 +88,34 @@
       link.className = 'md-nav__link';
       link.href = post.href;
       const dateText = formatDate(post.dateISO);
-      link.textContent = dateText ? `${dateText} — ${post.title}` : post.title;
+
+      const time = document.createElement('time');
+      if (post.dateISO) time.setAttribute('datetime', post.dateISO);
+      time.textContent = dateText;
+
+      const titleSpan = document.createElement('span');
+      titleSpan.textContent = ` — ${post.title}`;
+
+      link.appendChild(time);
+      link.appendChild(titleSpan);
+
+      if (currentPath === post.href || currentPath.endsWith(post.href)) {
+        link.setAttribute('aria-current', 'page');
+      }
       li.appendChild(link);
       list.appendChild(li);
     });
     nav.appendChild(list);
 
+    // Append below the default secondary nav to avoid flicker
     sidebar.appendChild(nav);
   }
 
   async function buildBlogToc(){
-    if (!isBlogIndex()) return;
+    if (!isBlogSection()) return;
 
-    const base = blogBaseUrl();
+    const root = blogRootUrl();
+    if (!root) return;
     const seen = new Set();
     const posts = [];
 
@@ -90,14 +127,22 @@
       });
     }
 
-    add(collectPosts(document, window.location.href));
-
+    // Always fetch the blog index and subsequent pages to collect posts
     const parser = new DOMParser();
+    try {
+      const res = await fetch(`${root}index.html`, { credentials: 'same-origin' });
+      if (res.ok) {
+        const html = await res.text();
+        const doc = parser.parseFromString(html, 'text/html');
+        add(collectPosts(doc, `${root}`));
+      }
+    } catch (_) { /* ignore */ }
+
     let page = 2;
     while (true){
       const variants = [
-        `${base}page/${page}/index.html`,
-        `${base}page/${page}/`
+        `${root}page/${page}/index.html`,
+        `${root}page/${page}/`
       ];
       let html = null;
       let baseForLinks = null;
