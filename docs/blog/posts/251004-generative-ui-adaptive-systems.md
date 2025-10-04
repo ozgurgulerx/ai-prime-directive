@@ -10,12 +10,12 @@ tags:
   - llm
 ---
 
+<div class="blog-content-wrapper">
+<div class="blog-main-content">
+
 ### Generative UI — why now
 
 Frictionless UX drives usage. Generative UI reduces friction by assembling interfaces at runtime.
-
-<div class="blog-content-wrapper">
-<div class="blog-main-content">
 
 <figure markdown style="max-width: 500px; margin: 1.5em auto;">
   ![Generative UI adaptive interface examples](../../images/generative-ui-devices.png){ width="100%" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" }
