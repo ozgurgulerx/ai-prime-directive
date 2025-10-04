@@ -35,8 +35,7 @@
     const sidebar = document.querySelector('.md-sidebar--secondary');
     if (!sidebar) return;
 
-    const prev = sidebar.querySelector('nav.blog-toc');
-    if (prev) prev.remove();
+    sidebar.querySelectorAll('nav.md-nav--secondary').forEach(nav => nav.remove());
 
     const nav = document.createElement('nav');
     nav.className = 'md-nav md-nav--secondary blog-toc';
@@ -91,22 +90,33 @@
       });
     }
 
-    add(collectPosts(document, base));
+    add(collectPosts(document, window.location.href));
 
     const parser = new DOMParser();
     let page = 2;
     while (true){
-      const pageUrl = `${base}page/${page}/`;
-      try {
-        const res = await fetch(pageUrl, { credentials: 'same-origin' });
-        if (!res.ok) break;
-        const html = await res.text();
-        const doc = parser.parseFromString(html, 'text/html');
-        add(collectPosts(doc, pageUrl));
-        page += 1;
-      } catch (err){
-        break;
+      const variants = [
+        `${base}page/${page}/index.html`,
+        `${base}page/${page}/`
+      ];
+      let html = null;
+      let baseForLinks = null;
+      for (const candidate of variants){
+        try {
+          const res = await fetch(candidate, { credentials: 'same-origin' });
+          if (res.ok){
+            html = await res.text();
+            baseForLinks = candidate;
+            break;
+          }
+        } catch (err){
+          /* ignore and try next */
+        }
       }
+      if (!html) break;
+      const doc = parser.parseFromString(html, 'text/html');
+      add(collectPosts(doc, baseForLinks));
+      page += 1;
     }
 
     posts.sort((a, b) => (b.dateISO || '').localeCompare(a.dateISO || ''));
