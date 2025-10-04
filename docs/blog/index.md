@@ -2,6 +2,10 @@
 
 <div class="blog-index-list" markdown="1">
 
+## <time datetime="2025-10-04">October 4, 2025</time> — Generative UI: From Static Screens to Adaptive Systems
+
+**[Read the post →](posts/251004-generative-ui-adaptive-systems.md)**
+
 ## <time datetime="2025-10-01">October 1, 2025</time> — AI Paradigm Shifts and their Data Requirements
 
 **[Read the post →](posts/251001-ai-data-requirements.md)**
