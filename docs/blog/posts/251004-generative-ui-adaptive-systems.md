@@ -14,6 +14,11 @@ tags:
 
 Frictionless UX drives usage. Generative UI reduces friction by assembling interfaces at runtime.
 
+<figure markdown style="max-width: 800px; margin: 2em auto;">
+  ![Generative UI adaptive interface examples](../../images/generative-ui-devices.png){ width="100%" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" }
+  <figcaption style="text-align: center; font-style: italic; margin-top: 0.5em; color: #666;">Adaptive interfaces that respond to context and user signals</figcaption>
+</figure>
+
 Generative UI: interfaces whose structure and behavior are generated on‑the‑fly by models, not hard‑coded. Principles:
 
 - **Dynamic assembly**: Models + analytics compose components in real time per user, device, and goal.
