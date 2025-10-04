@@ -27,6 +27,11 @@ Simple, readable archive of posts on LLM patterns, AI UX, and EvalOps.
 
 ## AI Products 
 
+- [Generative UI: From Static Screens to Adaptive Systems](../blog/posts/251004-generative-ui-adaptive-systems.md)
+  — Oct 4, 2025 · ~8 min · Topics: Generative UI, Adaptive Systems, Design Systems
+- [Local PII Pre-Filter with Microsoft Presidio + Qwen 2.5](../blog/posts/251003-presidio-pii-filtering.md)
+  — Oct 3, 2025 · ~2 min · Topics: PII, AI Safety, Guardrails
+
 ## Earlier Pieces 
 
  - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [The Missing Piece in Graph RAG: Graph Attention Networks](https://medium.com/@343544/the-missing-piece-in-graph-rag-graph-attention-networks-f50cb9857895){ target="_blank" rel="noopener" }
