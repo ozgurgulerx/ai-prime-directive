@@ -14,9 +14,12 @@ tags:
 
 Frictionless UX drives usage. Generative UI reduces friction by assembling interfaces at runtime.
 
-<figure markdown style="max-width: 800px; margin: 2em auto;">
+<div class="blog-content-wrapper">
+<div class="blog-main-content">
+
+<figure markdown style="max-width: 500px; margin: 1.5em auto;">
   ![Generative UI adaptive interface examples](../../images/generative-ui-devices.png){ width="100%" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" }
-  <figcaption style="text-align: center; font-style: italic; margin-top: 0.5em; color: #666;">Adaptive interfaces that respond to context and user signals</figcaption>
+  <figcaption style="text-align: center; font-style: italic; margin-top: 0.5em; color: #666; font-size: 0.9em;">Adaptive interfaces that respond to context and user signals</figcaption>
 </figure>
 
 Generative UI: interfaces whose structure and behavior are generated on‑the‑fly by models, not hard‑coded. Principles:
@@ -81,3 +84,60 @@ Quality guardrails keep generation safe and consistent.
  - **Telemetry & feedback**: Capture edits/aborts, success metrics, and model rationales to improve selection over time.
 
 - [GenAIUI Whitepaper (2024)](https://6082761.fs1.hubspotusercontent-na1.net/hubfs/6082761/2024%20Whitepaper/GenAIUI%20Whitepaper%202024.pdf)
+
+</div>
+
+<aside class="blog-sidebar">
+<h3>Recent Posts</h3>
+<nav class="blog-posts-list">
+<div class="blog-post-item current">
+  <time datetime="2025-10-04">Oct 4, 2025</time>
+  <a href="251004-generative-ui-adaptive-systems.md">Generative UI: From Static Screens to Adaptive Systems</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-10-03">Oct 3, 2025</time>
+  <a href="251003-presidio-pii-filtering.md">Local PII Pre-Filter with Microsoft Presidio + Qwen 2.5</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-10-01">Oct 1, 2025</time>
+  <a href="251001-ai-data-requirements.md">AI Paradigm Shifts and their Data Requirements</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-09-24">Sep 24, 2025</time>
+  <a href="250924-copilot-studio-review.md">Copilot Studio</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-09-21">Sep 21, 2025</time>
+  <a href="250921-ai-ideation.md">AI Ideation & Facilication</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-09-14">Sep 14, 2025</time>
+  <a href="250914-W37-Papers.md">W37 Papers</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-09-14">Sep 14, 2025</time>
+  <a href="250914-RL-environments.md">What are RL environments?</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-09-11">Sep 11, 2025</time>
+  <a href="250912-MCP-on-Azure.md">MCP Capabilities on Azure</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-09-11">Sep 11, 2025</time>
+  <a href="250912-codex-best-practices.md">Codex Best Practices</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-09-11">Sep 11, 2025</time>
+  <a href="250911-forward-deployed-engineering.md">Forward Deployed Engineering for building AI Agents</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-09-10">Sep 10, 2025</time>
+  <a href="250910-building-agents-on-azure.md">Building Agents on Azure</a>
+</div>
+<div class="blog-post-item">
+  <time datetime="2025-09-07">Sep 7, 2025</time>
+  <a href="250907-context-engineering.md">Context Engineering</a>
+</div>
+</nav>
+</aside>
+</div>
