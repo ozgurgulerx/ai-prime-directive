@@ -1,5 +1,5 @@
 ---
-title: Generative UI: From Static Screens to Adaptive Systems
+title: "Generative UI: From Static Screens to Adaptive Systems"
 description: Move from fixed screens to model-assisted, policy-guarded interfaces that adapt at runtime using contracts, design tokens, and systematic evaluation.
 date: 2025-10-04
 tags:
