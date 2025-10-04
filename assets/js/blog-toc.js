@@ -51,13 +51,21 @@
 
     const list = document.createElement('ul');
     list.className = 'md-nav__list';
+    const formatDate = (iso) => {
+      if (!iso) return '';
+      const date = new Date(iso);
+      if (Number.isNaN(date.getTime())) return '';
+      return date.toISOString().slice(0, 10);
+    };
+
     posts.forEach(post => {
       const li = document.createElement('li');
       li.className = 'md-nav__item';
       const link = document.createElement('a');
       link.className = 'md-nav__link';
       link.href = post.href;
-      link.textContent = post.title;
+      const dateText = formatDate(post.dateISO);
+      link.textContent = dateText ? `${dateText} — ${post.title}` : post.title;
       li.appendChild(link);
       list.appendChild(li);
     });
