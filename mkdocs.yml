@@ -50,6 +50,7 @@ extra_javascript:
   - assets/js/extra.js?v=20250906-1514
   - assets/js/home.js?v=20250906-1514
   - assets/js/filters.js?v=20250906-1514
+  - assets/js/blog-toc.js?v=20250906-1514
   - assets/js/writing.js?v=20250906-1514
   - assets/js/speaking.js?v=20250906-1514
 
