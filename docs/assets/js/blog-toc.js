@@ -4,25 +4,23 @@
   }
 
   function blogBaseUrl(){
-    const parts = window.location.pathname.split('/');
-    const idx = parts.indexOf('blog');
-    if (idx === -1) return window.location.origin + '/blog/';
-    const prefix = parts.slice(0, idx + 1).join('/') || '';
-    return window.location.origin + (prefix.endsWith('/') ? prefix : prefix + '/');
+    const { origin, pathname } = window.location;
+    const path = pathname.endsWith('/') ? pathname : `${pathname}/`;
+    return `${origin}${path}`;
   }
 
   function collectPosts(root, baseHref){
     const items = [];
     const anchors = root.querySelectorAll('article.md-post a.toclink');
     anchors.forEach(anchor => {
-      const href = anchor.getAttribute('href') || '';
-      if (!href || href.includes('#')) return;
+      const rawHref = anchor.getAttribute('href') || '';
+      if (!rawHref || rawHref.includes('#')) return;
       const title = anchor.textContent.trim();
       if (!title) return;
       const article = anchor.closest('article.md-post');
       const timeEl = article ? article.querySelector('time') : null;
       const dateISO = timeEl ? timeEl.getAttribute('datetime') || '' : '';
-      const url = new URL(href, baseHref);
+      const url = new URL(rawHref, baseHref);
       items.push({
         title,
         href: url.pathname + url.search + url.hash,
@@ -53,9 +51,13 @@
     list.className = 'md-nav__list';
     const formatDate = (iso) => {
       if (!iso) return '';
-      const date = new Date(iso);
+      const clean = iso.includes('T') ? iso : iso.replace(' ', 'T');
+      const date = new Date(clean);
       if (Number.isNaN(date.getTime())) return '';
-      return date.toISOString().slice(0, 10);
+      const yy = String(date.getFullYear()).slice(-2);
+      const mm = String(date.getMonth() + 1).padStart(2, '0');
+      const dd = String(date.getDate()).padStart(2, '0');
+      return `${yy}${mm}${dd}`;
     };
 
     posts.forEach(post => {
@@ -89,12 +91,12 @@
       });
     }
 
-    add(collectPosts(document, window.location.href));
+    add(collectPosts(document, base));
 
     const parser = new DOMParser();
     let page = 2;
     while (true){
-      const pageUrl = `${base}page/${page}/index.html`;
+      const pageUrl = `${base}page/${page}/`;
       try {
         const res = await fetch(pageUrl, { credentials: 'same-origin' });
         if (!res.ok) break;
