@@ -61,10 +61,10 @@
     nav.className = 'md-nav md-nav--secondary blog-toc';
     nav.setAttribute('aria-label', 'Blog posts');
 
-    const label = document.createElement('label');
-    label.className = 'md-nav__title';
-    label.textContent = 'Blog posts';
-    nav.appendChild(label);
+    const header = document.createElement('div');
+    header.className = 'md-nav__title blog-toc__title';
+    header.textContent = 'Blog posts';
+    nav.appendChild(header);
 
     const list = document.createElement('ul');
     list.className = 'md-nav__list';
@@ -85,19 +85,26 @@
       const li = document.createElement('li');
       li.className = 'md-nav__item';
       const link = document.createElement('a');
-      link.className = 'md-nav__link';
+      link.className = 'md-nav__link blog-toc__link';
       link.href = post.href;
       const dateText = formatDate(post.dateISO);
-
+      // Structure: <span class="blog-toc__row"><time/> <span class="blog-toc__sep">—</span> <span class="blog-toc__title"/></span>
+      const row = document.createElement('span');
+      row.className = 'blog-toc__row';
       const time = document.createElement('time');
       if (post.dateISO) time.setAttribute('datetime', post.dateISO);
+      time.className = 'blog-toc__date';
       time.textContent = dateText;
-
+      const sep = document.createElement('span');
+      sep.className = 'blog-toc__sep';
+      sep.textContent = '—';
       const titleSpan = document.createElement('span');
-      titleSpan.textContent = ` — ${post.title}`;
-
-      link.appendChild(time);
-      link.appendChild(titleSpan);
+      titleSpan.className = 'blog-toc__title';
+      titleSpan.textContent = post.title;
+      row.appendChild(time);
+      row.appendChild(sep);
+      row.appendChild(titleSpan);
+      link.appendChild(row);
 
       if (currentPath === post.href || currentPath.endsWith(post.href)) {
         link.setAttribute('aria-current', 'page');
