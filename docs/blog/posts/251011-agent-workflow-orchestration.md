@@ -15,6 +15,10 @@ tags:
 
 Most agent demos are linear prompt chains with fragile state management. Production systems need **typed workflow graphs** with explicit coordination, checkpoint/resume, human-in-the-loop gates, and comprehensive telemetry. Without these primitives, agent systems fail silently, can't be debugged, and don't scale beyond toy examples.
 
+![Agent workflow orchestration dashboard](../../images/agent-workflow-dashboard.png){ style="max-width: 800px; width: 100%; display: block; margin: 1.5em auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" }
+
+<p style="text-align: center; font-style: italic; margin-top: 0.5em; color: #666; font-size: 0.9em;">Workflow orchestration UI showing graph visualization, trace timeline, and telemetry streams</p>
+
 ### Core workflow capabilities
 
 **Typed workflow graph**  

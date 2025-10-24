@@ -1,5 +1,6 @@
 # Blog
 
+- <time datetime="2025-10-24">October 24, 2025</time> — **[When GenAI Reasoning Helps Beyond Classification & Predictive Models](posts/251024-when-genai-reasoning-helps-beyond-classification-and-predictive-models.md)**
 - <time datetime="2025-10-11">October 11, 2025</time> — **[Production Agent Workflows: Orchestration & Observability](posts/251011-agent-workflow-orchestration.md)**
 - <time datetime="2025-10-06">October 6, 2025</time> — **[True Multi‑Agency](posts/251006-true-multi-agency.md)**
 - <time datetime="2025-10-04">October 4, 2025</time> — **[Generative UI: From Static Screens to Adaptive Systems](posts/251004-generative-ui-adaptive-systems.md)**
@@ -14,3 +15,4 @@
 - <time datetime="2025-09-11">September 11, 2025</time> — **[Forward Deployed Engineering](posts/250911-forward-deployed-engineering.md)**
 - <time datetime="2025-09-10">September 10, 2025</time> — **[Building Agents on Azure](posts/250910-building-agents-on-azure.md)**
 - <time datetime="2025-09-07">September 7, 2025</time> — **[Context Engineering](posts/250907-context-engineering.md)**
+
