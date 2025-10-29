@@ -1,12 +1,12 @@
 # Blog
 
+- <time datetime="2025-10-28">October 28, 2025</time> — **[September's Mega Rounds](posts/251028-septembers-mega-rounds.md)**
 - <time datetime="2025-10-24">October 24, 2025</time> — **[When GenAI Reasoning Helps Beyond Classification & Predictive Models](posts/251024-when-genai-reasoning-helps-beyond-classification-and-predictive-models.md)**
 - <time datetime="2025-10-11">October 11, 2025</time> — **[Production Agent Workflows: Orchestration & Observability](posts/251011-agent-workflow-orchestration.md)**
 - <time datetime="2025-10-06">October 6, 2025</time> — **[True Multi‑Agency](posts/251006-true-multi-agency.md)**
 - <time datetime="2025-10-04">October 4, 2025</time> — **[Generative UI: From Static Screens to Adaptive Systems](posts/251004-generative-ui-adaptive-systems.md)**
 - <time datetime="2025-10-03">October 3, 2025</time> — **[Presidio PII Filtering](posts/251003-presidio-pii-filtering.md)**
 - <time datetime="2025-10-01">October 1, 2025</time> — **[AI Data Requirements](posts/251001-ai-data-requirements.md)**
-- <time datetime="2025-09-25">September 25, 2025</time> — **[September’s Mega Rounds](posts/250925-septembers-mega-rounds.md)**
 - <time datetime="2025-09-24">September 24, 2025</time> — **[Copilot Studio Review](posts/250924-copilot-studio-review.md)**
 - <time datetime="2025-09-21">September 21, 2025</time> — **[AI Ideation](posts/250921-ai-ideation.md)**
 - <time datetime="2025-09-14">September 14, 2025</time> — **[W37 Papers](posts/250914-W37-Papers.md)**

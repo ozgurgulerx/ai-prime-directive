@@ -1,7 +1,7 @@
 ---
 title: "September’s Mega Rounds"
 description: A September snapshot of AI VC activity with unprecedented mega‑rounds, heterogeneous AI infra plays, sovereign European build‑outs, early‑stage agent patterns, and a surge in AI science factory PPPR funding.
-date: 2025-09-25
+date: 2025-10-28
 tags:
   - vc
   - investment
