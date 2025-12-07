@@ -25,19 +25,16 @@ Simple, readable archive of posts on LLM patterns, AI UX, and EvalOps.
 - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Boost RAG Performance: Enhance Vector Search with Metadata Filters in Azure AI Search](https://medium.com/@343544/improve-rag-performance-with-document-metadata-filters-for-vector-search-on-azureai-3af3bce6708c){ target="_blank" rel="noopener" }
   — Aug 1, 2024 · ~6 min · Topics: Azure, RAG
 
-## AI Products 
-
-- [Generative UI: From Static Screens to Adaptive Systems](../blog/posts/251004-generative-ui-adaptive-systems.md)
-  — Oct 4, 2025 · ~8 min · Topics: Generative UI, Adaptive Systems, Design Systems
-- [Local PII Pre-Filter with Microsoft Presidio + Qwen 2.5](../blog/posts/251003-presidio-pii-filtering.md)
-  — Oct 3, 2025 · ~2 min · Topics: PII, AI Safety, Guardrails
-
 ## Earlier Pieces 
 
 - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Fixing Sparse Retrieval with RAPTOR on Azure AI Search](https://medium.com/microsoftazure/fixing-sparse-retrieval-with-raptor-on-azure-ai-search-4d540dd3bd43){ target="_blank" rel="noopener" }
   — Nov 18, 2025 · Topics: Azure, RAG, RAPTOR
 - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Building Production AI with Microsoft’s Agent Framework: Credit Underwriting Case Study](https://medium.com/microsoftazure/building-production-ai-with-microsofts-agent-framework-credit-underwriting-case-study-a40d8335d4ed){ target="_blank" rel="noopener" }
   — Oct 11, 2025 · Topics: Agents, Azure, Production AI
+ - [Generative UI: From Static Screens to Adaptive Systems](../blog/posts/251004-generative-ui-adaptive-systems.md)
+  — Oct 4, 2025 · ~8 min · Topics: Generative UI, Adaptive Systems, Design Systems
+- [Local PII Pre-Filter with Microsoft Presidio + Qwen 2.5](../blog/posts/251003-presidio-pii-filtering.md)
+  — Oct 3, 2025 · ~2 min · Topics: PII, AI Safety, Guardrails
 
  - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [The Missing Piece in Graph RAG: Graph Attention Networks](https://medium.com/@343544/the-missing-piece-in-graph-rag-graph-attention-networks-f50cb9857895){ target="_blank" rel="noopener" }
   — Nov 21, 2024 · ~6 min · Topics: GraphRAG
