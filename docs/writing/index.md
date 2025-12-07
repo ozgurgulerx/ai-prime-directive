@@ -34,6 +34,11 @@ Simple, readable archive of posts on LLM patterns, AI UX, and EvalOps.
 
 ## Earlier Pieces 
 
+- <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Fixing Sparse Retrieval with RAPTOR on Azure AI Search](https://medium.com/microsoftazure/fixing-sparse-retrieval-with-raptor-on-azure-ai-search-4d540dd3bd43){ target="_blank" rel="noopener" }
+  — Nov 18, 2025 · Topics: Azure, RAG, RAPTOR
+- <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Building Production AI with Microsoft’s Agent Framework: Credit Underwriting Case Study](https://medium.com/microsoftazure/building-production-ai-with-microsofts-agent-framework-credit-underwriting-case-study-a40d8335d4ed){ target="_blank" rel="noopener" }
+  — Oct 11, 2025 · Topics: Agents, Azure, Production AI
+
  - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [The Missing Piece in Graph RAG: Graph Attention Networks](https://medium.com/@343544/the-missing-piece-in-graph-rag-graph-attention-networks-f50cb9857895){ target="_blank" rel="noopener" }
   — Nov 21, 2024 · ~6 min · Topics: GraphRAG
 - <img src="../assets/img/tds.svg" class="publisher-icon" alt="TDS" /> [Tackle Complex LLM Decision-Making with Language Agent Tree Search (LATS) & GPT-4o](https://medium.com/data-science/tackle-complex-llm-decision-making-with-language-agent-tree-search-lats-gpt4-o-0bc648c46ea4){ target="_blank" rel="noopener" }

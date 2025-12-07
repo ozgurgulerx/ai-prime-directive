@@ -8,6 +8,7 @@ description: Agent patterns and memory.
 ## Topics
 
 - [Agent Memory](agent-memory.md)
+- [Context Engineering](context-engineering.md)
 
 ## See also
 

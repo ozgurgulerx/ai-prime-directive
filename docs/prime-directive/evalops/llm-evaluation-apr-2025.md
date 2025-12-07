@@ -10,6 +10,85 @@ tags: [evals, evalops, llm, rag, safety, robustness, tooling]
 ## Introduction: Evolving Needs for LLM Evaluation
 Large Language Models (LLMs) have rapidly become integral to modern AI products, but evaluating their outputs has emerged as a critical engineering challenge. Unlike traditional software, LLM behavior is probabilistic and context-sensitive, so dynamic, rigorous evaluation is needed to ensure systems meet user expectations (The Definitive Guide to LLM Evaluation - Arize AI). In 2025, AI teams are increasingly treating LLM evaluation as a first-class part of the development lifecycle. This shift is driven by real-world issues like factual hallucinations that can undermine trust or even cause serious errors if unchecked (one lawyer infamously got into real trouble after relying on a chatbot’s made-up citations (LLM Observability: The 5 Key Pillars for Monitoring Large Language Models)). As LLM deployments scale, robust evaluation pipelines are now essential to reliably measure model performance, catch failures, and continuously improve AI products (The Definitive Guide to LLM Evaluation - Arize AI). This white-paper style overview highlights emerging trends in LLM evaluation – from Retrieval-Augmented Generation testing and hallucination detection to robustness benchmarking – and describes the key capabilities, tools, and platforms shaping how teams validate LLMs in practice.
 
+## Benchmark Stack in 2025
+Yeah, you can think of it as a *stack* now, not just MMLU/GSM8K.
+
+Here’s a compact “benchmarks you should care about” list, grouped by vibe.
+
+---
+
+### 1. Classic / almost-saturated staples
+
+These are still quoted, but mostly sanity checks now:
+
+* **MMLU** – 57-subject, multi-choice exam (STEM, humanities, law, etc.).
+  *Capability*: general knowledge + light reasoning.
+* **GSM8K** – 8.5K grade-school math word problems.
+  *Capability*: basic multi-step arithmetic reasoning.
+* **BIG-Bench Hard (BBH)** – hard subset of BIG-Bench.
+  *Capability*: diverse quirky reasoning tasks.
+* **HumanEval / MBPP** – small code benchmarks.
+  *Capability*: toy code synthesis & correctness.
+
+---
+
+### 2. New “frontier reasoning” benchmarks (the ones Jeff/others brag about)
+
+These are the ones you mentioned plus close cousins:
+
+* **HLE – Humanity’s Last Exam**
+  2.5K+ expert-level, multi-domain questions (many short-answer, some multimodal). Designed as a “final academic exam” because models hit 90%+ on MMLU.
+  *Capability*: broad expert reasoning under exam pressure.
+
+* **GPQA (+ GPQA Diamond)**
+  ~448 PhD-level science MCQs (bio/chem/physics); **Diamond** is the hardest 198 Q subset, “Google-proof” and used for o1 comparisons.
+  *Capability*: deep graduate-level scientific reasoning.
+
+* **ARC-AGI-2**
+  Grid-based pattern puzzles, easy for humans, near-zero for pure LLMs.
+  *Capability*: abstract, non-linguistic pattern formation & transformation → “fluid intelligence” proxy.
+
+* **MMLU-Pro / MMLU-Redux variants**
+  Harder, cleaned, or extended versions of MMLU.
+  *Capability*: same domain breadth as MMLU but more difficult / less contaminated.
+
+* **FrontierMath / Olympiad-style math (FrontierMath, OlympiadBench, AIME-style sets)**
+  Custom hard math sets (often competition-style) used to probe long-chain reasoning beyond GSM8K / MATH.
+  *Capability*: long, brittle chains of symbolic reasoning.
+
+If you’re picking **three names** for slides / model cards today, it’s basically:
+
+> **HLE, GPQA-Diamond, ARC-AGI-2**
+>
+> * still reporting **MMLU, GSM8K** for continuity.
+
+---
+
+### 3. Vision + reasoning (bonus, if you care about multimodal)
+
+* **MathVista / MathVerse / GSM8K-V**
+  Visual math / diagram problems.
+  *Capability*: joint visual + symbolic reasoning.
+* **MMMU / similar multimodal exams**
+  Multi-subject multimodal, like a visual analogue to MMLU/HLE.
+
+---
+
+### How to talk about this in a deck / panel
+
+One clean framing:
+
+* **“Old layer”** – *MMLU, GSM8K, HumanEval* → “Can it pass standard exams and write toy code?”
+* **“New layer”** – *HLE, GPQA-Diamond, ARC-AGI-2, FrontierMath* →
+  “Can it handle grad-level science and human-style pattern abstraction **without** overfitting to old benchmarks?”
+
+If you want, next step I can turn this into a 1-slide table: columns = *Benchmark / Domain / What it really tests / Why it matters in 2025*, so you can just screenshot and drop into your slides.
+
+---
+
+**Sources (for definitions & stats, not for the grouping):**
+MMLU description and scope; GSM8K math dataset; HLE overview and 2.5K expert questions; GPQA & GPQA-Diamond description; ARC-AGI-2 description and difficulty focus.
+
 ## Evaluating LLMs in Retrieval-Augmented Generation (RAG)
 One prominent trend is rigorous evaluation for Retrieval-Augmented Generation (RAG) systems. RAG involves feeding an LLM with retrieved documents or knowledge, enabling it to generate answers grounded in that reference data. The goal is to minimize off-base answers by anchoring the model in facts, but evaluating this reliably is non-trivial. In 2025, engineers are designing specialized RAG evaluation criteria to ensure outputs are faithful to the provided context. Key metrics include contextual recall and precision – i.e., does the LLM’s answer include the important facts from the retrieval, and does it avoid introducing unsupported details (GitHub - confident-ai/deepeval: The LLM Evaluation Framework). For example, an ideal answer should incorporate relevant information from the knowledge base (high recall) while not straying beyond it (high precision/faithfulness).
 
