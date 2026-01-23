@@ -72,7 +72,7 @@ Advanced systems engineering for LLMs. Covers efficient training algorithms, dis
 
 ### Stanford CS372: AI for Reasoning, Planning, and Decision Making (Spring 2025)
 **Instructor:** Edward Y. Chang
-[Course site](https://stanford-cs372.github.io/cs372/)
+[Course site](http://infolab.stanford.edu/~echang/cs372/cs372-syllabus.html) · [Stanford Online](https://online.stanford.edu/courses/cs372-artificial-general-intelligence-reasoning-planning-and-decision-making)
 
 Cutting-edge course on reasoning frameworks atop LLMs, targeting AGI-like abilities. Topics: multi-agent LLM systems, planning algorithms, temporal reasoning, validated decision-making, long-term memory, ethical alignment. Research-focused seminar on frontier AI.
 
@@ -180,7 +180,7 @@ Broad modern AI survey emphasizing foundation models and multimodal applications
 
 ### CS-E4740: Federated Learning (Aalto University, Spring 2025)
 **Instructor:** Alexander Jung
-[Course site](https://federatedlearningaalto.github.io/) · [YouTube playlist](https://www.youtube.com/playlist?list=PLrbn2dGrLJK9rB05BObJGIcZP-g2nR28Y)
+[Course site](https://federatedlearningaalto.github.io/) · [GitHub](https://github.com/alexjungaalto/FederatedLearning) · [YouTube playlist](https://www.youtube.com/playlist?list=PLrbn2dGrLJK9rB05BObJGIcZP-g2nR28Y)
 
 FL networks, design principles, core algorithms, variants, and trustworthy FL. Weekly lectures and Python/Jupyter exercises.
 
@@ -204,7 +204,7 @@ Human-in-the-loop AI decision-making processes. Explores keeping humans at the c
 ## Professional Programs & Certificates
 
 ### CMU Graduate Certificate: Generative AI & Large Language Models (Online, 2025)
-[Program site](https://www.cs.cmu.edu/generative-ai-certificate)
+[Program site](https://www.cmu.edu/online/gai-llm/) · [Curriculum](https://www.cmu.edu/online/gai-llm/curriculum/index.html)
 
 12-month online program (3 courses). Build LLMs from scratch, fine-tune models, distributed training (SLURM), RLHF, compression, multimodal AI. Live evening classes for working professionals.
 
@@ -219,7 +219,7 @@ Human-in-the-loop AI decision-making processes. Explores keeping humans at the c
 
 ### MIT Professional: AI System Architecture & LLM Applications (July 2026)
 **Instructor:** David Martinez (MIT Lincoln Laboratory)
-[Program site](https://professional.mit.edu/)
+[Program site](https://professional-education.mit.edu/ai-system-architecture-llm)
 
 5-day intensive on designing, building, and deploying LLM-powered systems end-to-end. Covers architecture design, deployment at scale, testing, evaluation, responsible AI. Culminates in group project building an LLM application.
 
@@ -233,7 +233,7 @@ Human-in-the-loop AI decision-making processes. Explores keeping humans at the c
 ---
 
 ### Oxford (LMH): Advanced AI & ML: LLMs and NLP (Summer 2026)
-[Program site](https://www.lmh.ox.ac.uk/summer-programmes)
+[Program site](https://www.lmh.ox.ac.uk/study-here/lmh-summer-programmes/courses-and-dates) · [NLP Course](https://oxfordsummerschools.com/courses/lady-margaret-hall-university-of-oxford/advanced-artificial-intelligence-and-machine-learning-natural-language-processing/)
 
 3-week intensive (in-person or online). Covers Transformers, attention, LLM fine-tuning (LoRA, QLoRA), multimodal AI (vision-language), AI ethics. Hands-on labs.
 
