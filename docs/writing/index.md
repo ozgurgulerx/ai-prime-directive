@@ -25,10 +25,14 @@ Simple, readable archive of posts on LLM patterns, AI UX, and EvalOps.
 - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Boost RAG Performance: Enhance Vector Search with Metadata Filters in Azure AI Search](https://medium.com/@343544/improve-rag-performance-with-document-metadata-filters-for-vector-search-on-azureai-3af3bce6708c){ target="_blank" rel="noopener" }
   — Aug 1, 2024 · ~6 min · Topics: Azure, RAG
 
-## Earlier Pieces 
+## Earlier Pieces
 
+- <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Context Engineering with Microsoft Agent Framework's Context Provider API](https://medium.com/microsoftazure/context-engineering-with-microsoft-agent-frameworks-context-provider-api-dcf083daa8be){ target="_blank" rel="noopener" }
+  — Dec 15, 2025 · ~7 min · Topics: Agents, Context Engineering, Azure
+- <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Stop Blaming the Model: Topological Hardening for Predictable Inference Latency](https://medium.com/@343544/stop-blaming-the-model-topological-hardening-for-predictable-inference-latency){ target="_blank" rel="noopener" }
+  — Dec 9, 2025 · ~8 min · Topics: Inference, MLOps, Performance
 - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Fixing Sparse Retrieval with RAPTOR on Azure AI Search](https://medium.com/microsoftazure/fixing-sparse-retrieval-with-raptor-on-azure-ai-search-4d540dd3bd43){ target="_blank" rel="noopener" }
-  — Nov 18, 2025 · Topics: Azure, RAG, RAPTOR
+  — Nov 18, 2025 · ~8 min · Topics: Azure, RAG, RAPTOR
 - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Building Production AI with Microsoft’s Agent Framework: Credit Underwriting Case Study](https://medium.com/microsoftazure/building-production-ai-with-microsofts-agent-framework-credit-underwriting-case-study-a40d8335d4ed){ target="_blank" rel="noopener" }
   — Oct 11, 2025 · Topics: Agents, Azure, Production AI
  - [Generative UI: From Static Screens to Adaptive Systems](../blog/posts/251004-generative-ui-adaptive-systems.md)

@@ -11,6 +11,9 @@ _Add entries here as you publish them._
 
 ## Recent entries
 
+ - [Silicon Empires: The Fight for the Future of AI](silicon-empires.md) — <small>January 13, 2026</small>
+ - [Think Like a UX Researcher](think-like-a-ux-researcher.md) — <small>December 9, 2025</small>
+ - [Generative AI Design Patterns](generative-ai-design-patterns.md) — <small>October 28, 2025</small>
  - ![If Anyone Builds It, Everyone Dies](../assets/img/anyone-builds-everyone-dies.png){ width="72" style="vertical-align:middle;margin-right:8px;border-radius:4px;" } [If Anyone Builds It, Everyone Dies](anyone-builds-everyone-dies.md) — <small>September 16, 2025</small>
  - ![Breakneck](../assets/img/breakneck_thumb.png){ width="72" style="vertical-align:middle;margin-right:8px;border-radius:4px;" } [Breakneck](breakneck.md) — <small>September 11, 2025</small>
  - ![Human is the New Vinyl](../assets/img/human_is_the_new_vinyl.png){ width="72" style="vertical-align:middle;margin-right:8px;border-radius:4px;" } [Human is the New Vinyl](human-is-the-new-vinyl.md) — <small>August 19, 2025</small>

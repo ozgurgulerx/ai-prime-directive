@@ -75,6 +75,128 @@ Mental pattern:
 * **Bad**: append previous turns forever.
 * **Good**: maintain a small, evolving “world state” and only occasionally sample raw history if needed.
 
+### Context compaction vs summarization
+
+Good question to zoom in on, Ozgur.
+
+**Short answer**
+
+* **Context compaction = reversible compression.**  
+  You *move* or *encode* details outside the prompt (files, IDs, DB rows, tool calls) and just keep **handles** in context.
+
+* **Context summarization = lossy compression.**  
+  You *rewrite* many tokens into a **short textual abstraction**, and you **cannot reconstruct** the original detail from that summary alone.
+
+Now in more precise terms.
+
+---
+
+#### 1. Context compaction
+
+Think: “don’t keep the thing in the prompt, keep a pointer to it.”
+
+**Definition**
+
+* Replace large blobs of text/code/history in the prompt with:
+  * references (`file://`, `doc_id`, `conversation_id`, `memory_key`),
+  * small structured objects,
+  * short tags that can be **resolved via tools**.
+* The *full* information lives **outside** the LLM context (FS, DB, vector store, tool backends).
+
+**Properties**
+
+* **Reversible** (in system terms):  
+  the model (via tools) can re-load the full detail when needed.
+* Preserves **exact information**, just not inline in the prompt.
+* Mainly about **moving information out of the KV cache** into external state.
+
+**Examples**
+
+* Instead of:
+  * stuffing 2k lines of code in the prompt every turn.
+* Do:
+  * “The current project files are in the repo. Use the `read_file` tool when you need exact code.”  
+    The agent calls `read_file(path="src/main.py")` only when needed.
+
+* Instead of:
+  * keeping the entire conversation history with a user in context.
+* Do:
+  * store transcripts in a DB, keep only `session_id` + a small “current goal” object in the prompt.
+
+So compaction is: **“externalize + reference”**.
+
+---
+
+#### 2. Context summarization
+
+Think: “rewrite 10k tokens into 300 tokens of distilled meaning.”
+
+**Definition**
+
+* Take long histories (dialogue, logs, docs) and generate a **short natural-language or structured summary**:
+  * bullet list of key facts,
+  * state JSON: `{ goals: [...], decisions: [...], open_questions: [...] }`.
+
+**Properties**
+
+* **Lossy**:  
+  you *lose* nuance and some details; you can’t reconstruct the original from the summary.
+* Still lives **inside** the LLM context (the summary is part of the prompt).
+* Optimizes for **signal-to-noise**, not perfect fidelity.
+
+**Examples**
+
+* Conversation:
+  * Raw: 50 turns of support chat.
+  * Summary:  
+    “User is building a RAG agent with vLLM, wants KV-cache aware routing, has issues with tool selection and context rot.”
+
+* Doc:
+  * Raw: 50-page spec.
+  * Summary in prompt:
+    * 8 bullets on goals, constraints, and definitions relevant to the current task.
+
+So summarization is: **“compress + keep inside the prompt”**.
+
+---
+
+#### 3. Side-by-side comparison
+
+| Aspect                  | **Context Compaction**                                    | **Context Summarization**                                      |
+| ----------------------- | --------------------------------------------------------- | -------------------------------------------------------------- |
+| Info source             | Raw history, code, docs                                   | Same                                                           |
+| What you keep in prompt | **Handles / IDs / small structs**                         | **Short textual / JSON summary**                               |
+| Reversibility           | Yes (via tools / DB)                                      | No (you lose detail)                                           |
+| Where full info lives   | Outside model (FS, DB, tools, vector store)               | Nowhere accessible to the model unless you also store raw data |
+| Goal                    | Reduce prompt size, keep exact info available when needed | Improve signal-to-noise, keep only what matters conceptually   |
+| Typical operations      | “Save file”, “store message”, “index doc” then reference  | “Summarize last N turns/docs into K tokens and drop raw text”  |
+
+---
+
+#### 4. How to use them in an agent stack (practical heuristic)
+
+For something like your Graph Atlas / SK / Azure setup:
+
+1. **Apply compaction first (default).**
+   * Move code, long docs, and old turns to external storage.
+   * Keep **short references + tools** to fetch detail on demand.
+
+2. **Apply summarization when:**
+   * you only care about **state**, not wording (e.g., “what decisions were made?”),
+   * you’re hitting “context rot” even with compaction (model confused by too many old turns),
+   * you want a **stable, small “world state”** object in every turn.
+
+3. **Design-wise:**
+   * compaction = design of your **state & storage layer**,
+   * summarization = design of your **state update function**.
+
+If you like, next step we can sketch a tiny “ContextManager” interface with two methods:
+
+* `compact(state, raw_events) -> state, external_refs`
+* `summarize(state, history) -> state_summary`
+
+that you can drop directly into an SK / Python agent harness.
+
 ---
 
 ## 2. Share context by communicating, not communicate by sharing context
@@ -220,4 +342,3 @@ If you’re building agents / apps:
    Don’t just share documents. Tell the model what about them matters *for this step*.
 
 If you want to go further, the next step is designing a “Context Engine” component in your stack (e.g., `StateManager`, summarization policies, tool registry with small surfaces, and an “agent-as-tool” pattern you can actually implement).
-

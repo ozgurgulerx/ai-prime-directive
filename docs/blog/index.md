@@ -1,5 +1,14 @@
 # Blog
 
+- <time datetime="2025-12-15">December 15, 2025</time> — **[Context Engineering with Microsoft Agent Framework's Context Provider API](https://medium.com/microsoftazure/context-engineering-with-microsoft-agent-frameworks-context-provider-api-dcf083daa8be)**
+  Context engineering is about enforcing a bounded, prioritized, deterministic context window from heterogeneous signals. The Agent Framework's Context Provider API provides read/write hooks to compose memory systems safely and predictably.
+
+- <time datetime="2025-12-09">December 9, 2025</time> — **[Stop Blaming the Model: Topological Hardening for Predictable Inference Latency](https://medium.com/@343544/stop-blaming-the-model-topological-hardening-for-predictable-inference-latency)**
+  Addressing inference latency variance through network topology optimization rather than model-level tuning.
+
+- <time datetime="2025-11-18">November 18, 2025</time> — **[Fixing Sparse Retrieval with RAPTOR on Azure AI Search](https://medium.com/microsoftazure/fixing-sparse-retrieval-with-raptor-on-azure-ai-search-4d540dd3bd43)**
+  Implementing RAPTOR (Recursive Abstractive Processing for Tree-Organised Retrieval) to address sparse retrieval challenges when information is distributed across many documents.
+
 - <time datetime="2025-10-28">October 28, 2025</time> — **[September's Mega Rounds](posts/251028-septembers-mega-rounds.md)**
 - <time datetime="2025-10-24">October 24, 2025</time> — **[When GenAI Reasoning Helps Beyond Classification & Predictive Models](posts/251024-when-genai-reasoning-helps-beyond-classification-and-predictive-models.md)**
 - <time datetime="2025-10-11">October 11, 2025</time> — **[Production Agent Workflows: Orchestration & Observability](posts/251011-agent-workflow-orchestration.md)**
