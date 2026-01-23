@@ -8,7 +8,7 @@ Curated university courses on LLMs, Transformers, Graph Models, Reasoning, and A
 
 ---
 
-## Tier 1: Premier Research-Oriented Courses (2025–2026)
+## Tier 1: Premier Research-Oriented Courses (2025–2026) <span class="tier-badge tier-badge--premier">Premier</span>
 
 ### Stanford CS336: Language Modeling from Scratch (Spring 2025)
 **Instructors:** Percy Liang & Tatsunori Hashimoto
@@ -18,10 +18,10 @@ A deep, implementation-heavy graduate course on building LLMs entirely from the 
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | A | Low-level LLM internals; few courses match this |
-| Relevance | A | State-of-the-art training techniques |
-| Accessibility | B | Materials public; requires advanced skills + GPUs |
-| Career Value | A | Ideal for AI researchers and expert engineers |
+| Depth | <span class="rating rating--a">A</span> | Low-level LLM internals; few courses match this |
+| Relevance | <span class="rating rating--a">A</span> | State-of-the-art training techniques |
+| Accessibility | <span class="rating rating--b">B</span> | Materials public; requires advanced skills + GPUs |
+| Career Value | <span class="rating rating--a">A</span> | Ideal for AI researchers and expert engineers |
 
 ---
 
@@ -33,10 +33,10 @@ Graduate-level course on AI alignment and safety. Covers generalization, optimiz
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | A | Conceptually deep, tackles unsolved problems |
-| Relevance | A | Critical for future AI development |
-| Accessibility | A | Public lectures and materials |
-| Career Value | A | For researchers pursuing AI safety |
+| Depth | <span class="rating rating--a">A</span> | Conceptually deep, tackles unsolved problems |
+| Relevance | <span class="rating rating--a">A</span> | Critical for future AI development |
+| Accessibility | <span class="rating rating--a">A</span> | Public lectures and materials |
+| Career Value | <span class="rating rating--a">A</span> | For researchers pursuing AI safety |
 
 ---
 
@@ -48,10 +48,10 @@ Holistic graduate survey of LLM techniques. Part 1: architectures, pre-training,
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | A- | Thorough on core concepts and applications |
-| Relevance | A | Covers everything needed for LLM work in 2025 |
-| Accessibility | B- | Syllabus public; lectures not openly shared |
-| Career Value | A | Excellent for NLP/LLM-focused roles |
+| Depth | <span class="rating rating--a">A-</span> | Thorough on core concepts and applications |
+| Relevance | <span class="rating rating--a">A</span> | Covers everything needed for LLM work in 2025 |
+| Accessibility | <span class="rating rating--b">B-</span> | Syllabus public; lectures not openly shared |
+| Career Value | <span class="rating rating--a">A</span> | Excellent for NLP/LLM-focused roles |
 
 ---
 
@@ -63,10 +63,10 @@ Advanced systems engineering for LLMs. Covers efficient training algorithms, dis
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | A | Deep dive into LLM engineering |
-| Relevance | A | Critical as LLMs move to production |
-| Accessibility | C+ | Specialized content not openly provided |
-| Career Value | A | Gold for AI infrastructure engineers |
+| Depth | <span class="rating rating--a">A</span> | Deep dive into LLM engineering |
+| Relevance | <span class="rating rating--a">A</span> | Critical as LLMs move to production |
+| Accessibility | <span class="rating rating--c">C+</span> | Specialized content not openly provided |
+| Career Value | <span class="rating rating--a">A</span> | Gold for AI infrastructure engineers |
 
 ---
 
@@ -78,10 +78,10 @@ Cutting-edge course on reasoning frameworks atop LLMs, targeting AGI-like abilit
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | A | Forward-looking, tackles unsolved problems |
-| Relevance | A- | Highly relevant for future AI, less for current |
-| Accessibility | C | Limited; some lectures shared informally |
-| Career Value | A (research) | Goldmine for next-gen AI systems |
+| Depth | <span class="rating rating--a">A</span> | Forward-looking, tackles unsolved problems |
+| Relevance | <span class="rating rating--a">A-</span> | Highly relevant for future AI, less for current |
+| Accessibility | <span class="rating rating--c">C</span> | Limited; some lectures shared informally |
+| Career Value | <span class="rating rating--a">A</span> | Goldmine for next-gen AI systems |
 
 ---
 
@@ -93,10 +93,10 @@ Comprehensive deep dive into graph ML and GNNs. Covers PageRank, community detec
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | A | One of the most in-depth graph ML courses |
-| Relevance | A- | Crucial for relational data domains |
-| Accessibility | B+ | Materials free; older recordings available |
-| Career Value | A | Foundational for graph ML research |
+| Depth | <span class="rating rating--a">A</span> | One of the most in-depth graph ML courses |
+| Relevance | <span class="rating rating--a">A-</span> | Crucial for relational data domains |
+| Accessibility | <span class="rating rating--b">B+</span> | Materials free; older recordings available |
+| Career Value | <span class="rating rating--a">A</span> | Foundational for graph ML research |
 
 ---
 
@@ -107,7 +107,7 @@ Graduate-level, practice-oriented coverage of modern NLP: transformers and LLMs,
 
 ---
 
-## Tier 2: Excellent Foundational Courses (2025)
+## Tier 2: Excellent Foundational Courses (2025) <span class="tier-badge tier-badge--excellent">Excellent</span>
 
 ### Stanford CME 295: Transformers & Large Language Models (Autumn 2025)
 **Instructors:** Afshine Amidi & Shervine Amidi
@@ -117,10 +117,10 @@ Comprehensive intro to Transformers and LLMs. Covers evolution of NLP, Transform
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | B+ | Great breadth, solid depth for overview |
-| Relevance | A | Ubiquitous transformer paradigm |
-| Accessibility | A | Free lectures, slides, illustrated cheatsheet |
-| Career Value | A- | Strong for practitioners and NLP foundations |
+| Depth | <span class="rating rating--b">B+</span> | Great breadth, solid depth for overview |
+| Relevance | <span class="rating rating--a">A</span> | Ubiquitous transformer paradigm |
+| Accessibility | <span class="rating rating--a">A</span> | Free lectures, slides, illustrated cheatsheet |
+| Career Value | <span class="rating rating--a">A-</span> | Strong for practitioners and NLP foundations |
 
 ---
 
@@ -132,10 +132,10 @@ Foundational AI safety course covering interpretability, robustness, RL safety, 
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | B+ | Solid foundations |
-| Relevance | A | Critical safety topics |
-| Accessibility | B+ | Open to Stanford community |
-| Career Value | B+ | Good entry point for AI safety |
+| Depth | <span class="rating rating--b">B+</span> | Solid foundations |
+| Relevance | <span class="rating rating--a">A</span> | Critical safety topics |
+| Accessibility | <span class="rating rating--b">B+</span> | Open to Stanford community |
+| Career Value | <span class="rating rating--b">B+</span> | Good entry point for AI safety |
 
 ---
 
@@ -154,10 +154,10 @@ Broad modern AI survey emphasizing foundation models and multimodal applications
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | B+ | Wide range at solid graduate level |
-| Relevance | A | Foundation models + multimodal AI |
-| Accessibility | A | Free via MIT OCW |
-| Career Value | A | Panoramic view of modern AI |
+| Depth | <span class="rating rating--b">B+</span> | Wide range at solid graduate level |
+| Relevance | <span class="rating rating--a">A</span> | Foundation models + multimodal AI |
+| Accessibility | <span class="rating rating--a">A</span> | Free via MIT OCW |
+| Career Value | <span class="rating rating--a">A</span> | Panoramic view of modern AI |
 
 ---
 
@@ -169,14 +169,14 @@ Broad modern AI survey emphasizing foundation models and multimodal applications
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | B+ | Excellent pedagogical clarity |
-| Relevance | A | Timeless Transformer foundations |
-| Accessibility | A | Free on YouTube |
-| Career Value | A- | Best starting point for understanding Transformers |
+| Depth | <span class="rating rating--b">B+</span> | Excellent pedagogical clarity |
+| Relevance | <span class="rating rating--a">A</span> | Timeless Transformer foundations |
+| Accessibility | <span class="rating rating--a">A</span> | Free on YouTube |
+| Career Value | <span class="rating rating--a">A-</span> | Best starting point for understanding Transformers |
 
 ---
 
-## Tier 3: Specialized & Domain Courses
+## Tier 3: Specialized & Domain Courses <span class="tier-badge tier-badge--specialized">Specialized</span>
 
 ### CS-E4740: Federated Learning (Aalto University, Spring 2025)
 **Instructor:** Alexander Jung
@@ -201,7 +201,7 @@ Human-in-the-loop AI decision-making processes. Explores keeping humans at the c
 
 ---
 
-## Professional Programs & Certificates
+## Professional Programs & Certificates <span class="tier-badge tier-badge--professional">Professional</span>
 
 ### CMU Graduate Certificate: Generative AI & Large Language Models (Online, 2025)
 [Program site](https://www.cmu.edu/online/gai-llm/) · [Curriculum](https://www.cmu.edu/online/gai-llm/curriculum/index.html)
@@ -210,10 +210,10 @@ Human-in-the-loop AI decision-making processes. Explores keeping humans at the c
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | A | Compressed master's-level curriculum |
-| Relevance | A | Tuned to 2025 industry needs |
-| Accessibility | B | Online but paid (~tuition-based) |
-| Career Value | A | CMU credential + immediately applicable skills |
+| Depth | <span class="rating rating--a">A</span> | Compressed master's-level curriculum |
+| Relevance | <span class="rating rating--a">A</span> | Tuned to 2025 industry needs |
+| Accessibility | <span class="rating rating--b">B</span> | Online but paid (~tuition-based) |
+| Career Value | <span class="rating rating--a">A</span> | CMU credential + immediately applicable skills |
 
 ---
 
@@ -225,10 +225,10 @@ Human-in-the-loop AI decision-making processes. Explores keeping humans at the c
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | B | Thorough overview for practitioners |
-| Relevance | A | LLM deployment — critical skill |
-| Accessibility | D | Paid (~$4,500), in-person Cambridge |
-| Career Value | A- | Fast-track for technical leads/managers |
+| Depth | <span class="rating rating--b">B</span> | Thorough overview for practitioners |
+| Relevance | <span class="rating rating--a">A</span> | LLM deployment — critical skill |
+| Accessibility | <span class="rating rating--d">D</span> | Paid (~$4,500), in-person Cambridge |
+| Career Value | <span class="rating rating--a">A-</span> | Fast-track for technical leads/managers |
 
 ---
 
@@ -239,10 +239,10 @@ Human-in-the-loop AI decision-making processes. Explores keeping humans at the c
 
 | Aspect | Rating | Notes |
 |--------|--------|-------|
-| Depth | B+ | Rigorous for summer program |
-| Relevance | A- | LLMs, NLP, vision-language |
-| Accessibility | B | Online option; paid program |
-| Career Value | B+ | Oxford credential + networking |
+| Depth | <span class="rating rating--b">B+</span> | Rigorous for summer program |
+| Relevance | <span class="rating rating--a">A-</span> | LLMs, NLP, vision-language |
+| Accessibility | <span class="rating rating--b">B</span> | Online option; paid program |
+| Career Value | <span class="rating rating--b">B+</span> | Oxford credential + networking |
 
 ---
 
