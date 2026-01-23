@@ -10,7 +10,13 @@
   Implementing RAPTOR (Recursive Abstractive Processing for Tree-Organised Retrieval) to address sparse retrieval challenges when information is distributed across many documents.
 
 - <time datetime="2025-10-28">October 28, 2025</time> — **[September's Mega Rounds](posts/251028-septembers-mega-rounds.md)**
+- <time datetime="2025-10-24">October 24, 2025</time> — **[Reasoning over Features, Not Identities for Personalisation](https://medium.com/@343544/reasoning-over-features-not-identities-for-personalisation)**
+  Using feature-based reasoning instead of identity-based approaches for more robust personalisation systems.
+
 - <time datetime="2025-10-24">October 24, 2025</time> — **[When GenAI Reasoning Helps Beyond Classification & Predictive Models](posts/251024-when-genai-reasoning-helps-beyond-classification-and-predictive-models.md)**
+- <time datetime="2025-10-11">October 11, 2025</time> — **[Building Production AI with Microsoft's Agent Framework: Credit Underwriting Case Study](https://medium.com/microsoftazure/building-production-ai-with-microsofts-agent-framework-credit-underwriting-case-study-a40d8335d4ed)**
+  A real-world FSI workflow demonstrating Agent Framework with typed graphs, parallel fan-out/fan-in, conditional routing, and telemetry-driven UI.
+
 - <time datetime="2025-10-11">October 11, 2025</time> — **[Production Agent Workflows: Orchestration & Observability](posts/251011-agent-workflow-orchestration.md)**
 - <time datetime="2025-10-06">October 6, 2025</time> — **[True Multi‑Agency](posts/251006-true-multi-agency.md)**
 - <time datetime="2025-10-04">October 4, 2025</time> — **[Generative UI: From Static Screens to Adaptive Systems](posts/251004-generative-ui-adaptive-systems.md)**

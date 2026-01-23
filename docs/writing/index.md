@@ -33,8 +33,10 @@ Simple, readable archive of posts on LLM patterns, AI UX, and EvalOps.
   — Dec 9, 2025 · ~8 min · Topics: Inference, MLOps, Performance
 - <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Fixing Sparse Retrieval with RAPTOR on Azure AI Search](https://medium.com/microsoftazure/fixing-sparse-retrieval-with-raptor-on-azure-ai-search-4d540dd3bd43){ target="_blank" rel="noopener" }
   — Nov 18, 2025 · ~8 min · Topics: Azure, RAG, RAPTOR
-- <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Building Production AI with Microsoft’s Agent Framework: Credit Underwriting Case Study](https://medium.com/microsoftazure/building-production-ai-with-microsofts-agent-framework-credit-underwriting-case-study-a40d8335d4ed){ target="_blank" rel="noopener" }
-  — Oct 11, 2025 · Topics: Agents, Azure, Production AI
+- <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Reasoning over Features, Not Identities for Personalisation](https://medium.com/@343544/reasoning-over-features-not-identities-for-personalisation){ target="_blank" rel="noopener" }
+  — Oct 24, 2025 · ~3 min · Topics: Personalisation, Reasoning, LLMs
+- <img src="../assets/img/medium.svg" class="publisher-icon" alt="Medium" /> [Building Production AI with Microsoft's Agent Framework: Credit Underwriting Case Study](https://medium.com/microsoftazure/building-production-ai-with-microsofts-agent-framework-credit-underwriting-case-study-a40d8335d4ed){ target="_blank" rel="noopener" }
+  — Oct 11, 2025 · ~12 min · Topics: Agents, Azure, Production AI
  - [Generative UI: From Static Screens to Adaptive Systems](../blog/posts/251004-generative-ui-adaptive-systems.md)
   — Oct 4, 2025 · ~8 min · Topics: Generative UI, Adaptive Systems, Design Systems
 - [Local PII Pre-Filter with Microsoft Presidio + Qwen 2.5](../blog/posts/251003-presidio-pii-filtering.md)
