@@ -32,15 +32,7 @@ A similar startup is Hiverge ($5M, Seed), focusing on writing and improving opti
 
 **NVIDIA is going all‑in.** 22 deals in September alone, seeding every layer of the stack to both create and capture demand.
 
-![Top investments, September 25](../../assets/img/septembers-mega-rounds/top-investments-sep25.png)
-
-Figure 1 — Top investments, September 25
-
-![Investments skewed toward later stages in September 2025](../../assets/img/septembers-mega-rounds/stage-skew-sep25.png)
-
-The month’s funding skewed heavily toward later‑stage rounds.
-
-![GenAI Heatmap of Markets: Adoption × Companies × Investment](../../assets/img/septembers-mega-rounds/heatmap-sep25.png)
+The month's funding skewed heavily toward later‑stage rounds.
 
 GenAI was most applicable in horizontal enablers (AI/ML platforms, Sales/CX, Productivity, DevTools) with LegalTech leading the regulated verticals, while FinTech/HealthTech sat mid-pack and capital-heavy or integration-burdened sectors (Semis, Biotech, Supply/Prop/Insure) lagged.
 
@@ -49,8 +41,6 @@ GenAI was most applicable in horizontal enablers (AI/ML platforms, Sales/CX, Pro
 ![Investments by vertical](../../assets/img/septembers-mega-rounds/investments-by-vertical-sep25.png)
 
 September AI/ML funding overwhelmingly concentrated in Foundation Models/LLMs (late-stage/PE heavy), with MLOps and agentic orchestration getting modest share, while RAG/LLMOps and the rest (multimodal, safety/evals, AutoML, synthetic data, edge) barely registered.
-
-![Funding by model (only when disclosed — total dataset: 44 startups out of 414)](../../assets/img/septembers-mega-rounds/funding-by-model-sep25.png)
 
 ### AI Agent Plays
 
