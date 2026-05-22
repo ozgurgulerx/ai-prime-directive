@@ -29,7 +29,7 @@ npm run dev
 Open:
 
 ```text
-http://127.0.0.1:4321/ai-prime-directive/
+http://127.0.0.1:4321/
 ```
 
 Build and preview:
@@ -96,6 +96,6 @@ Matches should only appear in negative guardrails, environment variable names, o
 
 ## Hosting Policy
 
-Default target: GitHub Pages.
+Default target: GitHub Pages at `https://cloudatlas.blog/`.
 
 Do not migrate this version to Azure App Service. Azure Static Web Apps is only a future option if the site adds serverless APIs, gated resources, form backends, preview environments, calculators, authentication, or explicit Azure architecture demo value.

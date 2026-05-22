@@ -178,18 +178,18 @@ npm run preview
 
 Confirm in the browser:
 
-- `http://127.0.0.1:4321/ai-prime-directive/`
-- `http://127.0.0.1:4321/ai-prime-directive/agents/`
-- `http://127.0.0.1:4321/ai-prime-directive/inference/`
-- `http://127.0.0.1:4321/ai-prime-directive/build-log/`
-- `http://127.0.0.1:4321/ai-prime-directive/blog/`
-- `http://127.0.0.1:4321/ai-prime-directive/books/`
-- `http://127.0.0.1:4321/ai-prime-directive/talks/`
-- `http://127.0.0.1:4321/ai-prime-directive/consulting/`
-- `http://127.0.0.1:4321/ai-prime-directive/investments/`
-- `http://127.0.0.1:4321/ai-prime-directive/startup-notes/`
-- `http://127.0.0.1:4321/ai-prime-directive/prime-directive/`
-- `http://127.0.0.1:4321/ai-prime-directive/about/`
+- `http://127.0.0.1:4321/`
+- `http://127.0.0.1:4321/agents/`
+- `http://127.0.0.1:4321/inference/`
+- `http://127.0.0.1:4321/build-log/`
+- `http://127.0.0.1:4321/blog/`
+- `http://127.0.0.1:4321/books/`
+- `http://127.0.0.1:4321/talks/`
+- `http://127.0.0.1:4321/consulting/`
+- `http://127.0.0.1:4321/investments/`
+- `http://127.0.0.1:4321/startup-notes/`
+- `http://127.0.0.1:4321/prime-directive/`
+- `http://127.0.0.1:4321/about/`
 
 Run guardrail checks:
 
