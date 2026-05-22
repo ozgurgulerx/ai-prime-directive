@@ -1,7 +1,10 @@
 venv/
-site/
+site/node_modules/
+site/dist/
+site/.astro/
+site/.env
+site/.env.*
 __pycache__/
 .pytest_cache/
 .ipynb_checkpoints/
 .DS_Store
-

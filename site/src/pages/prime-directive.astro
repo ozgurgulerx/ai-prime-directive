@@ -1,0 +1,29 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Section from "@/components/Section.astro";
+import Card from "@/components/Card.astro";
+
+const archive = [
+  ["LLM Foundations", "../docs/prime-directive/foundations/index.md"],
+  ["Reasoning LLMs", "../docs/prime-directive/reasoning-llms/index.md"],
+  ["RAG", "../docs/prime-directive/rag/index.md"],
+  ["Agents", "../docs/prime-directive/agents/index.md"],
+  ["Open-Source Models", "../docs/prime-directive/open-source-models/index.md"],
+  ["EvalOps", "../docs/prime-directive/evalops/index.md"],
+  ["AI Safety and Security", "../docs/prime-directive/ai-safety-security/index.md"],
+  ["AI UX", "../docs/prime-directive/product-ux/index.md"],
+  ["Graph", "../docs/prime-directive/graph/index.md"],
+];
+---
+
+<BaseLayout title="AI Prime Directive Archive" description="Evergreen notes, patterns, and templates for learning, building, and iterating on production AI systems.">
+  <section class="hero">
+    <p class="eyebrow">Archive</p>
+    <h1>AI Prime Directive</h1>
+    <p class="lede">Evergreen notes, patterns, and templates for learning, building, and iterating on production AI systems.</p>
+  </section>
+
+  <Section title="Archive cards">
+    <div class="grid three">{archive.map(([title]) => <Card title={title} summary="Preserved from the original AI Prime Directive knowledge base." />)}</div>
+  </Section>
+</BaseLayout>

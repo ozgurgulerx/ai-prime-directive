@@ -1,0 +1,78 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Section from "@/components/Section.astro";
+import Card from "@/components/Card.astro";
+
+const diligence = [
+  "model dependency",
+  "data advantage",
+  "latency/cost envelope",
+  "eval maturity",
+  "deployment complexity",
+  "margin structure",
+  "customer integration depth",
+  "defensibility",
+];
+
+const domains = ["finance", "aviation", "legal/docops", "manufacturing", "education/tutoring", "research assistants"];
+
+const selectedNotes = [
+  "AI infrastructure funding trends",
+  "GPU cloud economics",
+  "vertical AI systems",
+  "inference as margin structure",
+  "agentic workflow defensibility",
+  "cloud GTM for AI startups",
+  "AI factory architecture notes",
+];
+---
+
+<BaseLayout title="Startup Notes" description="Technical and market notes from working around startup ecosystems, cloud platforms, AI infrastructure, and applied AI systems.">
+  <section class="hero">
+    <p class="eyebrow">Startup notes</p>
+    <h1>Startup Notes</h1>
+    <p class="lede">Technical and market notes from working around startup ecosystems, cloud platforms, AI infrastructure, and applied AI systems.</p>
+    <p class="lede">I use this section to collect observations on AI infrastructure markets, startup architecture, GPU/cloud economics, developer tooling, technical diligence, and the practical path from prototype to production.</p>
+    <p class="lede">This is not investment advice. It is a public record of technical pattern recognition.</p>
+  </section>
+
+  <Section title="AI infrastructure markets">
+    <div class="grid three">
+      {["GPU cloud", "Inference providers", "AI factories", "Developer platforms", "Production AI layers", "Cloud GTM"].map((title) => (
+        <Card title={title} summary="Public-safe notes on market structure, architecture tradeoffs, and deployment constraints." />
+      ))}
+    </div>
+  </Section>
+
+  <Section title="Operating context">
+    <div class="grid three">
+      <Card title="AWS Startups background" summary="Startup ecosystem work provides context for cloud GTM, founder-facing deployment tradeoffs, and early architecture decisions." />
+      <Card title="AI and technology advisory work" summary="Public notes stay at the pattern level unless exact advisory wording is confirmed as safe to publish." />
+      <Card title="Founder/operator empathy" summary="The focus is practical deployment reality: cost, latency, data access, integration depth, sales motion, and support burden." />
+    </div>
+  </Section>
+
+  <Section title="Startup architecture">
+    <div class="prose">
+      <p>Patterns from evaluating and building early-stage AI systems: what breaks, what compounds, and what should be measured early.</p>
+    </div>
+  </Section>
+
+  <Section title="Technical diligence notes">
+    <div class="grid four">
+      {diligence.map((item) => <Card title={item} />)}
+    </div>
+  </Section>
+
+  <Section title="Domain AI systems">
+    <div class="grid three">
+      {domains.map((domain) => <Card title={domain} summary="Records from demos, prototypes, or public-safe technical observations." />)}
+    </div>
+  </Section>
+
+  <Section title="Selected notes">
+    <div class="grid three">
+      {selectedNotes.map((note) => <Card title={note} status="planned note" />)}
+    </div>
+  </Section>
+</BaseLayout>

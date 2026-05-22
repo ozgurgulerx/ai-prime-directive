@@ -1,0 +1,40 @@
+---
+import { withBase } from "@/lib/links";
+
+interface Item {
+  id: string;
+  collection: "blog" | "build-log";
+  data: {
+    title: string;
+    date: Date;
+    summary: string;
+    tags: string[];
+  };
+}
+
+interface Props {
+  items: Item[];
+  limit?: number;
+}
+
+const { items, limit } = Astro.props;
+const shown = limit ? items.slice(0, limit) : items;
+const pathFor = (item: Item) => withBase(`${item.collection}/${item.id}/`);
+---
+
+<div class="rows">
+  {shown.map((item) => (
+    <article class="row-card">
+      <div>
+        <time class="meta" datetime={item.data.date.toISOString()}>{item.data.date.toISOString().slice(0, 10)}</time>
+        <div class="chips">
+          {item.data.tags.slice(0, 3).map((tag) => <span class="chip">{tag}</span>)}
+        </div>
+      </div>
+      <div>
+        <h3><a href={pathFor(item)}>{item.data.title}</a></h3>
+        <p>{item.data.summary}</p>
+      </div>
+    </article>
+  ))}
+</div>

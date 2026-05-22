@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-labelledby="title desc">
+  <title id="title">AI Inference Engineering cover placeholder</title>
+  <desc id="desc">Minimal technical cover with token lanes and memory blocks.</desc>
+  <rect width="400" height="600" fill="#f8f8f6"/>
+  <rect x="32" y="32" width="336" height="536" fill="none" stroke="#d9d9d4"/>
+  <g fill="none" stroke="#215f63" stroke-width="2">
+    <path d="M72 140h210c28 0 42 14 42 42v14"/>
+    <path d="M72 178h170c28 0 42 14 42 42v44"/>
+    <path d="M72 216h130c28 0 42 14 42 42v74"/>
+  </g>
+  <g fill="#ffffff" stroke="#161616">
+    <rect x="70" y="314" width="72" height="38"/>
+    <rect x="164" y="314" width="72" height="38"/>
+    <rect x="258" y="314" width="72" height="38"/>
+  </g>
+  <text x="56" y="408" fill="#161616" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700">
+    <tspan x="56" dy="0">AI Inference</tspan>
+    <tspan x="56" dy="44">Engineering</tspan>
+  </text>
+  <text x="56" y="516" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="18">Ozgur Guler</text>
+</svg>

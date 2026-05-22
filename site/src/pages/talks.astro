@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Section from "@/components/Section.astro";
+import Card from "@/components/Card.astro";
+
+const talks = (await getCollection("talks")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const topics = ["AI agents in production", "AI inference engineering", "EvalOps and observability", "AI infrastructure", "RAG, context engineering, and data integration", "AI security", "Startup AI systems"];
+---
+
+<BaseLayout title="Talks and Workshops" description="Talks, private briefings, and workshops on production AI systems.">
+  <section class="hero">
+    <p class="eyebrow">Talks</p>
+    <h1>Talks and Workshops</h1>
+    <p class="lede">Talks, private briefings, and workshops on AI agents, inference systems, EvalOps, and AI infrastructure.</p>
+    <div class="button-row"><a class="button primary" href="mailto:ozgur@graph-atlas.com?subject=AI%20Talk">Book a Talk</a></div>
+  </section>
+
+  <Section title="Selected talks">
+    <div class="grid two">
+      {talks.map((talk) => <Card title={talk.data.title} status={talk.data.type} tags={talk.data.tags} summary={`${talk.data.summary} ${talk.data.location ? `Location: ${talk.data.location}.` : ""}`} />)}
+    </div>
+  </Section>
+
+  <Section title="Workshop topics">
+    <div class="grid three">{topics.map((topic) => <Card title={topic} />)}</div>
+  </Section>
+
+  <Section title="Book a talk">
+    <div class="prose">
+      <p>Please include event or company, audience, technical level, format, topic, date/location/remote, budget range, and stakeholders or other speakers.</p>
+      <p><a class="button primary" href="mailto:ozgur@graph-atlas.com?subject=AI%20Talk">Email a talk request</a></p>
+    </div>
+  </Section>
+</BaseLayout>

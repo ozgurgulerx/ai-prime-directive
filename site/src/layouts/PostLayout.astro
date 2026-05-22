@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+interface Props {
+  title: string;
+  date?: Date;
+  summary?: string;
+  tags?: string[];
+}
+
+const { title, date, summary, tags = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={summary}>
+  <article class="prose">
+    <p class="eyebrow">{date ? date.toISOString().slice(0, 10) : "Note"}</p>
+    <h1>{title}</h1>
+    {summary && <p class="lede">{summary}</p>}
+    {tags.length > 0 && <div class="chips">{tags.map((tag) => <span class="chip">{tag}</span>)}</div>}
+    <slot />
+  </article>
+</BaseLayout>

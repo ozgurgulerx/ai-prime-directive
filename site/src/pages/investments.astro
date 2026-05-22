@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Section from "@/components/Section.astro";
+import Card from "@/components/Card.astro";
+
+const startups = await getCollection("investments");
+const topics = ["AI infrastructure markets", "model marketplaces", "consumer AI workflows", "startup architecture", "technical diligence", "inference economics", "agentic product defensibility"];
+---
+
+<BaseLayout title="Startup Work" description="A quiet record of startup and investment-adjacent work around AI, infrastructure, developer tooling, and product architecture.">
+  <section class="hero">
+    <p class="eyebrow">Startup work</p>
+    <h1>Startup Work</h1>
+    <p class="lede">A quiet record of startup and investment-adjacent work around AI, infrastructure, developer tooling, and product architecture.</p>
+  </section>
+
+  <Section title="Selected startups">
+    <div class="grid two">
+      {startups.map((startup) => <Card title={startup.data.title} href={startup.data.url} status={startup.data.relationship} tags={startup.data.tags} summary={startup.data.summary} />)}
+    </div>
+  </Section>
+
+  <Section title="Investment and technical pattern notes">
+    <div class="grid three">{topics.map((topic) => <Card title={topic} />)}</div>
+  </Section>
+
+  <Section title="Boundaries">
+    <div class="prose">
+      <p>This page avoids non-public details, private terms, founder details, and confidential analysis. It is not investment advice.</p>
+    </div>
+  </Section>
+</BaseLayout>

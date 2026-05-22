@@ -1,76 +1,101 @@
-# AI Prime Directive — MkDocs Material site
+# Ozgur Guler Personal Technical Website
 
-This repository hosts a marketing + docs site built with MkDocs Material and deployed to GitHub Pages.
+This repository hosts a static Astro personal website deployed to GitHub Pages. The active site lives in `site/`; the earlier MkDocs content remains in `docs/` as archive/source material.
 
 ## Goals
 
-- Introduce Ozgur Guler (AI consultant)
-- Keep the AI Prime Directive docs in their own section (not on the homepage)
-- Promote writing, newsletter, speaking, and courses
-- Convert traffic into consulting leads (CTA + Formspree form)
+- Make Ozgur Guler's work legible through AI agents, AI inference, build logs, technical writing, books, talks, consulting, selected startup work, and the AI Prime Directive archive.
+- Keep the site static, fast, readable, and easy to operate.
+- Keep startup and investment-adjacent material public-safe, sober, and technical.
+- Preserve GitHub Pages as the default deployment target.
 
-## Local development
+See `goal.md` for the product target, `plan.md` for implementation guardrails, and `AGENTS.md` for repo-local agent instructions.
 
-1) Install Python 3.10+ and pip
-2) Install dependencies:
+## Local Development
 
-```bash
-pip install mkdocs-material mkdocs-rss-plugin mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin mkdocs-privacy
-```
-
-3) Serve locally:
+Install dependencies:
 
 ```bash
-mkdocs serve
+cd site
+npm install
 ```
 
-Open http://127.0.0.1:8000 to preview.
+Serve locally:
 
-## Configuration
+```bash
+npm run dev
+```
 
-Update the following placeholders across files:
+Open:
 
-- `mkdocs.yml` → `site_url`, `repo_url`
-- `docs/consulting.md` → `YOUR_FORMSPREE_ID`, `CALENDLY_URL`
-- `docs/courses.md` → `YOUR_FORMSPREE_ID`
-- `docs/newsletter.md` and `overrides/home.html` → `SUBSTACK_URL`
+```text
+http://127.0.0.1:4321/ai-prime-directive/
+```
 
-Optional: add a `CNAME` file at the repo root for a custom domain. The workflow will detect and set it during deploy.
+Build and preview:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Image Assets
+
+Nano Banana Pro prompt files live in:
+
+```text
+site/prompts/nano-banana/
+```
+
+Generated images, when available, go into:
+
+```text
+site/public/generated/
+```
+
+The generation script uses the Gemini API only when `GEMINI_API_KEY` or `GOOGLE_API_KEY` is already set locally:
+
+```bash
+cd site
+npm run generate:images
+```
+
+No credentials are stored in the repository.
 
 ## GitHub Pages
 
-The workflow in `.github/workflows/gh-pages.yml`:
+The workflow in `.github/workflows/deploy-docs.yml`:
 
-- Installs MkDocs + plugins
-- Builds the site with `mkdocs build`
-- Deploys `site/` to the `gh-pages` branch using `peaceiris/actions-gh-pages@v3`
-- Triggers on push to `main`
+- installs Node dependencies from `site/package-lock.json`
+- builds the Astro site with `npm run build`
+- preserves a root `CNAME` file if present
+- uploads `site/dist` to GitHub Pages
+- triggers on push to `main` and manual workflow dispatch
 
-Enable GitHub Pages:
+Enable GitHub Pages from repository settings using the official GitHub Pages workflow.
 
-- Settings → Pages → Deploy from branch → `gh-pages` → root
+## Verification
 
-## Formspree setup
+Run before handoff:
 
-1) Create a new form at https://formspree.io/
-2) Copy the form ID and replace `YOUR_FORMSPREE_ID` in:
-   - `docs/consulting.md`
-   - `docs/courses.md`
-3) Optionally set up email notifications and spam filters.
+```bash
+cd site
+npm run build
+npm test
+cd ..
+git diff --check
+```
 
-## Calendly
+Guardrail scan:
 
-1) Create a public booking link at https://calendly.com/
-2) Replace `CALENDLY_URL` in `docs/consulting.md` and `docs/speaking.md`.
+```bash
+rg -n "future London employer|AI consultant London|London employer|invest in the future|visionary founders|trusted by|private deal|investment memo|founder names|/Users/" site README.md goal.md plan.md AGENTS.md
+```
 
-## Open Graph & favicon
+Matches should only appear in negative guardrails, environment variable names, or non-public developer documentation.
 
-- Replace `images/og.png` with a real 1200×630 image.
-- Update `images/logo.svg` or provide a PNG favicon via `extra.head` if desired.
+## Hosting Policy
 
-## Notes
+Default target: GitHub Pages.
 
-- Homepage is a marketing page only; docs live under `Prime Directive` in the nav.
-- Accessibility: visible focus outlines, sufficient contrast, ARIA labels on form inputs.
-- Privacy: newsletter embed loads Substack assets; a plain link is provided as an alternative.
-
+Do not migrate this version to Azure App Service. Azure Static Web Apps is only a future option if the site adds serverless APIs, gated resources, form backends, preview environments, calculators, authentication, or explicit Azure architecture demo value.

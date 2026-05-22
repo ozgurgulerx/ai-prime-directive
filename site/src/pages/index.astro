@@ -1,0 +1,313 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { withBase } from "@/lib/links";
+
+type DatedEntry = CollectionEntry<"blog"> | CollectionEntry<"build-log">;
+const byDate = (a: DatedEntry, b: DatedEntry) => b.data.date.valueOf() - a.data.date.valueOf();
+
+const blog = (await getCollection("blog")).sort(byDate);
+const buildLog = (await getCollection("build-log")).sort(byDate);
+const books = await getCollection("books");
+const projects = await getCollection("projects");
+
+const bookBy = (id: string) => books.find((b) => b.id.replace(/\.md$/, "") === id);
+const projectBy = (id: string) => projects.find((p) => p.id.replace(/\.md$/, "") === id);
+const postBy = (id: string) => blog.find((p) => p.id.replace(/\.md$/, "") === id);
+
+type IndexItem = {
+  title: string;
+  kind: string;
+  blurb: string;
+  href: string;
+  external?: boolean;
+};
+
+const selected: IndexItem[] = [
+  bookBy("ai-inference-engineering") && {
+    title: "AI Inference Engineering",
+    kind: "Book — in progress",
+    blurb: "Serving stacks, latency, throughput, KV-cache pressure, GPU economics, and AI factory architecture.",
+    href: bookBy("ai-inference-engineering")!.data.link ?? withBase("books/"),
+    external: true,
+  },
+  bookBy("ai-agents-in-production") && {
+    title: "AI Agents in Production",
+    kind: "Book — in progress",
+    blurb: "Memory, durable execution, tool boundaries, evals, replay, governance, and enterprise deployment.",
+    href: bookBy("ai-agents-in-production")!.data.link ?? withBase("books/"),
+    external: true,
+  },
+  projectBy("foundry-demo") && {
+    title: "foundry-demo",
+    kind: "Code — Azure AI Foundry workshop",
+    blurb: "Hosted agents, tracing, governance, grounding, MCP tooling, and A2A flows — packaged as a hands-on workshop.",
+    href: projectBy("foundry-demo")!.data.url ?? withBase("agents/"),
+    external: true,
+  },
+  projectBy("agent-framework-ozg") && {
+    title: "agent-framework-ozg",
+    kind: "Code — workshop fork",
+    blurb: "Runnable samples for agents, workflows, memory, reasoning, and Azure AI Foundry integration.",
+    href: projectBy("agent-framework-ozg")!.data.url ?? withBase("agents/"),
+    external: true,
+  },
+  postBy("production-agent-workflows") && {
+    title: "Production Agent Workflows: Orchestration and Observability",
+    kind: "Essay",
+    blurb: "Typed workflow graphs, fan-out/fan-in execution, checkpointing, human approval gates, and telemetry.",
+    href: withBase(`blog/${postBy("production-agent-workflows")!.id.replace(/\.md$/, "")}/`),
+  },
+  postBy("local-pii-pre-filter") && {
+    title: "Local PII Pre-Filter with Presidio and Qwen 2.5",
+    kind: "Essay — guardrails",
+    blurb: "A local pre-prompt guardrail using Presidio and a small CPU model to reduce PII exposure before LLM calls.",
+    href: withBase(`blog/${postBy("local-pii-pre-filter")!.id.replace(/\.md$/, "")}/`),
+  },
+].filter(Boolean) as IndexItem[];
+
+type ShelfBook = {
+  series: string;
+  title: string;
+  status: string;
+  href: string;
+};
+
+const shelf: ShelfBook[] = [
+  { series: "Vol. I", title: "AI Inference Engineering", status: "In progress", href: bookBy("ai-inference-engineering")?.data.link ?? withBase("books/") },
+  { series: "Vol. II", title: "AI Agents in Production", status: "In progress", href: bookBy("ai-agents-in-production")?.data.link ?? withBase("books/") },
+  { series: "Vol. III", title: "Modern LLMs", status: "Draft concept", href: withBase("books/") },
+  { series: "Vol. IV", title: "AI Security", status: "In progress", href: bookBy("ai-security")?.data.link ?? withBase("books/") },
+];
+
+const recentBlog = blog.slice(0, 4);
+const recentBuild = buildLog.slice(0, 4);
+const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
+const pad2 = (n: number) => String(n).padStart(2, "0");
+---
+
+<BaseLayout
+  title="AI Systems Builder"
+  description="Ozgur Guler — production AI systems, agents, inference, EvalOps, and AI infrastructure. A public record of artefacts, books, essays, and selected work."
+>
+  <header class="masthead" aria-label="Masthead">
+    <span>Est. MMXXIV</span>
+    <span class="rule"></span>
+    <span>London · AI Systems</span>
+    <span class="rule"></span>
+    <a href="mailto:ozgur@graph-atlas.com">Reach →</a>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Ozgur Guler · A public record</p>
+    <h1>Production AI, <em>from first principles.</em></h1>
+    <p class="lede">
+      I build, write about, and ship production AI systems — agent harnesses, long-running
+      workflows, inference architecture, EvalOps, and the infrastructure underneath.
+    </p>
+    <p class="lede">
+      A curated record: books in progress, essays, code, build notes, talks, and selected
+      startup work. No hype, no metrics theatre — just the trail.
+    </p>
+    <div class="button-row" aria-label="Primary entry points">
+      <a class="button primary" href={withBase("agents/")}>agents</a>
+      <a class="button" href={withBase("inference/")}>inference</a>
+      <a class="button" href={withBase("books/")}>books</a>
+      <a class="button" href={withBase("blog/")}>writing</a>
+      <a class="button" href="mailto:ozgur@graph-atlas.com">contact</a>
+    </div>
+  </section>
+
+  <dl class="now-strip" aria-label="Current focus">
+    <dt>Now</dt>
+    <dd>Drafting <em>AI Inference Engineering</em> and <em>AI Agents in Production</em>.</dd>
+    <dt>Building</dt>
+    <dd>Durable agent harnesses on Azure AI Foundry · MCP boundaries · EvalOps.</dd>
+    <dt>Open to</dt>
+    <dd>Talks, sober technical consulting, and selected startup work.</dd>
+  </dl>
+
+  <section class="section" aria-labelledby="selected-work">
+    <div class="section-head">
+      <div>
+        <span class="section-marker" aria-hidden="true">I.</span>
+        <p class="eyebrow">Selected work</p>
+        <h2 id="selected-work">A curated index.</h2>
+      </div>
+      <a class="button" href={withBase("agents/")}>view all</a>
+    </div>
+    <ol class="index-list">
+      {selected.map((item, i) => (
+        <li>
+          <a href={item.href} {...(item.external ? { target: "_blank", rel: "noopener" } : {})}>
+            <span class="idx-num">№&nbsp;{pad2(i + 1)}</span>
+            <span>
+              <span class="idx-title">{item.title}</span>
+              <span class="idx-blurb">{item.blurb}</span>
+            </span>
+            <span class="idx-kind">{item.kind}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="practice">
+    <div class="section-head">
+      <div>
+        <span class="section-marker" aria-hidden="true">II.</span>
+        <p class="eyebrow">Practice</p>
+        <h2 id="practice">Two tracks, one discipline.</h2>
+        <p>
+          Production AI is the meeting point of model behaviour, infrastructure economics, and
+          operator trust. I work where those three meet.
+        </p>
+      </div>
+    </div>
+    <div class="practice">
+      <div>
+        <h3>Agents</h3>
+        <ul>
+          <li>Memory, state, and forgetting policies</li>
+          <li>Durable execution and long-running workflows</li>
+          <li>Tool boundaries, MCP, and approval gates</li>
+          <li>Evals, replay, and run-trace observability</li>
+          <li>Governance and enterprise deployment</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Inference</h3>
+        <ul>
+          <li>Serving topology and model routing</li>
+          <li>Latency, throughput, and batching</li>
+          <li>KV-cache pressure and scheduling</li>
+          <li>GPU economics and AI-factory architecture</li>
+          <li>Benchmarking, reliability, observability</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="books">
+    <div class="section-head">
+      <div>
+        <span class="section-marker" aria-hidden="true">III.</span>
+        <p class="eyebrow">Books</p>
+        <h2 id="books">Long-form, in progress.</h2>
+      </div>
+      <a class="button" href={withBase("books/")}>view all</a>
+    </div>
+    <div class="shelf">
+      {shelf.map((book) => (
+        <article class="shelf-item">
+          <a href={book.href} target={book.href.startsWith("http") ? "_blank" : null} rel={book.href.startsWith("http") ? "noopener" : null}>
+            <div class="cover-typo" aria-hidden="true">
+              <div class="cv-series">{book.series}</div>
+              <div class="cv-title">
+                {book.title}
+                <span class="cv-author-name">Ozgur Guler</span>
+              </div>
+              <div class="cv-author">{book.status.toUpperCase()}</div>
+            </div>
+            <h3 class="shelf-title">{book.title}</h3>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="recent">
+    <div class="section-head">
+      <div>
+        <span class="section-marker" aria-hidden="true">IV.</span>
+        <p class="eyebrow">Recent</p>
+        <h2 id="recent">Writing and build notes.</h2>
+      </div>
+    </div>
+    <div class="split-lists">
+      <div>
+        <h3>Essays</h3>
+        <ul class="dated-list">
+          {recentBlog.map((post) => (
+            <li>
+              <a href={withBase(`blog/${post.id.replace(/\.md$/, "")}/`)}>
+                <time datetime={post.data.date.toISOString()}>{fmtDate(post.data.date)}</time>
+                <span>
+                  <span class="dl-title">{post.data.title}</span>
+                  <span class="dl-sub">{post.data.summary}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3>Build log</h3>
+        <ul class="dated-list">
+          {recentBuild.map((entry) => (
+            <li>
+              <a href={withBase(`build-log/${entry.id.replace(/\.md$/, "")}/`)}>
+                <time datetime={entry.data.date.toISOString()}>{fmtDate(entry.data.date)}</time>
+                <span>
+                  <span class="dl-title">{entry.data.title}</span>
+                  <span class="dl-sub">{entry.data.summary}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="startup">
+    <div class="section-head">
+      <div>
+        <span class="section-marker" aria-hidden="true">V.</span>
+        <p class="eyebrow">Startup work</p>
+        <h2 id="startup">Public-safe notes.</h2>
+        <p>Selected involvement; deep technical work, public framing.</p>
+      </div>
+      <a class="button" href={withBase("investments/")}>view all</a>
+    </div>
+    <div class="practice">
+      <div>
+        <h3>Enlighty.ai</h3>
+        <p style="color: var(--ink-soft); margin: 0;">
+          AI-native consumer intelligence platform turning fragmented data into trusted insight.
+        </p>
+        <p style="margin: 12px 0 0;"><a href="https://enlighty.ai/" target="_blank" rel="noopener">enlighty.ai</a></p>
+      </div>
+      <div>
+        <h3>Eachlabs.ai</h3>
+        <p style="color: var(--ink-soft); margin: 0;">
+          AI workflow and model platform for app builders, with curated image, video, voice, and text models.
+        </p>
+        <p style="margin: 12px 0 0;"><a href="https://www.eachlabs.ai/" target="_blank" rel="noopener">eachlabs.ai</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="colophon" aria-labelledby="colophon">
+    <div>
+      <p class="col-mark" id="colophon">Ozgur Guler<br /><em>AI systems builder.</em></p>
+      <p class="col-meta">
+        London · Est. MMXXIV<br />
+        Set in <em>Newsreader</em>, Inter, &amp; JetBrains&nbsp;Mono.<br />
+        Built with Astro · No tracking · No nonsense.
+      </p>
+    </div>
+    <div class="col-reach">
+      <h3>Reach</h3>
+      <div class="col-links">
+        <a href="mailto:ozgur@graph-atlas.com">email</a>
+        <a href="https://github.com/ozgurgulerx" target="_blank" rel="noopener">github</a>
+        <a href="https://medium.com/@343544" target="_blank" rel="noopener">medium</a>
+        <a href="https://generativefrontier.substack.com" target="_blank" rel="noopener">substack</a>
+        <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601" target="_blank" rel="noopener">linkedin</a>
+        <a href="https://x.com/ozgurgulerx" target="_blank" rel="noopener">x.com</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

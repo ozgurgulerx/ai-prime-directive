@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookCard from "@/components/BookCard.astro";
+
+const books = await getCollection("books");
+---
+
+<BaseLayout title="Books" description="Long-form writing projects on production AI systems.">
+  <section class="hero">
+    <p class="eyebrow">Books</p>
+    <h1>Books</h1>
+    <p class="lede">Long-form writing projects on production AI systems.</p>
+  </section>
+  <div class="grid two">
+    {books.map((book) => <BookCard book={book} />)}
+  </div>
+</BaseLayout>

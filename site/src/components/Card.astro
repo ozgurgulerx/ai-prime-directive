@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  summary?: string;
+  href?: string;
+  status?: string;
+  tags?: string[];
+  accent?: boolean;
+}
+
+const { title, summary, href, status, tags = [], accent = false } = Astro.props;
+---
+
+<article class:list={["card", { accent }]}>
+  {status && <span class="status">{status}</span>}
+  <h3>{href ? <a href={href}>{title}</a> : title}</h3>
+  {summary && <p>{summary}</p>}
+  {tags.length > 0 && (
+    <div class="chips">
+      {tags.map((tag) => <span class="chip">{tag}</span>)}
+    </div>
+  )}
+  <slot />
+</article>

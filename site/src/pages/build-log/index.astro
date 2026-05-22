@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PostList from "@/components/PostList.astro";
+
+const entries = (await getCollection("build-log")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Build Log" description="Short practical notes on things built, tested, learned, or changed.">
+  <section class="hero">
+    <p class="eyebrow">Build log</p>
+    <h1>Build Log</h1>
+    <p class="lede">A short, practical record of things built, tested, learned, or changed. Technical, useful, and easy to scan.</p>
+  </section>
+  <PostList items={entries} />
+</BaseLayout>

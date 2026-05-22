@@ -1,0 +1,50 @@
+---
+interface Props {
+  book: {
+    data: {
+      title: string;
+      subtitle?: string;
+      status: string;
+      description: string;
+      cover: string;
+      link?: string;
+      tags: string[];
+    };
+  };
+}
+
+const { book } = Astro.props;
+const statusBand = book.data.status.toUpperCase();
+---
+
+<article class="card book-card">
+  {book.data.link ? (
+    <a class="cover-link" href={book.data.link} target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+      <div class="cover-typo">
+        <div class="cv-series">Modern Practice</div>
+        <div class="cv-title">
+          {book.data.title}
+          <span class="cv-author-name">Ozgur Guler</span>
+        </div>
+        <div class="cv-author">{statusBand}</div>
+      </div>
+    </a>
+  ) : (
+    <div class="cover-typo">
+      <div class="cv-series">Modern Practice</div>
+      <div class="cv-title">
+        {book.data.title}
+        <span class="cv-author-name">Ozgur Guler</span>
+      </div>
+      <div class="cv-author">{statusBand}</div>
+    </div>
+  )}
+  <div>
+    <h3>{book.data.link ? <a href={book.data.link} target="_blank" rel="noopener">{book.data.title}</a> : book.data.title}</h3>
+    {book.data.subtitle && <p class="meta">{book.data.subtitle}</p>}
+    <p>{book.data.description}</p>
+    <div class="chips">
+      {book.data.tags.map((tag) => <span class="chip">{tag}</span>)}
+    </div>
+  </div>
+</article>

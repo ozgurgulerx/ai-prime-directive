@@ -1,4 +1,4 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy Astro site to GitHub Pages
 
 on:
   push:
@@ -18,23 +18,32 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.x'
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: npm ci
 
-      - name: Build MkDocs site
-        env:
-          JUPYTER_PLATFORM_DIRS: "1"
-        run: mkdocs build
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Preserve custom domain
+        working-directory: .
+        run: |
+          if [ -f CNAME ]; then
+            cp CNAME site/dist/CNAME
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -42,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./site
+          path: ./site/dist
 
   deploy:
     environment:

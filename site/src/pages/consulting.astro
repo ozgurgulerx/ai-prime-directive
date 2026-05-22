@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Section from "@/components/Section.astro";
+import Card from "@/components/Card.astro";
+
+const formats = ["Architecture review", "Prototype-to-production review", "Inference cost/latency review", "Agent system design review", "EvalOps/governance review", "AI security review", "Startup technical diligence", "Private technical briefing"];
+---
+
+<BaseLayout title="Consulting" description="Occasional consulting for production AI architecture, agent systems, inference, EvalOps, AI security, and infrastructure strategy.">
+  <section class="hero">
+    <p class="eyebrow">Consulting</p>
+    <h1>Consulting</h1>
+    <p class="lede">I occasionally work with technical teams, founders, and investors on production AI architecture, agent systems, inference, EvalOps, AI security, and infrastructure strategy.</p>
+  </section>
+
+  <Section title="Formats">
+    <div class="grid two">{formats.map((format) => <Card title={format} />)}</div>
+  </Section>
+
+  <Section title="Contact">
+    <div class="prose">
+      <p>For fit, send the technical context, current system shape, timeline, and what decision you need to make.</p>
+      <p><a class="button primary" href="mailto:ozgur@graph-atlas.com?subject=AI%20Consulting">Email Ozgur</a></p>
+    </div>
+  </Section>
+</BaseLayout>
