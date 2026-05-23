@@ -71,4 +71,21 @@ if (prohibitedMatches.length > 0) {
   throw new Error(`Found prohibited public text:\n${prohibitedMatches.map((text) => `- ${text}`).join("\n")}`);
 }
 
+const talksHtml = readFileSync(new URL("talks/index.html", distDir), "utf8");
+const requiredTalkImages = [
+  "/images/speaking/fabric-unify-ai-foundry.jpeg",
+  "/images/speaking/infobip-zagreb.jpeg",
+  "/images/speaking/endeavor-johannesburg.jpeg",
+  "/images/speaking/microsoft-startups-feb24.jpeg",
+  "/images/speaking/microsoft-partners.jpeg",
+  "/images/speaking/digitalzone-istanbul.jpeg",
+  "/images/speaking/ytu-startup-house.jpeg",
+];
+
+const missingTalkImages = requiredTalkImages.filter((image) => !talksHtml.includes(image));
+
+if (missingTalkImages.length > 0) {
+  throw new Error(`Missing expected talk images:\n${missingTalkImages.map((image) => `- ${image}`).join("\n")}`);
+}
+
 console.log("Smoke test passed: routes, key text, and public guardrails are aligned.");

@@ -6,6 +6,7 @@ import Card from "@/components/Card.astro";
 
 const talks = (await getCollection("talks")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const topics = ["AI agents in production", "AI inference engineering", "EvalOps and observability", "AI infrastructure", "RAG, context engineering, and data integration", "AI security", "Startup AI systems"];
+const formatDate = new Intl.DateTimeFormat("en", { month: "short", year: "numeric" });
 ---
 
 <BaseLayout title="Talks and Workshops" description="Talks, private briefings, and workshops on production AI systems.">
@@ -18,7 +19,35 @@ const topics = ["AI agents in production", "AI inference engineering", "EvalOps 
 
   <Section title="Selected talks">
     <div class="grid two">
-      {talks.map((talk) => <Card title={talk.data.title} status={talk.data.type} tags={talk.data.tags} summary={`${talk.data.summary} ${talk.data.location ? `Location: ${talk.data.location}.` : ""}`} />)}
+      {
+        talks.map((talk) => (
+          <article class="card talk-card">
+            {talk.data.image && (
+              <img
+                class="card-media"
+                src={talk.data.image}
+                alt={talk.data.imageAlt ?? `${talk.data.title} talk photo`}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+            <div class="talk-body">
+              {talk.data.type && <span class="status">{talk.data.type}</span>}
+              <h3>{talk.data.title}</h3>
+              <p class="meta">
+                {formatDate.format(talk.data.date)}
+                {talk.data.location ? ` · ${talk.data.location}` : ""}
+              </p>
+              <p>{talk.data.summary}</p>
+              {talk.data.tags.length > 0 && (
+                <div class="chips">
+                  {talk.data.tags.map((tag) => <span class="chip">{tag}</span>)}
+                </div>
+              )}
+            </div>
+          </article>
+        ))
+      }
     </div>
   </Section>
 
@@ -33,3 +62,25 @@ const topics = ["AI agents in production", "AI inference engineering", "EvalOps 
     </div>
   </Section>
 </BaseLayout>
+
+<style>
+  .talk-card {
+    gap: 0;
+  }
+
+  .card-media {
+    width: calc(100% + 48px);
+    max-width: calc(100% + 48px);
+    margin: -26px -24px 16px;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper-tint);
+  }
+
+  .talk-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+</style>

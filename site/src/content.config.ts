@@ -48,6 +48,8 @@ const talks = defineCollection({
     summary: z.string(),
     location: z.string().optional(),
     type: z.string().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
     tags,
   }),
 });
