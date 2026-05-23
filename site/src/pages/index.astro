@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { directBookLinks, favoriteBookFeeds } from "@/lib/bookmarks";
+import { bookDraftLinks } from "@/lib/bookmarks";
 import { withBase } from "@/lib/links";
 
 type DatedEntry = CollectionEntry<"blog"> | CollectionEntry<"build-log">;
@@ -76,17 +76,11 @@ type ShelfBook = {
 };
 
 const shelf: ShelfBook[] = [
-  ...directBookLinks.map((book, index) => ({
-    series: `Book link ${index + 1}`,
+  ...bookDraftLinks.slice(0, 4).map((book) => ({
+    series: book.series,
     title: book.title,
     status: book.status,
     href: book.url,
-  })),
-  ...favoriteBookFeeds.slice(0, 2).map((feed, index) => ({
-    series: `Feed ${index + 1}`,
-    title: feed.title,
-    status: feed.status,
-    href: feed.url,
   })),
 ];
 
@@ -205,7 +199,7 @@ const postExternal = (post: CollectionEntry<"blog">) => postHref(post).startsWit
       <div>
         <span class="section-marker" aria-hidden="true">III.</span>
         <p class="eyebrow">Books</p>
-        <h2 id="books">Favourite book links.</h2>
+        <h2 id="books">Book drafts.</h2>
       </div>
       <a class="button" href={withBase("books/")}>view all</a>
     </div>

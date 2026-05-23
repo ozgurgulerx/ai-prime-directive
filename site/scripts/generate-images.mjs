@@ -9,6 +9,13 @@ const promptDir = new URL("../prompts/nano-banana/", import.meta.url);
 const outputRoot = new URL("../public/generated/", import.meta.url);
 
 const jobs = [
+  ["books-folder-inference-engineering.md", "books/books-folder-inference-engineering.png", "2:3"],
+  ["books-folder-prod-agents.md", "books/books-folder-prod-agents.png", "2:3"],
+  ["books-folder-ai-data.md", "books/books-folder-ai-data.png", "2:3"],
+  ["books-folder-ai-security.md", "books/books-folder-ai-security.png", "2:3"],
+  ["books-folder-llms.md", "books/books-folder-llms.png", "2:3"],
+  ["books-folder-rl.md", "books/books-folder-rl.png", "2:3"],
+  ["books-folder-ai-coding.md", "books/books-folder-ai-coding.png", "2:3"],
   ["bookmark-prompt-engineering-for-generative-ai.md", "books/bookmark-prompt-engineering-for-generative-ai.png", "2:3"],
   ["bookmark-llms-generative-ai-healthcare.md", "books/bookmark-llms-generative-ai-healthcare.png", "2:3"],
   ["ai-inference-engineering.md", "books/ai-inference-engineering.png", "2:3"],

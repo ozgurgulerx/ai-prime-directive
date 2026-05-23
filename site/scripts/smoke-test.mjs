@@ -104,4 +104,33 @@ if (missingBlogText.length > 0) {
   throw new Error(`Missing expected Medium blog content:\n${missingBlogText.map((text) => `- ${text}`).join("\n")}`);
 }
 
+const booksHtml = readFileSync(new URL("books/index.html", distDir), "utf8");
+const requiredBookText = [
+  "Inference Engineering",
+  "Prod Agents",
+  "AI &amp; Data",
+  "AI Security",
+  "LLM&#39;s",
+  "RL",
+  "AI Coding",
+];
+const prohibitedBookText = [
+  "Favourite discovery feeds",
+  "Ozgur writing projects",
+  "Prompt Engineering for Generative AI",
+  "LLMs and Generative AI for Healthcare",
+  "Manning MEAP Catalog",
+];
+
+const missingBookText = requiredBookText.filter((text) => !booksHtml.includes(text));
+const prohibitedBookMatches = prohibitedBookText.filter((text) => booksHtml.includes(text));
+
+if (missingBookText.length > 0) {
+  throw new Error(`Missing expected Books- entries:\n${missingBookText.map((text) => `- ${text}`).join("\n")}`);
+}
+
+if (prohibitedBookMatches.length > 0) {
+  throw new Error(`Found removed book content:\n${prohibitedBookMatches.map((text) => `- ${text}`).join("\n")}`);
+}
+
 console.log("Smoke test passed: routes, key text, and public guardrails are aligned.");
