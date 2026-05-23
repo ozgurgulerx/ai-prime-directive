@@ -11,6 +11,14 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<PostLayout title={entry.data.title} date={entry.data.date} summary={entry.data.summary} tags={entry.data.tags}>
+<PostLayout
+  title={entry.data.title}
+  date={entry.data.date}
+  summary={entry.data.summary}
+  tags={entry.data.tags}
+  sourceUrl={entry.data.sourceUrl}
+  publication={entry.data.publication}
+  pinned={entry.data.pinned}
+>
   <Content />
 </PostLayout>

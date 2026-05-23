@@ -94,6 +94,8 @@ const recentBlog = blog.slice(0, 4);
 const recentBuild = buildLog.slice(0, 4);
 const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
 const pad2 = (n: number) => String(n).padStart(2, "0");
+const postHref = (post: CollectionEntry<"blog">) => post.data.sourceUrl ?? withBase(`blog/${post.id.replace(/\.md$/, "")}/`);
+const postExternal = (post: CollectionEntry<"blog">) => postHref(post).startsWith("http");
 ---
 
 <BaseLayout
@@ -240,7 +242,7 @@ const pad2 = (n: number) => String(n).padStart(2, "0");
         <ul class="dated-list">
           {recentBlog.map((post) => (
             <li>
-              <a href={withBase(`blog/${post.id.replace(/\.md$/, "")}/`)}>
+              <a href={postHref(post)} target={postExternal(post) ? "_blank" : null} rel={postExternal(post) ? "noopener" : null}>
                 <time datetime={post.data.date.toISOString()}>{fmtDate(post.data.date)}</time>
                 <span>
                   <span class="dl-title">{post.data.title}</span>

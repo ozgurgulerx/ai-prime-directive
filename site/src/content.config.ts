@@ -12,6 +12,8 @@ const blog = defineCollection({
     summary: z.string(),
     tags,
     sourceUrl: z.string().optional(),
+    publication: z.string().optional(),
+    pinned: z.boolean().optional(),
   }),
 });
 

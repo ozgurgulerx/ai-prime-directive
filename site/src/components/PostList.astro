@@ -9,6 +9,9 @@ interface Item {
     date: Date;
     summary: string;
     tags: string[];
+    sourceUrl?: string;
+    publication?: string;
+    pinned?: boolean;
   };
 }
 
@@ -19,7 +22,8 @@ interface Props {
 
 const { items, limit } = Astro.props;
 const shown = limit ? items.slice(0, limit) : items;
-const pathFor = (item: Item) => withBase(`${item.collection}/${item.id}/`);
+const pathFor = (item: Item) => item.data.sourceUrl ?? withBase(`${item.collection}/${item.id}/`);
+const isExternal = (item: Item) => pathFor(item).startsWith("http");
 ---
 
 <div class="rows">
@@ -27,12 +31,18 @@ const pathFor = (item: Item) => withBase(`${item.collection}/${item.id}/`);
     <article class="row-card">
       <div>
         <time class="meta" datetime={item.data.date.toISOString()}>{item.data.date.toISOString().slice(0, 10)}</time>
+        {item.data.pinned && <span class="status">Pinned</span>}
+        {item.data.publication && <span class="status">{item.data.publication}</span>}
         <div class="chips">
           {item.data.tags.slice(0, 3).map((tag) => <span class="chip">{tag}</span>)}
         </div>
       </div>
       <div>
-        <h3><a href={pathFor(item)}>{item.data.title}</a></h3>
+        <h3>
+          <a href={pathFor(item)} target={isExternal(item) ? "_blank" : null} rel={isExternal(item) ? "noopener" : null}>
+            {item.data.title}
+          </a>
+        </h3>
         <p>{item.data.summary}</p>
       </div>
     </article>

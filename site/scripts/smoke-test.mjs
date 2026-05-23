@@ -88,4 +88,20 @@ if (missingTalkImages.length > 0) {
   throw new Error(`Missing expected talk images:\n${missingTalkImages.map((image) => `- ${image}`).join("\n")}`);
 }
 
+const blogHtml = readFileSync(new URL("blog/index.html", distDir), "utf8");
+const requiredBlogText = [
+  "Highlighted from Medium",
+  "The Missing Piece in Graph RAG: Graph Attention Networks",
+  "Tackle Complex LLM Decision-Making",
+  "Boost RAG Performance",
+  "Building Agent Harnesses with Microsoft Agent-Framework Durable Extensions",
+  "10 RAG Shifts Redefining Production AI in 2026",
+];
+
+const missingBlogText = requiredBlogText.filter((text) => !blogHtml.includes(text));
+
+if (missingBlogText.length > 0) {
+  throw new Error(`Missing expected Medium blog content:\n${missingBlogText.map((text) => `- ${text}`).join("\n")}`);
+}
+
 console.log("Smoke test passed: routes, key text, and public guardrails are aligned.");

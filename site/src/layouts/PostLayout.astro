@@ -6,9 +6,12 @@ interface Props {
   date?: Date;
   summary?: string;
   tags?: string[];
+  sourceUrl?: string;
+  publication?: string;
+  pinned?: boolean;
 }
 
-const { title, date, summary, tags = [] } = Astro.props;
+const { title, date, summary, tags = [], sourceUrl, publication, pinned = false } = Astro.props;
 ---
 
 <BaseLayout title={title} description={summary}>
@@ -17,6 +20,13 @@ const { title, date, summary, tags = [] } = Astro.props;
     <h1>{title}</h1>
     {summary && <p class="lede">{summary}</p>}
     {tags.length > 0 && <div class="chips">{tags.map((tag) => <span class="chip">{tag}</span>)}</div>}
+    {(sourceUrl || publication || pinned) && (
+      <p>
+        {pinned && <span class="status">Pinned</span>}
+        {publication && <span class="status">{publication}</span>}
+        {sourceUrl && <a class="button primary" href={sourceUrl} target="_blank" rel="noopener">Read on Medium</a>}
+      </p>
+    )}
     <slot />
   </article>
 </BaseLayout>
