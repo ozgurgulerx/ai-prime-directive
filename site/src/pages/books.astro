@@ -2,17 +2,58 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import BookCard from "@/components/BookCard.astro";
+import Card from "@/components/Card.astro";
+import Section from "@/components/Section.astro";
+import { directBookLinks, favoriteBookFeeds } from "@/lib/bookmarks";
 
-const books = await getCollection("books");
+const writingProjects = await getCollection("books");
 ---
 
-<BaseLayout title="Books" description="Long-form writing projects on production AI systems.">
+<BaseLayout title="Books" description="Favourite book links and reading feeds from the Books bookmarks folder.">
   <section class="hero">
     <p class="eyebrow">Books</p>
     <h1>Books</h1>
-    <p class="lede">Long-form writing projects on production AI systems.</p>
+    <p class="lede">Favourite book links and reading feeds from the Books bookmarks folder: direct O'Reilly book links, technical publisher catalogs, and saved discovery feeds across AI, infrastructure, programming, startups, finance, and science.</p>
   </section>
-  <div class="grid two">
-    {books.map((book) => <BookCard book={book} />)}
-  </div>
+
+  <Section title="Direct book links">
+    <div class="grid two">
+      {directBookLinks.map((book) => (
+        <article class="card book-card">
+          <a class="cover-link" href={book.url} target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <div class="cover-typo">
+              <div class="cv-series">Favourite Link</div>
+              <div class="cv-title">
+                {book.title}
+                <span class="cv-author-name">Bookmarked</span>
+              </div>
+              <div class="cv-author">{book.status.toUpperCase()}</div>
+            </div>
+          </a>
+          <div>
+            <span class="status">{book.status}</span>
+            <h3><a href={book.url} target="_blank" rel="noopener">{book.title}</a></h3>
+            <p>{book.summary}</p>
+            <div class="chips">
+              {book.tags.map((tag) => <span class="chip">{tag}</span>)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section title="Favourite discovery feeds">
+    <div class="grid three">
+      {favoriteBookFeeds.map((feed) => (
+        <Card title={feed.title} href={feed.url} status={feed.status} summary={feed.summary} tags={feed.tags} />
+      ))}
+    </div>
+  </Section>
+
+  <Section title="Ozgur writing projects">
+    <div class="grid two">
+      {writingProjects.map((book) => <BookCard book={book} />)}
+    </div>
+  </Section>
 </BaseLayout>

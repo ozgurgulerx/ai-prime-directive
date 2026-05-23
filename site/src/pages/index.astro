@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { directBookLinks, favoriteBookFeeds } from "@/lib/bookmarks";
 import { withBase } from "@/lib/links";
 
 type DatedEntry = CollectionEntry<"blog"> | CollectionEntry<"build-log">;
@@ -75,10 +76,18 @@ type ShelfBook = {
 };
 
 const shelf: ShelfBook[] = [
-  { series: "Vol. I", title: "AI Inference Engineering", status: "In progress", href: bookBy("ai-inference-engineering")?.data.link ?? withBase("books/") },
-  { series: "Vol. II", title: "AI Agents in Production", status: "In progress", href: bookBy("ai-agents-in-production")?.data.link ?? withBase("books/") },
-  { series: "Vol. III", title: "Modern LLMs", status: "Draft concept", href: withBase("books/") },
-  { series: "Vol. IV", title: "AI Security", status: "In progress", href: bookBy("ai-security")?.data.link ?? withBase("books/") },
+  ...directBookLinks.map((book, index) => ({
+    series: `Book link ${index + 1}`,
+    title: book.title,
+    status: book.status,
+    href: book.url,
+  })),
+  ...favoriteBookFeeds.slice(0, 2).map((feed, index) => ({
+    series: `Feed ${index + 1}`,
+    title: feed.title,
+    status: feed.status,
+    href: feed.url,
+  })),
 ];
 
 const recentBlog = blog.slice(0, 4);
@@ -194,7 +203,7 @@ const pad2 = (n: number) => String(n).padStart(2, "0");
       <div>
         <span class="section-marker" aria-hidden="true">III.</span>
         <p class="eyebrow">Books</p>
-        <h2 id="books">Long-form, in progress.</h2>
+        <h2 id="books">Favourite book links.</h2>
       </div>
       <a class="button" href={withBase("books/")}>view all</a>
     </div>

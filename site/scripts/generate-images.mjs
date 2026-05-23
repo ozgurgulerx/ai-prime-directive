@@ -9,6 +9,8 @@ const promptDir = new URL("../prompts/nano-banana/", import.meta.url);
 const outputRoot = new URL("../public/generated/", import.meta.url);
 
 const jobs = [
+  ["bookmark-prompt-engineering-for-generative-ai.md", "books/bookmark-prompt-engineering-for-generative-ai.png", "2:3"],
+  ["bookmark-llms-generative-ai-healthcare.md", "books/bookmark-llms-generative-ai-healthcare.png", "2:3"],
   ["ai-inference-engineering.md", "books/ai-inference-engineering.png", "2:3"],
   ["ai-agents-in-production.md", "books/ai-agents-in-production.png", "2:3"],
   ["ai-data-integration-patterns.md", "books/ai-data-integration-patterns.png", "2:3"],

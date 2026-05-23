@@ -9,11 +9,12 @@ interface Props {
 }
 
 const { title, summary, href, status, tags = [], accent = false } = Astro.props;
+const external = href?.startsWith("http");
 ---
 
 <article class:list={["card", { accent }]}>
   {status && <span class="status">{status}</span>}
-  <h3>{href ? <a href={href}>{title}</a> : title}</h3>
+  <h3>{href ? <a href={href} target={external ? "_blank" : null} rel={external ? "noopener" : null}>{title}</a> : title}</h3>
   {summary && <p>{summary}</p>}
   {tags.length > 0 && (
     <div class="chips">
