@@ -278,20 +278,20 @@ body:has(.page-writing) .md-typeset h1{ max-width: min(var(--writing-max, 1100px
   vertical-align: middle;
 }
 .tier-badge--premier {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  background: #fef3c7;
   color: #78350f;
 }
 .tier-badge--excellent {
-  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+  background: #e5e7eb;
   color: #374151;
 }
 .tier-badge--specialized {
-  background: linear-gradient(135deg, #fcd5a0, #f59e0b);
+  background: #ffedd5;
   color: #78350f;
   opacity: 0.8;
 }
 .tier-badge--professional {
-  background: linear-gradient(135deg, #818cf8, #6366f1);
+  background: #6366f1;
   color: #fff;
 }
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848 1264" role="img" aria-labelledby="title desc">
   <title id="title">Inference Engineering</title>
-  <desc id="desc">Cambridge-style technical book cover for Inference Engineering by Ozgur Guler.</desc>
+  <desc id="desc">Cambridge-style technical book cover for Inference Engineering by Özgür Güler.</desc>
   <rect width="848" height="1264" fill="#f3efe5"/>
   <rect x="0" y="0" width="848" height="132" fill="#18342d"/>
   <rect x="0" y="1132" width="848" height="132" fill="#18342d"/>
@@ -18,7 +18,7 @@
     <text x="424" y="920" font-family="Georgia, serif" font-size="82" font-style="italic">
       <tspan x="424">Inference</tspan><tspan x="424" dy="96">Engineering</tspan>
     </text>
-    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Ozgur Guler</text>
-    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">GOOGLE DOC</text>
+    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Özgür Güler</text>
+    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">FREE DRAFT</text>
   </g>
 </svg>

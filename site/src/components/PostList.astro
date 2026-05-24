@@ -12,6 +12,8 @@ interface Item {
     sourceUrl?: string;
     publication?: string;
     pinned?: boolean;
+    image?: string;
+    imageAlt?: string;
   };
 }
 
@@ -28,16 +30,27 @@ const isExternal = (item: Item) => pathFor(item).startsWith("http");
 
 <div class="rows">
   {shown.map((item) => (
-    <article class="row-card">
+    <article class:list={["row-card", item.data.image && "has-thumbnail"]}>
       <div>
         <time class="meta" datetime={item.data.date.toISOString()}>{item.data.date.toISOString().slice(0, 10)}</time>
         {item.data.pinned && <span class="status">Pinned</span>}
-        {item.data.publication && <span class="status">{item.data.publication}</span>}
+        {item.data.publication && <span class="status publication-status">{item.data.publication}</span>}
         <div class="chips">
           {item.data.tags.slice(0, 3).map((tag) => <span class="chip">{tag}</span>)}
         </div>
       </div>
-      <div>
+      {item.data.image && (
+        <a class="post-thumbnail-link" href={pathFor(item)} target={isExternal(item) ? "_blank" : null} rel={isExternal(item) ? "noopener" : null} aria-hidden="true" tabindex="-1">
+          <img
+            class="post-thumbnail"
+            src={item.data.image}
+            alt={item.data.imageAlt ?? `Title image for ${item.data.title}`}
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      )}
+      <div class="row-body">
         <h3>
           <a href={pathFor(item)} target={isExternal(item) ? "_blank" : null} rel={isExternal(item) ? "noopener" : null}>
             {item.data.title}

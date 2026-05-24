@@ -1,6 +1,6 @@
 # Project Memory
 
-Ozgur Guler's personal technical website. Static site built with Astro under `site/`, deployed to GitHub Pages. Previous MkDocs material is preserved under `docs/` as archive/source.
+Özgür Güler's personal technical website. Static site built with Astro under `site/`, deployed to GitHub Pages. Previous MkDocs material is preserved under `docs/` as archive/source.
 
 ## Where to find the rules
 

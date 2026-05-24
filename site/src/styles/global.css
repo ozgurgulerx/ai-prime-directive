@@ -128,23 +128,52 @@ img {
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
+  gap: 26px;
   align-items: center;
 }
 
 .nav-links a {
   font-family: var(--mono);
-  font-size: 0.74rem;
+  font-size: 0.86rem;
   font-weight: 500;
-  color: var(--muted);
-  letter-spacing: 0.02em;
+  color: var(--ink);
+  letter-spacing: 0;
   text-transform: lowercase;
   background: none;
+  position: relative;
+  padding: 4px 0;
+  transition: color 120ms ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 180ms ease;
 }
 
 .nav-links a:hover {
-  color: var(--ink);
+  color: var(--accent);
   background: none;
+}
+
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.brand[aria-current="page"] {
+  color: var(--accent);
 }
 
 /* ── Page rhythm ────────────────────────────────────────────────── */
@@ -220,8 +249,38 @@ h3 {
   padding: 8px 0 12px;
 }
 
-.hero .lede + .lede {
-  margin-top: 14px;
+.lede-aside {
+  max-width: var(--measure);
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.home-portrait {
+  max-width: 880px;
+  margin: 28px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.home-portrait img {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: center 42%;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--paper-tint);
+}
+
+.home-portrait figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
 }
 
 .button-row {
@@ -269,12 +328,43 @@ h3 {
   color: var(--accent);
 }
 
+/* Weighted text-link CTA: quiet but unmistakably the focal action. */
+.button.cta {
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  position: relative;
+}
+.button.cta::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 160ms ease;
+}
+.button.cta:hover {
+  color: var(--ink);
+}
+.button.cta:hover::before {
+  width: 100%;
+}
+.button.cta::after {
+  color: var(--accent);
+}
+
 /* ── Sections ───────────────────────────────────────────────────── */
 
 .section {
   margin-top: 96px;
   padding-top: 28px;
   border-top: 1px solid var(--line);
+}
+
+.section[id] {
+  scroll-margin-top: 96px;
 }
 
 .section-head {
@@ -293,6 +383,73 @@ h3 {
   max-width: 56ch;
   margin: 6px 0 0;
   color: var(--ink-soft);
+}
+
+.section-copy {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/* ── Focus navigation ──────────────────────────────────────────── */
+
+.focus-nav {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.focus-nav a {
+  min-width: 0;
+  padding: 18px 22px 20px;
+  color: var(--ink);
+  background: none;
+  background-image: none;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.focus-nav a + a {
+  border-left: 1px solid var(--line);
+}
+
+.focus-nav a:hover {
+  color: var(--ink);
+  background: var(--accent-quiet);
+  background-image: none;
+}
+
+.focus-index {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-style: italic;
+  line-height: 1;
+  opacity: 0.62;
+}
+
+.focus-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.focus-nav strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 /* ── Grid (cards) ───────────────────────────────────────────────── */
@@ -410,11 +567,45 @@ h3 {
   align-items: baseline;
 }
 
+.row-card.has-thumbnail {
+  grid-template-columns: 132px 148px 1fr;
+  align-items: start;
+}
+
 .row-card:hover {
   background: var(--accent-quiet);
 }
 .row-card .chips {
   margin-top: 6px;
+}
+
+.publication-status {
+  display: block;
+  margin-top: 8px;
+}
+
+.post-thumbnail-link {
+  display: block;
+  width: 148px;
+}
+
+.post-thumbnail {
+  width: 148px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--paper-tint);
+  display: block;
+}
+
+.row-body {
+  min-width: 0;
+}
+
+.row-body > .meta {
+  display: block;
+  margin-top: 8px;
 }
 
 /* ── Book card ──────────────────────────────────────────────────── */
@@ -448,6 +639,9 @@ h3 {
   .book-cover {
     width: 140px;
   }
+  .home-portrait img {
+    max-height: 220px;
+  }
 }
 
 /* ── Prose ──────────────────────────────────────────────────────── */
@@ -464,6 +658,61 @@ h3 {
 
 .prose p {
   margin: 0 0 1em;
+}
+
+.newsletter-panel {
+  display: grid;
+  grid-template-columns: 128px minmax(0, var(--measure));
+  gap: 32px;
+  align-items: start;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.newsletter-mark {
+  min-height: 100%;
+  padding-right: 28px;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.newsletter-mark span {
+  display: block;
+}
+
+.newsletter-mark span:first-child {
+  color: var(--accent);
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.newsletter-panel .prose {
+  max-width: var(--measure);
+}
+
+.newsletter-panel .prose p:last-child {
+  margin-bottom: 0;
+}
+
+.post-hero-image {
+  margin: 28px 0 32px;
+}
+
+.post-hero-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--paper-tint);
 }
 
 /* ── Footer ─────────────────────────────────────────────────────── */
@@ -504,7 +753,7 @@ h3 {
 /* ── Homepage editorial primitives ──────────────────────────────── */
 
 .now-strip {
-  margin-top: 56px;
+  margin-top: 44px;
   padding-top: 22px;
   border-top: 1px solid var(--line);
   display: flex;
@@ -644,6 +893,32 @@ h3 {
 
 .practice li:last-child {
   border-bottom: 0;
+}
+
+.practice p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/* Logo mark — startup thumbnails, publisher seals, etc. */
+
+.logo-mark {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 0 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper-tint);
+  object-fit: contain;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logo-mark.inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 12px 0 0;
 }
 
 /* Books shelf */
@@ -810,11 +1085,38 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .focus-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .focus-nav a + a {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .newsletter-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-mark {
+    min-height: 0;
+    padding-right: 0;
+    padding-bottom: 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
   .row-card,
+  .row-card.has-thumbnail,
   .index-list a,
   .dated-list a {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .post-thumbnail-link,
+  .post-thumbnail {
+    width: 100%;
   }
 
   .index-list a {

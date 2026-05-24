@@ -1,16 +1,104 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import PostList from "@/components/PostList.astro";
 
-const entries = (await getCollection("build-log")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const focusAreas = [
+  {
+    title: "AI Inference Systems",
+    label: "focus area",
+    href: "#llm-inference",
+  },
+  {
+    title: "Production AI Agents",
+    label: "focus area",
+    href: "#ai-agents",
+  },
+  {
+    title: "Fun Projects / Side Projects",
+    label: "focus area",
+    href: "#personal-projects",
+  },
+];
+
+const personalProjects = [
+  {
+    title: "Summer House Guide",
+    summary: "A small public guide app for summer-house discovery and planning, kept as a lightweight containerized experiment.",
+    href: "https://summer-house-guide.redflower-7ad9e33f.uksouth.azurecontainerapps.io",
+    kind: "Guide App",
+  },
+  {
+    title: "AI Infra Investment Assistant",
+    summary: "An assistant for scanning AI infrastructure funding context and surfacing company, category, and market-structure signals.",
+    href: "https://ai-infra-fund-frontend.azurewebsites.net",
+    kind: "Investment Assistant",
+  },
+  {
+    title: "Build Atlas",
+    summary: "A signal extraction page for startup news: company context, investment signals, and builder patterns from public startup coverage.",
+    href: "https://buildatlas.net/",
+    kind: "Signal Atlas",
+  },
+];
+
 ---
 
 <BaseLayout title="Build Log" description="Short practical notes on things built, tested, learned, or changed.">
   <section class="hero">
     <p class="eyebrow">Build log</p>
-    <h1>Build Log</h1>
-    <p class="lede">A short, practical record of things built, tested, learned, or changed. Technical, useful, and easy to scan.</p>
+    <h1>Build <em>Log</em></h1>
+    <p class="lede">A short, practical record of things built, tested, learned, or changed across AI inference systems, production AI agents, and fun side projects.</p>
   </section>
-  <PostList items={entries} />
+
+  <nav class="focus-nav" aria-label="Build log focus areas">
+    {focusAreas.map((area, index) => (
+      <a href={area.href}>
+        <span class="focus-index">{String(index + 1).padStart(2, "0")}</span>
+        <span class="focus-label">{area.label}</span>
+        <strong>{area.title}</strong>
+      </a>
+    ))}
+  </nav>
+
+  <section class="section" id="llm-inference" aria-labelledby="llm-inference-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">AI inference systems</p>
+        <h2 id="llm-inference-title">Model Serving as Product Infrastructure</h2>
+        <p>Inference notes collect the practical tradeoffs behind cost, latency, reliability, and user experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ai-agents" aria-labelledby="ai-agents-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">AI agents</p>
+        <h2 id="ai-agents-title">Agent Systems as Durable Software</h2>
+        <p>Agent work belongs here as build evidence: state, tools, evals, governance, and deployment mechanics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="personal-projects" aria-labelledby="personal-projects-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Fun projects / side projects</p>
+        <h2 id="personal-projects-title">Fun Projects and Public Experiments</h2>
+        <p>Small public apps and signal experiments. The useful signal is what each one is testing.</p>
+      </div>
+    </div>
+    <div class="rows">
+      {personalProjects.map((item, index) => (
+        <article class="row-card">
+          <span class="meta">{String(index + 1).padStart(2, "0")}</span>
+          <div class="row-body">
+            <h3><a href={item.href} target="_blank" rel="noopener">{item.title}</a></h3>
+            <p>{item.summary}</p>
+            <div class="chips"><span class="chip">{item.kind}</span></div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
 </BaseLayout>

@@ -1,7 +1,7 @@
 site_name: AI Prime Directive — Learn, Build, Iterate.
 site_url: https://ozgurgulerx.github.io/ai-prime-directive
 repo_url: https://github.com/ozgurgulerx/ai-prime-directive
-copyright: © 2025 Ozgur Guler
+copyright: © 2025 Özgür Güler
 
 # Theme configuration for MkDocs Material
 theme:
@@ -75,7 +75,7 @@ extra:
       link: mailto:ozgur@graph-atlas.com
       name: Email
     - icon: fontawesome/solid/calendar-check
-      link: "mailto:ozgur@graph-atlas.com?subject=AI%20Talk&body=Hi%20Ozgur,%0A%0AI%27m%20interested%20in%20booking%20a%20talk.%0A%0AVenue:%0ADate:%0AAudience%20details:%0AFormat%20(Keynote%20or%20Tech%20Talk):%0AEvent%20theme:%0A%0AAdditional%20notes:%0A"
+      link: "mailto:ozgur@graph-atlas.com?subject=AI%20Talk&body=Hi%20%C3%96zg%C3%BCr,%0A%0AI%27m%20interested%20in%20booking%20a%20talk.%0A%0AVenue:%0ADate:%0AAudience%20details:%0AFormat%20(Keynote%20or%20Tech%20Talk):%0AEvent%20theme:%0A%0AAdditional%20notes:%0A"
       name: Book a talk
 
 plugins:
@@ -119,23 +119,12 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Inference: inference/index.md
+  - Agents: agents/index.md
+  - Artifacts: artifacts/index.md
   - Writing: writing/index.md
-  - Speaking: speaking/index.md
-  - Courses: courses/index.md
-  - Consulting:
-      - Overview: consulting/index.md
-      - Services: consulting/services.md
-      - Case Studies: consulting/case-studies.md
-  - AI Prime Directive:
+  - Startup Notes: startup-notes/index.md
+  - Prime Directive:
       - Overview: prime-directive/index.md
-      - LLM Foundations: prime-directive/foundations/index.md
-      - Reasoning LLMs: prime-directive/reasoning-llms/index.md
-      - RAG: prime-directive/rag/index.md
-      - Agents: prime-directive/agents/index.md
-      - Open-Source Models: prime-directive/open-source-models/index.md
-      - EvalOps: prime-directive/evalops/index.md
-      - AI Safety & Security: prime-directive/ai-safety-security/index.md
-      - AI UX: prime-directive/product-ux/index.md
-      - Graph: prime-directive/graph/index.md
-  - Books: books/index.md
-  - Blog: blog/index.md
+  - Speaking: speaking/index.md
+  - About: about/index.md

@@ -4,73 +4,73 @@ import Section from "@/components/Section.astro";
 import Card from "@/components/Card.astro";
 
 const diligence = [
-  "model dependency",
-  "data advantage",
-  "latency/cost envelope",
-  "eval maturity",
-  "deployment complexity",
-  "margin structure",
-  "customer integration depth",
-  "defensibility",
+  "Model Dependency",
+  "Data Advantage",
+  "Latency/Cost Envelope",
+  "Eval Maturity",
+  "Deployment Complexity",
+  "Margin Structure",
+  "Customer Integration Depth",
+  "Defensibility",
 ];
 
-const domains = ["finance", "aviation", "legal/docops", "manufacturing", "education/tutoring", "research assistants"];
+const domains = ["Finance", "Aviation", "Legal/DocOps", "Manufacturing", "Education/Tutoring", "Research Assistants"];
 
 const selectedNotes = [
-  "AI infrastructure funding trends",
-  "GPU cloud economics",
-  "vertical AI systems",
-  "inference as margin structure",
-  "agentic workflow defensibility",
-  "cloud GTM for AI startups",
-  "AI factory architecture notes",
+  "AI Infrastructure Funding Trends",
+  "GPU Cloud Economics",
+  "Vertical AI Systems",
+  "Inference as Margin Structure",
+  "Agentic Workflow Defensibility",
+  "Cloud GTM for AI Startups",
+  "AI Factory Architecture Notes",
 ];
 ---
 
 <BaseLayout title="Startup Notes" description="Technical and market notes from working around startup ecosystems, cloud platforms, AI infrastructure, and applied AI systems.">
   <section class="hero">
     <p class="eyebrow">Startup notes</p>
-    <h1>Startup Notes</h1>
+    <h1>Startup <em>Notes</em></h1>
     <p class="lede">Technical and market notes from working around startup ecosystems, cloud platforms, AI infrastructure, and applied AI systems.</p>
     <p class="lede">I use this section to collect observations on AI infrastructure markets, startup architecture, GPU/cloud economics, developer tooling, technical diligence, and the practical path from prototype to production.</p>
     <p class="lede">This is not investment advice. It is a public record of technical pattern recognition.</p>
   </section>
 
-  <Section title="AI infrastructure markets">
+  <Section title="AI Infrastructure Markets">
     <div class="grid three">
-      {["GPU cloud", "Inference providers", "AI factories", "Developer platforms", "Production AI layers", "Cloud GTM"].map((title) => (
+      {["GPU Cloud", "Inference Providers", "AI Factories", "Developer Platforms", "Production AI Layers", "Cloud GTM"].map((title) => (
         <Card title={title} summary="Public-safe notes on market structure, architecture tradeoffs, and deployment constraints." />
       ))}
     </div>
   </Section>
 
-  <Section title="Operating context">
+  <Section title="Operating Context">
     <div class="grid three">
-      <Card title="AWS Startups background" summary="Startup ecosystem work provides context for cloud GTM, founder-facing deployment tradeoffs, and early architecture decisions." />
-      <Card title="AI and technology advisory work" summary="Public notes stay at the pattern level unless exact advisory wording is confirmed as safe to publish." />
-      <Card title="Founder/operator empathy" summary="The focus is practical deployment reality: cost, latency, data access, integration depth, sales motion, and support burden." />
+      <Card title="AWS Startups Background" summary="Startup ecosystem work provides context for cloud GTM, founder-facing deployment tradeoffs, and early architecture decisions." />
+      <Card title="AI and Technology Advisory Work" summary="Public notes stay at the pattern level unless exact advisory wording is confirmed as safe to publish." />
+      <Card title="Founder/Operator Empathy" summary="The focus is practical deployment reality: cost, latency, data access, integration depth, sales motion, and support burden." />
     </div>
   </Section>
 
-  <Section title="Startup architecture">
+  <Section title="Startup Architecture">
     <div class="prose">
       <p>Patterns from evaluating and building early-stage AI systems: what breaks, what compounds, and what should be measured early.</p>
     </div>
   </Section>
 
-  <Section title="Technical diligence notes">
+  <Section title="Technical Diligence Notes">
     <div class="grid four">
       {diligence.map((item) => <Card title={item} />)}
     </div>
   </Section>
 
-  <Section title="Domain AI systems">
+  <Section title="Domain AI Systems">
     <div class="grid three">
       {domains.map((domain) => <Card title={domain} summary="Records from demos, prototypes, or public-safe technical observations." />)}
     </div>
   </Section>
 
-  <Section title="Selected notes">
+  <Section title="Selected Notes">
     <div class="grid three">
       {selectedNotes.map((note) => <Card title={note} status="planned note" />)}
     </div>

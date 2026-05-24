@@ -5,19 +5,37 @@ import Section from "@/components/Section.astro";
 import Card from "@/components/Card.astro";
 
 const talks = (await getCollection("talks")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const topics = ["AI agents in production", "AI inference engineering", "EvalOps and observability", "AI infrastructure", "RAG, context engineering, and data integration", "AI security", "Startup AI systems"];
+const topics = [
+  { title: "AI Agents in Production", summary: "Architecture, tool use, memory, and the operational controls that keep agents reliable past the demo." },
+  { title: "Building Successful AI Products", summary: "Product discovery, AI UX, evals, launch readiness, and adoption patterns for AI products that move beyond demos." },
+  { title: "AI Inference Engineering", summary: "Serving stacks, routing, and the latency and cost tradeoffs behind a system that ships." },
+  { title: "EvalOps and Observability", summary: "Building the evals, telemetry, and feedback loops that tell you whether an AI system is actually working." },
+  { title: "AI Infrastructure", summary: "The platform layer underneath applied AI: compute, deployment shape, reliability, and governance." },
+  { title: "RAG, Context Engineering, and Data Integration", summary: "Getting the right context to the model — retrieval, grounding, and the data plumbing around it." },
+  { title: "AI Security", summary: "Threat models, guardrails, and the failure modes that matter once an AI system meets real users." },
+  { title: "Startup AI Systems", summary: "Pragmatic architecture for small teams moving fast from prototype to a production cloud path." },
+];
 const formatDate = new Intl.DateTimeFormat("en", { month: "short", year: "numeric" });
 ---
 
 <BaseLayout title="Talks and Workshops" description="Talks, private briefings, and workshops on production AI systems.">
   <section class="hero">
     <p class="eyebrow">Talks</p>
-    <h1>Talks and Workshops</h1>
+    <p class="eyebrow avail">booking 2026 · remote, london, or in-person</p>
+    <h1>Talks and <em>Workshops</em></h1>
     <p class="lede">Talks, private briefings, and workshops on AI agents, inference systems, EvalOps, and AI infrastructure.</p>
-    <div class="button-row"><a class="button primary" href="mailto:ozgur@graph-atlas.com?subject=AI%20Talk">Book a Talk</a></div>
+    <div class="button-row">
+      <a class="button cta plausible-event-name=talk_link_click" href="mailto:ozgur@graph-atlas.com?subject=AI%20Talk">book a talk</a>
+      <a class="button" href="#workshop-topics">workshop topics</a>
+    </div>
   </section>
 
-  <Section title="Selected talks">
+  <div class="avail-strip">
+    <span>booking now · talks · private briefings · workshops</span>
+    <a class="button cta plausible-event-name=talk_link_click" href="mailto:ozgur@graph-atlas.com?subject=AI%20Talk">book a talk</a>
+  </div>
+
+  <Section title="Selected Talks">
     <div class="grid two">
       {
         talks.map((talk) => (
@@ -63,19 +81,43 @@ const formatDate = new Intl.DateTimeFormat("en", { month: "short", year: "numeri
     </div>
   </Section>
 
-  <Section title="Workshop topics">
-    <div class="grid three">{topics.map((topic) => <Card title={topic} />)}</div>
+  <Section id="workshop-topics" title="Workshop Topics">
+    <div class="grid three">{topics.map((topic) => <Card title={topic.title} summary={topic.summary} />)}</div>
   </Section>
 
-  <Section title="Book a talk">
-    <div class="prose">
-      <p>Please include event or company, audience, technical level, format, topic, date/location/remote, budget range, and stakeholders or other speakers.</p>
-      <p><a class="button primary" href="mailto:ozgur@graph-atlas.com?subject=AI%20Talk">Email a talk request</a></p>
+  <div class="contact-strip">
+    <div>
+      <h2>Book a Talk</h2>
+      <p>Include the event or company, audience and technical level, format, topic, date/location/remote, budget range, and any other speakers or stakeholders.</p>
     </div>
-  </Section>
+    <div class="button-row"><a class="button cta plausible-event-name=talk_link_click" href="mailto:ozgur@graph-atlas.com?subject=AI%20Talk">book a talk</a></div>
+  </div>
 </BaseLayout>
 
 <style>
+  .eyebrow.avail {
+    margin-top: 6px;
+    color: var(--accent);
+    text-transform: none;
+    letter-spacing: 0.06em;
+  }
+
+  .avail-strip {
+    margin-top: 40px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
   .talk-card {
     gap: 0;
   }

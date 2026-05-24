@@ -5,6 +5,8 @@ summary: "A pinned Azure AI Search essay on metadata filters as a practical retr
 tags: ["rag", "azure ai search", "metadata"]
 sourceUrl: "https://medium.com/@343544/improve-rag-performance-with-document-metadata-filters-for-vector-search-on-azureai-3af3bce6708c"
 publication: "Medium"
+image: "https://miro.medium.com/v2/resize:fit:700/1*GCAAtGC5r3Pm5kVr3jbnyw.png"
+imageAlt: "Title image for Boost RAG Performance: Enhance Vector Search with Metadata Filters in Azure AI Search"
 pinned: true
 ---
 

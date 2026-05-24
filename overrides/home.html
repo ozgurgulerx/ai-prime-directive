@@ -1,112 +1,174 @@
-{#
-  Custom marketing homepage for MkDocs Material.
-  Renders a hero, value cards, social proof, and recent blog posts.
-  Keep one primary CTA for clarity.
-#}
+{# Static technical homepage for MkDocs Material. #}
 
 {% extends "main.html" %}
 
 {% block content %}
-  <section class="hero">
-    <div class="hero__inner">
-      <h1>Ship reliable, user-centered LLM apps.</h1>
-      <p class="hero__sub">Opinionated patterns, reference templates, and eval-driven checklists.</p>
-      <div class="hero__ctas">
-        <a href="{{ base_url }}/my-prime-directive/start/" class="md-button md-button--primary">Start here</a>
+  <div class="apd-home">
+    <section class="home-hero" aria-labelledby="ai-prime-directive">
+      <p class="eyebrow">AI systems · inference · agents · evals</p>
+      <h1 id="ai-prime-directive">A technical record for production AI systems.</h1>
+      <p class="home-hero__sub">
+        Notes, artifacts, and essays from Özgür Güler on inference reliability, agent architecture,
+        domain AI systems, and the path from prototype to production.
+      </p>
+      <div class="home-hero__links" aria-label="Primary sections">
+        <a href="{{ 'inference/' | url }}">Inference</a>
+        <a href="{{ 'agents/' | url }}">Agents</a>
+        <a href="{{ 'artifacts/' | url }}">Artifacts</a>
+        <a href="{{ 'writing/' | url }}">Writing</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="persona">
-    <div class="persona__inner">
-      <label for="persona-select">I am a</label>
-      <select id="persona-select" data-persona>
-        <option value="builder">Builder</option>
-        <option value="product">Product Lead</option>
-        <option value="exec">Exec</option>
-      </select>
-    </div>
-  </section>
-
-  <section class="cards" data-card-grid>
-    <article class="card" data-card="patterns">
-      <h3>Patterns</h3>
-      <p>Opinionated recipes for reliable LLM systems.</p>
-      <a href="{{ base_url }}/my-prime-directive/" class="md-button">Explore</a>
-    </article>
-    <article class="card" data-card="guides">
-      <h3>Guides</h3>
-      <p>Step-by-step walkthroughs with evals and UX notes.</p>
-      <a href="{{ base_url }}/start/" class="md-button">Start</a>
-    </article>
-    <article class="card" data-card="templates">
-      <h3>Templates</h3>
-      <p>Reference prompts, suites, and checklists to copy.</p>
-      <a href="{{ base_url }}/my-prime-directive/evalops/" class="md-button">Use</a>
-    </article>
-  </section>
-
-  <section class="proof">
-    <ul class="proof__list">
-      <li>Reduced time-to-first-merge for eval suites by 60%.</li>
-      <li>Lifted answer accuracy +18 pts with RAG 2.0 policies.</li>
-      <li>Cut incident rate in half with UX guardrails.</li>
-    </ul>
-  </section>
-
-  <section class="recent">
-    <h2>Recent writing</h2>
-    <ul class="recent__list">
-      {# Render latest 3 posts from blog #}
-      {% set posts = [] %}
-      {% for page in pages %}
-        {% if page.meta and page.file.src_path.startswith('blog/') and not page.is_homepage %}
-          {% set _ = posts.append(page) %}
-        {% endif %}
-      {% endfor %}
-      {% set sorted_posts = posts|sort(attribute='meta.date', reverse=true) %}
-      {% for post in sorted_posts %}
-        {% if loop.index <= 3 %}
-          <li>
-            <a href="{{ post.url | url }}">{{ post.title }}</a>
-            {% if post.meta and post.meta.date %}
-              <span class="recent__date">— {{ post.meta.date }}</span>
-            {% endif %}
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </section>
-
-  <section class="newsletter-inline">
-    <div class="newsletter-inline__inner">
-      <div class="newsletter-copy">
-        <h3>Get the weekly rundown</h3>
-        <p>Patterns, templates, and teardown notes — no fluff.</p>
+    <section class="home-section home-wedges" aria-labelledby="primary-wedges">
+      <div class="section-heading">
+        <p class="eyebrow">Primary workstreams</p>
+        <h2 id="primary-wedges">Inference and agents</h2>
       </div>
-      <div class="cta cta--newsletters">
-        <div class="cta-item">
-          <a class="md-button md-button--substack" href="https://generativefrontier.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a>
-          <div class="pills" aria-label="Substack identity">
-            <span class="pill pill--substack">Frontier AI Tech</span>
+      <div class="home-grid home-grid--two">
+        <article class="record-card record-card--accent">
+          <div class="record-card__head">
+            <span class="status-label">Active</span>
+            <span class="topic-tag">Latency</span>
+            <span class="topic-tag">Cost</span>
           </div>
-        </div>
-        <div class="cta-item">
-          <a class="md-button md-button--linkedin" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601" target="_blank" rel="noopener">Subscribe to LinkedIn newsletter</a>
-          <div class="pills" aria-label="LinkedIn identity">
-            <span class="pill pill--linkedin">AI Investment Trends</span>
+          <h3><a href="{{ 'inference/' | url }}">Inference</a></h3>
+          <p>Notes on serving topology, cost envelopes, model routing, observability, and production failure modes.</p>
+          <dl>
+            <dt>What it demonstrates</dt>
+            <dd>Systems thinking across model behavior, infrastructure constraints, and user-facing reliability.</dd>
+          </dl>
+        </article>
+        <article class="record-card record-card--accent">
+          <div class="record-card__head">
+            <span class="status-label">Active</span>
+            <span class="topic-tag">Memory</span>
+            <span class="topic-tag">Workflow</span>
           </div>
-        </div>
+          <h3><a href="{{ 'agents/' | url }}">Agents</a></h3>
+          <p>Patterns for agent workflow design, context engineering, evaluation, human handoff, and tool integration.</p>
+          <dl>
+            <dt>What it demonstrates</dt>
+            <dd>Practical architecture for agent systems that need traceability, controlled autonomy, and operator trust.</dd>
+          </dl>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  
+    <section class="home-section" aria-labelledby="artifact-preview">
+      <div class="section-heading">
+        <p class="eyebrow">Artifacts</p>
+        <h2 id="artifact-preview">Public proof surface</h2>
+      </div>
+      <div class="artifact-table-wrap">
+        <table class="artifact-table">
+          <thead>
+            <tr>
+              <th>Artifact</th>
+              <th>Status</th>
+              <th>What it demonstrates</th>
+              <th>Related</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="{{ 'blog/2025/10/11/production-agent-workflows-orchestration--observability/' | url }}">Agent workflow orchestration</a></td>
+              <td><span class="status-label">Case note</span></td>
+              <td>Stateful orchestration, typed outputs, replayable agent runs.</td>
+              <td><a href="{{ 'agents/' | url }}">Agents</a></td>
+            </tr>
+            <tr>
+              <td><a href="{{ 'blog/2025/10/03/local-pii-pre-filter-with-microsoft-presidio--qwen-25/' | url }}">Local PII pre-filter</a></td>
+              <td><span class="status-label">Prototype</span></td>
+              <td>Privacy-first guardrail before model invocation.</td>
+              <td><a href="{{ 'prime-directive/ai-safety-security/' | url }}">Safety</a></td>
+            </tr>
+            <tr>
+              <td><a href="{{ 'blog/2025/10/01/ai-paradigm-shifts-and-their-data-requirements/' | url }}">AI data requirements</a></td>
+              <td><span class="status-label">Talk note</span></td>
+              <td>How data estates shape production AI architecture.</td>
+              <td><a href="{{ 'prime-directive/graph/' | url }}">Graph</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-link"><a href="{{ 'artifacts/' | url }}">View all artifacts</a></p>
+    </section>
 
-  <footer class="home-footer">
-    <div class="home-footer__inner">
-      <p>© {{ config.copyright | default('Ozgur Guler') }}</p>
-      <p>Ozgur Guler — AI consultant. Helping teams ship reliable, user-centered LLM apps.</p>
-    </div>
-  </footer>
+    <section class="home-section" aria-labelledby="selected-writing">
+      <div class="section-heading">
+        <p class="eyebrow">Writing</p>
+        <h2 id="selected-writing">Selected essays</h2>
+      </div>
+      <div class="home-grid home-grid--three">
+        <article class="record-card">
+          <div class="record-card__head">
+            <span class="topic-tag">Inference</span>
+            <span class="topic-tag">MLOps</span>
+          </div>
+          <h3><a href="https://medium.com/@343544/stop-blaming-the-model-topological-hardening-for-predictable-inference-latency" target="_blank" rel="noopener">Stop Blaming the Model</a></h3>
+          <p>Topological hardening for predictable inference latency.</p>
+        </article>
+        <article class="record-card">
+          <div class="record-card__head">
+            <span class="topic-tag">Agents</span>
+            <span class="topic-tag">Azure</span>
+          </div>
+          <h3><a href="https://medium.com/microsoftazure/building-production-ai-with-microsofts-agent-framework-credit-underwriting-case-study-a40d8335d4ed" target="_blank" rel="noopener">Building Production AI</a></h3>
+          <p>Credit underwriting as a grounded agent workflow case study.</p>
+        </article>
+        <article class="record-card">
+          <div class="record-card__head">
+            <span class="topic-tag">GraphRAG</span>
+            <span class="topic-tag">Retrieval</span>
+          </div>
+          <h3><a href="https://medium.com/@343544/the-missing-piece-in-graph-rag-graph-attention-networks-f50cb9857895" target="_blank" rel="noopener">The Missing Piece in Graph RAG</a></h3>
+          <p>Graph attention networks as a missing layer in retrieval systems.</p>
+        </article>
+      </div>
+      <p class="section-link"><a href="{{ 'writing/' | url }}">Browse writing</a></p>
+    </section>
+
+    <section class="home-section split-section" aria-labelledby="startup-preview">
+      <div>
+        <p class="eyebrow">Startup Notes</p>
+        <h2 id="startup-preview">Startup and infrastructure notes</h2>
+        <p>
+          A quiet public record of technical and market pattern recognition around AI infrastructure,
+          startup architecture, GPU/cloud economics, cloud GTM, and technical diligence questions.
+        </p>
+        <p class="section-link"><a href="{{ 'startup-notes/' | url }}">Read Startup Notes</a></p>
+      </div>
+      <div class="note-list" aria-label="Startup note topics">
+        <span>AI infrastructure markets</span>
+        <span>Startup architecture reviews</span>
+        <span>Technical diligence frameworks</span>
+        <span>Domain AI systems</span>
+      </div>
+    </section>
+
+    <section class="home-section split-section" aria-labelledby="speaking-preview">
+      <div>
+        <p class="eyebrow">Speaking</p>
+        <h2 id="speaking-preview">Talks and workshops</h2>
+        <p>
+          Hands-on sessions on agentic AI, data platforms, AI UX, EvalOps, and startup-facing AI deployment tradeoffs.
+        </p>
+        <p class="section-link"><a href="{{ 'speaking/' | url }}">View speaking record</a></p>
+      </div>
+      <div class="note-list" aria-label="Speaking topics">
+        <span>Production AI workshops</span>
+        <span>Agent architecture</span>
+        <span>GraphRAG-style systems</span>
+        <span>AI product engineering</span>
+      </div>
+    </section>
+
+    <section class="home-section contact-strip" aria-label="Contact links">
+      <a href="mailto:ozgur@graph-atlas.com">Email</a>
+      <a href="https://github.com/ozgurgulerx" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://x.com/ozgurgulerx" target="_blank" rel="noopener">X</a>
+      <a href="https://generativefrontier.substack.com" target="_blank" rel="noopener">Substack</a>
+      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601" target="_blank" rel="noopener">LinkedIn newsletter</a>
+    </section>
+  </div>
 {% endblock %}

@@ -12,7 +12,7 @@ const recent = posts.filter((post) => !post.data.pinned);
 <BaseLayout title="Technical Blog" description="Longer notes on AI agents, inference, EvalOps, data integration, AI UX, and startup AI systems.">
   <section class="hero">
     <p class="eyebrow">Technical blog</p>
-    <h1>Technical Blog</h1>
+    <h1>Technical <em>Blog</em></h1>
     <p class="lede">Medium essays and local notes on AI agents, inference, EvalOps, data integration, AI UX, and startup AI systems.</p>
     <div class="chips">{tags.map((tag) => <span class="chip">{tag}</span>)}</div>
   </section>
@@ -21,7 +21,7 @@ const recent = posts.filter((post) => !post.data.pinned);
     <div class="section-head">
       <div>
         <p class="eyebrow">Pinned</p>
-        <h2>Highlighted from Medium.</h2>
+        <h2>Highlighted From Medium</h2>
       </div>
     </div>
     <PostList items={pinned} />
@@ -31,7 +31,7 @@ const recent = posts.filter((post) => !post.data.pinned);
     <div class="section-head">
       <div>
         <p class="eyebrow">Latest</p>
-        <h2>Published posts.</h2>
+        <h2>Published Posts</h2>
       </div>
       <a class="button" href="https://medium.com/@343544" target="_blank" rel="noopener">Medium profile</a>
     </div>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848 1264" role="img" aria-labelledby="title desc">
-  <title id="title">AI &amp; Data</title>
-  <desc id="desc">Cambridge-style technical book cover for AI and Data by Ozgur Guler.</desc>
+  <title id="title">AI Data Integration Patterns</title>
+  <desc id="desc">Cambridge-style technical book cover for AI Data Integration Patterns by Özgür Güler.</desc>
   <rect width="848" height="1264" fill="#f3efe5"/>
   <rect x="0" y="0" width="848" height="132" fill="#18342d"/>
   <rect x="0" y="1132" width="848" height="132" fill="#18342d"/>
@@ -15,10 +15,10 @@
   </g>
   <g fill="#18342d" text-anchor="middle">
     <text x="424" y="83" font-family="Menlo, monospace" font-size="31" letter-spacing="9">BOOK 03</text>
-    <text x="424" y="922" font-family="Georgia, serif" font-size="92" font-style="italic">
-      <tspan x="424">AI &amp; Data</tspan>
+    <text x="424" y="830" font-family="Georgia, serif" font-size="76" font-style="italic">
+      <tspan x="424">AI Data</tspan><tspan x="424" dy="88">Integration</tspan><tspan x="424" dy="88">Patterns</tspan>
     </text>
-    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Ozgur Guler</text>
-    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">GOOGLE DOC</text>
+    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Özgür Güler</text>
+    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">FREE DRAFT</text>
   </g>
 </svg>

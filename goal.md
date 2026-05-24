@@ -2,7 +2,7 @@
 
 ## Objective
 
-Build and maintain a lean Astro personal website for Ozgur Guler that makes his work legible through AI agents, AI inference, build logs, technical writing, books, talks, consulting, selected startup work, and the AI Prime Directive archive.
+Build and maintain a lean Astro personal website for Özgür Güler that makes his work legible through AI agents, AI inference, build logs, technical writing, books, talks, consulting, selected startup work, and the AI Prime Directive archive.
 
 The site should feel like a compact proof-of-work record for a technical builder, not a documentation index, VC brand, generic AI consultancy page, or job-search artifact.
 
@@ -14,7 +14,7 @@ The site should feel like a compact proof-of-work record for a technical builder
 - The homepage no longer looks like MkDocs or a raw blog index.
 - The first viewport is crisp, personal, and technical, with no startup or investment content in the hero.
 - Agents and Inference are the two most prominent homepage wedges.
-- The top navigation is: Home, Agents, Inference, Build Log, Blog, Books, Talks, Consulting, Investments.
+- The top navigation is: Home, Agents, Inference, Build Log, Blog, Books, Talks, Consulting, Startups.
 - The homepage includes:
   - crisp hero
   - AI Agents and AI Inference wedges
@@ -46,7 +46,7 @@ The site should feel like a compact proof-of-work record for a technical builder
 
 - Do not migrate this version to Azure App Service.
 - Do not introduce a server runtime, database, auth, backend, or form handling unless explicitly requested later.
-- Do not position Ozgur as trying to become a full-time investor.
+- Do not position Özgür as trying to become a full-time investor.
 - Do not make the site look like a VC personal brand.
 - Do not use hype language, fake metrics, decorative gradients, stock imagery, giant portraits, animated hero sections, or "trusted by" logos unless real and public.
 - Do not expose hidden job-search strategy, private founder details, fund details, credentials, or non-public diligence analysis.

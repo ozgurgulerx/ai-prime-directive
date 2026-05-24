@@ -2,25 +2,131 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Section from "@/components/Section.astro";
 import Card from "@/components/Card.astro";
+import { withBase } from "@/lib/links";
 
-const formats = ["Architecture review", "Prototype-to-production review", "Inference cost/latency review", "Agent system design review", "EvalOps/governance review", "AI security review", "Startup technical diligence", "Private technical briefing"];
+const offers = [
+  {
+    title: "AI Inference Systems",
+    summary: "Serving architecture, routing, latency and cost optimization, observability, and deployment tradeoffs.",
+  },
+  {
+    title: "AI Prototypes",
+    summary: "Focused prototypes that turn an applied AI idea into a working product path, not a slide-deck demo.",
+  },
+  {
+    title: "Agent Systems",
+    summary: "Agent architecture, tool use, memory and context design, evals, safety boundaries, and operational control.",
+  },
+  {
+    title: "Cloud Production Path",
+    summary: "Moving AI prototypes into production cloud environments with the right reliability, monitoring, and governance shape.",
+  },
+];
+
+const formats = [
+  {
+    title: "Advisory",
+    status: "ongoing",
+    summary: "Recurring review of architecture, roadmap, and the tradeoffs your team is weighing. A senior second opinion on the decisions that are expensive to reverse.",
+  },
+  {
+    title: "Prototype Sprint",
+    status: "fixed scope",
+    summary: "A short, bounded engagement that turns an applied-AI idea into a working product path you can build on, evaluate, and demo to stakeholders.",
+  },
+  {
+    title: "Production Readiness Review",
+    status: "one-off",
+    summary: "An assessment of an existing system for reliability, cost, latency, and observability before it scales, with a prioritized list of what to fix first.",
+  },
+];
+
+const goodFit = [
+  "You have a working AI prototype and need a credible path to production.",
+  "Inference cost or latency is becoming the constraint on the product.",
+  "An agent system needs evals, guardrails, and operational control.",
+  "A technical decision is expensive to reverse and you want a second opinion.",
+];
+
+const notFit = [
+  "You need staff augmentation or a long-term hands-on-keyboard hire.",
+  "The work is a generic web build with an AI feature bolted on.",
+  "There is no one technical on your side to carry the work forward.",
+  "You are looking for a vendor to rubber-stamp a decision already made.",
+];
+
+const trainings = [
+  {
+    title: "Team Workshops",
+    status: "on-site or remote",
+    summary: "A focused, hands-on session built around the AI systems your team is actually shipping — agents, inference, evals, and the production path.",
+  },
+  {
+    title: "Hands-on Training",
+    status: "multi-session",
+    summary: "A short training programme that takes an engineering or product team from applied-AI fundamentals to the patterns that hold up in production.",
+  },
+  {
+    title: "Executive Briefings",
+    status: "leadership",
+    summary: "A decision-oriented briefing for leadership on where applied AI creates leverage, where it creates risk, and what to fund first.",
+  },
+];
 ---
 
-<BaseLayout title="Consulting" description="Occasional consulting for production AI architecture, agent systems, inference, EvalOps, AI security, and infrastructure strategy.">
+<BaseLayout title="Consulting" description="Consulting for AI inference systems, applied AI prototypes, agent systems, and moving AI workloads into production cloud environments.">
   <section class="hero">
-    <p class="eyebrow">Consulting</p>
+    <p class="eyebrow">Advisory · Prototyping · Production</p>
     <h1>Consulting</h1>
-    <p class="lede">I occasionally work with technical teams, founders, and investors on production AI architecture, agent systems, inference, EvalOps, AI security, and infrastructure strategy.</p>
+    <p class="lede">I help teams design, prototype, optimize, and ship AI systems in the cloud: inference stacks, agent workflows, and applied AI prototypes that can move from demo to production.</p>
+    <div class="button-row"><a class="button primary plausible-event-name=consulting_click" href="mailto:ozgur@graph-atlas.com?subject=AI%20Consulting">Start a conversation</a></div>
   </section>
 
-  <Section title="Formats">
-    <div class="grid two">{formats.map((format) => <Card title={format} />)}</div>
-  </Section>
-
-  <Section title="Contact">
-    <div class="prose">
-      <p>For fit, send the technical context, current system shape, timeline, and what decision you need to make.</p>
-      <p><a class="button primary" href="mailto:ozgur@graph-atlas.com?subject=AI%20Consulting">Email Ozgur</a></p>
+  <Section title="What I Offer" intro="Full-stack coverage from AI infrastructure and inference optimization to building AI systems, agent workflows, prototypes, and moving them into production cloud environments.">
+    <div class="grid two">
+      {offers.map((offer) => <Card title={offer.title} summary={offer.summary} />)}
     </div>
   </Section>
+
+  <Section title="How I Work" intro="Three ways to engage, sized to the decision in front of you.">
+    <div class="grid three">
+      {formats.map((format) => <Card title={format.title} status={format.status} summary={format.summary} />)}
+    </div>
+  </Section>
+
+  <Section title="A Good Fit" intro="The work goes well when it is scoped and technical. A quick read on whether it is the right time to talk.">
+    <div class="practice">
+      <div>
+        <h3>A Good Fit</h3>
+        <ul>
+          {goodFit.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h3>Probably Not a Fit</h3>
+        <ul>
+          {notFit.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Trainings and Learning Workshops"
+    intro="Workshops and team training that bring an engineering or product team up to speed on production AI — agents, inference, EvalOps, and the path from prototype to production."
+    href={withBase("talks/")}
+    linkLabel="Topics and past sessions"
+  >
+    <div class="grid three">
+      {trainings.map((t) => <Card title={t.title} status={t.status} summary={t.summary} />)}
+    </div>
+  </Section>
+
+  <div class="contact-strip">
+    <div>
+      <h2>Start a Conversation</h2>
+      <p>Send the current system or idea, the outcome you need, the main constraints, and the timeline. I will reply if there is a focused way to help.</p>
+    </div>
+    <div class="button-row"><a class="button primary plausible-event-name=consulting_click" href="mailto:ozgur@graph-atlas.com?subject=AI%20Consulting">Email Özgür</a></div>
+  </div>
 </BaseLayout>

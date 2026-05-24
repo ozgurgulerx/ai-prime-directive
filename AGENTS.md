@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository contains Ozgur Guler's static personal technical website. The public site is now implemented as a lightweight Astro site in `site/`, with the previous MkDocs content preserved as source and archive material under `docs/`.
+This repository contains Özgür Güler's static personal technical website. The public site is now implemented as a lightweight Astro site in `site/`, with the previous MkDocs content preserved as source and archive material under `docs/`.
 
 Use `goal.md` as the product target and `plan.md` as the implementation guardrail.
 
@@ -48,11 +48,41 @@ Do not publish:
 - confidential analysis
 - hidden job-search strategy
 - "London employer" language
-- claims that imply Ozgur is trying to become a full-time investor
+- claims that imply Özgür is trying to become a full-time investor
 - hype language such as "visionary founders" unless quoting a public source
 - "I invest in the future" style language
 
 Do not put startup or investment content in the homepage hero.
+
+## Current Public Positioning
+
+The homepage is a simple personal front door, not a content mirror. It should stay inspired by the compact personal-homepage pattern of `https://yoheinakajima.com/`: a clear identity line, a "by day / by night" frame, a short public bio, one strong speaking/workshop photo, compact facts, and a small guide to the subpages.
+
+Current public facts that may be used in homepage or about-page copy:
+
+- Özgür is the MS Innovation Hub technical lead in Istanbul.
+- Public technical focus: production AI systems, agentic workflows, LLM inference/model serving, EvalOps, governance, and AI infrastructure.
+- Side/public work: continual-learning AI book drafts, public build experiments, technical writing, talks/workshops, ENA.VC AI technology and technical diligence advisory, and selected startup architecture work.
+
+Do not duplicate the detailed contents of `/build-log/`, `/books/`, `/blog/`, `/talks/`, `/investments/`, or `/consulting/` on the homepage. The homepage should only guide visitors toward those sections.
+
+Private positioning context may exist outside this repo, including the `litp2l-prep` project. Use it only to calibrate public-safe themes such as AI infrastructure, model serving, agents, governance, field deployment, and enterprise GTM. Never publish or mention private prep strategy, role-search context, compensation targets, target employers, or local filesystem paths.
+
+### Technical Blog Entries
+
+When adding a technical blog entry under `site/src/content/blog/`, include enough source metadata for the blog index to stay visually rich and attributable:
+
+- If the post is mirrored from Medium, TDS, Microsoft Azure, or another public channel, set `sourceUrl` and the exact public `publication` label, such as `Microsoft Azure`, `TDS Archive`, or `Medium`.
+- When the original article has a public title/hero image, add it as the blog thumbnail metadata and use a precise alt text. Prefer a stable local copy under `site/public/images/blog/` when practical; do not invent stock-like replacement art.
+- Use the existing compact publisher/status UI to highlight publication channels. Do not create loud badges, logos, or marketing-style publisher blocks.
+- Do not invent publication labels or imply a post appeared in a channel unless the public source confirms it.
+
+### Page Titles, Thumbnails, and Logos
+
+- Use title case / initial capital letters for public-facing page titles, section titles, card titles, workshop titles, book titles, project titles, and post titles. Preserve acronyms and established product casing such as `AI`, `LLM`, `RAG`, `EvalOps`, `ENA.VC`, and `.ai`.
+- Do not force meta/UI labels into title case when the design system intentionally uses lowercase or uppercase monospace text, such as nav labels, buttons, eyebrows, status chips, and topic tags.
+- For thumbnail logos, prefer real public logos only when they represent a real company, product, publication, sponsor, or project and the source is public-safe. Render them with the existing `.logo-mark` pattern, compactly and without "trusted by" styling.
+- Do not use generated art as an official logo for an external company, publication, or product. Nano Banana Pro can be used for original thematic thumbnails, book covers, OG images, and owned-project visual marks when a concrete asset target exists and the local API key is already configured.
 
 ## Design Guardrails
 
@@ -89,16 +119,33 @@ Avoid:
 The active Astro navigation should include:
 
 1. Home
-2. Agents
-3. Inference
-4. Build Log
-5. Blog
-6. Books
-7. Talks
-8. Consulting
-9. Investments
+2. Build Log
+3. Blog
+4. Books
+5. Talks
+6. Consulting
+7. Investments
 
-The Startup Notes requirement is satisfied by the `/startup-notes/` page and startup/infrastructure sections linked from the Startup Work page. The AI Prime Directive content remains available as `/prime-directive/` and no longer dominates the homepage.
+The AI Agents and LLM Inference material should live as grouped sections under `/build-log/`, not as primary navigation items. The Startup Notes requirement is satisfied by the `/startup-notes/` page and startup/infrastructure sections linked from the Startup Work page. The AI Prime Directive content remains available as `/prime-directive/` and no longer dominates the homepage.
+
+Keep `/agents/` and `/inference/` as lightweight legacy entry points that direct readers to `/build-log/#ai-agents` and `/build-log/#llm-inference`. Do not restore their old repo-grid pages unless explicitly requested.
+
+## Build Log Structure
+
+The `/build-log/` page should start with grouped sections, not individual GitHub repositories:
+
+1. Personal projects / fun projects
+2. AI agents
+3. LLM inference
+4. Recent build-log entries
+
+It is acceptable to mention project families and what they demonstrate. Avoid turning the page into a raw repo directory.
+
+## URL Routing
+
+The canonical public site URL is `https://ozgurguler.org/`.
+
+Astro is configured with `base: "/"` and `trailingSlash: "always"`. Keep internal links, generated routes, canonical URLs, and social URLs slash-terminated, for example `/books/`, `/build-log/`, `/blog/production-agent-workflows/`, and `/build-log/context-engineering/`. Direct non-slash variants such as `/books` are not the planned canonical routes.
 
 ## Nano Banana Pro Assets
 

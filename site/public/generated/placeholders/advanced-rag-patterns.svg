@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-labelledby="title desc">
+  <title id="title">Advanced RAG Patterns placeholder</title>
+  <desc id="desc">Minimal technical cover showing retrieval, augmentation, and generation stages.</desc>
+  <rect width="400" height="600" fill="#f8f8f6"/>
+  <rect x="32" y="32" width="336" height="536" fill="none" stroke="#d9d9d4"/>
+  <g fill="none" stroke="#215f63" stroke-width="2">
+    <path d="M74 148h92l52 72h108"/>
+    <path d="M74 258h92l52-38"/>
+    <path d="M74 368h92l52-148"/>
+  </g>
+  <g fill="#ffffff" stroke="#161616">
+    <rect x="54" y="124" width="88" height="48" rx="2"/>
+    <rect x="54" y="234" width="88" height="48" rx="2"/>
+    <rect x="54" y="344" width="88" height="48" rx="2"/>
+    <circle cx="218" cy="220" r="24"/>
+    <rect x="270" y="196" width="78" height="48" rx="2"/>
+  </g>
+  <g fill="#626262" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    <text x="72" y="153">retrieve</text>
+    <text x="68" y="263">augment</text>
+    <text x="70" y="373">generate</text>
+  </g>
+  <text x="56" y="456" fill="#161616" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">
+    <tspan x="56" dy="0">Advanced</tspan>
+    <tspan x="56" dy="40">RAG</tspan>
+    <tspan x="56" dy="40">Patterns</tspan>
+  </text>
+  <text x="56" y="540" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="18">Ozgur Guler</text>
+</svg>

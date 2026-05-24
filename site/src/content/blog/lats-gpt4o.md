@@ -5,6 +5,8 @@ summary: "A pinned agent-decision essay on Language Agent Tree Search, deliberat
 tags: ["agents", "decision-making", "search"]
 sourceUrl: "https://medium.com/data-science/tackle-complex-llm-decision-making-with-language-agent-tree-search-lats-gpt4-o-0bc648c46ea4"
 publication: "TDS Archive"
+image: "https://miro.medium.com/v2/resize:fit:700/1*Ko-TYWtzJhZNistEhQSwwQ.png"
+imageAlt: "Title image for Tackle Complex LLM Decision-Making with Language Agent Tree Search (LATS) and GPT-4o"
 pinned: true
 ---
 

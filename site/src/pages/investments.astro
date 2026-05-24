@@ -2,32 +2,74 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Section from "@/components/Section.astro";
-import Card from "@/components/Card.astro";
+import { withBase } from "@/lib/links";
 
 const startups = await getCollection("investments");
-const topics = ["AI infrastructure markets", "model marketplaces", "consumer AI workflows", "startup architecture", "technical diligence", "inference economics", "agentic product defensibility"];
 ---
 
-<BaseLayout title="Startup Work" description="A quiet record of startup and investment-adjacent work around AI, infrastructure, developer tooling, and product architecture.">
+<BaseLayout title="Startup Work" description="A public record of startup investing, advisory work, and technical diligence around early AI companies.">
   <section class="hero">
-    <p class="eyebrow">Startup work</p>
-    <h1>Startup Work</h1>
-    <p class="lede">A quiet record of startup and investment-adjacent work around AI, infrastructure, developer tooling, and product architecture.</p>
+    <p class="eyebrow">Investing · Advisory · Technical diligence</p>
+    <h1>Startup <em>Work</em></h1>
+    <p class="lede">A public record of startup investing, advisory work, and technical diligence around early AI companies.</p>
   </section>
 
-  <Section title="Selected startups">
-    <div class="grid two">
-      {startups.map((startup) => <Card title={startup.data.title} href={startup.data.url} status={startup.data.relationship} tags={startup.data.tags} summary={startup.data.summary} />)}
+  <Section eyebrow="Context" title="Advisory Context">
+    <div class="prose">
+      <p>I currently advise <a href="https://ena.vc/" target="_blank" rel="noopener">ENA.VC</a> on AI technology and technical diligence. My startup exposure began through AWS Startups in 2019 and continued through Microsoft Startups &amp; Digital Natives from 2022, where the work sat close to founder teams, cloud GTM, and applied AI systems.</p>
+      <p>My lens is technical: whether the startup has a real moat, meaningful differentiation, engineering depth, and a credible path from technical edge to company-scale potential.</p>
+      <p>Open to selective conversations with VC teams and startups where an independent technical view can sharpen an investment, advisory, or strategy decision.</p>
     </div>
   </Section>
 
-  <Section title="Investment and technical pattern notes">
-    <div class="grid three">{topics.map((topic) => <Card title={topic} />)}</div>
+  <Section eyebrow="Portfolio surface" title="Selected Startups" intro="Examples from the startup surface I invest in, advise, support, or track through technical diligence.">
+    <div class="grid two">
+      {startups.map((startup) => (
+        <article class="card">
+          {startup.data.logo && (
+            <img
+              class="logo-mark"
+              src={withBase(startup.data.logo)}
+              alt={`${startup.data.title} logo`}
+              loading="lazy"
+              width="48"
+              height="48"
+            />
+          )}
+          <h3>
+            <a href={startup.data.url} target="_blank" rel="noopener">{startup.data.title}</a>
+          </h3>
+          <p>{startup.data.summary}</p>
+          <div class="chips">
+            {startup.data.tags.map((tag) => <span class="chip">{tag}</span>)}
+          </div>
+        </article>
+      ))}
+    </div>
   </Section>
 
-  <Section title="Boundaries">
-    <div class="prose">
-      <p>This page avoids non-public details, private terms, founder details, and confidential analysis. It is not investment advice.</p>
+  <Section eyebrow="Experiment" title="Experimental Signal Work">
+    <div class="newsletter-panel">
+      <div class="newsletter-mark" aria-hidden="true">
+        <span>AI</span>
+        <span>signals</span>
+      </div>
+      <div class="prose">
+        <p><a href="https://buildatlas.net/" target="_blank" rel="noopener">Build Atlas</a> is an experimental page for extracting signals in the AI investment space, tracking company context, and collecting curated high-signal news.</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section eyebrow="Writing" title="Newsletter">
+    <div class="newsletter-panel">
+      <div class="newsletter-mark" aria-hidden="true">
+        <span>AI</span>
+        <span>newsletter</span>
+      </div>
+      <div class="prose">
+        <p>I publish a newsletter on AI investment trends and builder patterns, focused on market signals, technical diligence, infrastructure shifts, and how applied AI products move from prototype to production.</p>
+        <p><a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7267852565411737601" target="_blank" rel="noopener">Subscribe to the newsletter</a></p>
+      </div>
     </div>
   </Section>
 </BaseLayout>

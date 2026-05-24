@@ -1,48 +1,31 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Section from "@/components/Section.astro";
-import Card from "@/components/Card.astro";
+import { withBase } from "@/lib/links";
 
-const projects = (await getCollection("projects")).filter((project) => project.data.area === "inference");
+const areas = [
+  "Serving topology and model routing",
+  "Latency, throughput, batching, and scheduling",
+  "KV-cache pressure and inference-time compute",
+  "GPU economics and AI factory architecture",
+  "Benchmarking, reliability, and observability",
+];
 ---
 
-<BaseLayout title="AI Inference" description="Model serving, latency, throughput, KV-cache pressure, GPU/cloud economics, and AI factory architecture.">
+<BaseLayout title="LLM Inference" description="LLM inference notes are grouped under the Build Log as model serving and AI infrastructure patterns.">
   <section class="hero">
-    <p class="eyebrow">Core area</p>
-    <h1>AI Inference</h1>
-    <p class="lede">Model serving, latency, throughput, KV-cache pressure, GPU/cloud economics, and AI factory architecture.</p>
+    <p class="eyebrow">Moved section</p>
+    <h1>LLM <em>Inference</em></h1>
+    <p class="lede">The inference material now lives under the Build Log as a grouped public section rather than a page of individual repositories.</p>
+    <div class="button-row">
+      <a class="button primary" href={withBase("build-log/#llm-inference")}>LLM inference in build log</a>
+    </div>
   </section>
 
-  <Section title="Thesis">
-    <div class="prose">
-      <p>Inference is where AI product quality, user experience, margin, and infrastructure reality meet. Good systems require measured tradeoffs across latency, throughput, memory, batching, scheduling, hardware, and deployment topology.</p>
-    </div>
-  </Section>
-
-  <Section title="Core areas">
-    <div class="grid three">
-      {["Serving Stacks", "Latency and Throughput", "KV Cache and Memory Pressure", "Batching and Scheduling", "Cost Models", "GPU Cloud and AI Factory Notes", "Benchmarking Methodology", "Reliability and Observability"].map((title) => (
-        <Card title={title} summary="Notes and artifacts will collect practical tradeoffs, measurement patterns, and architecture implications." />
-      ))}
-    </div>
-  </Section>
-
-  <Section title="Projects and artifacts">
-    <div class="grid two">
-      {projects.map((project) => (
-        <Card title={project.data.title} href={project.data.url} status={project.data.status} tags={project.data.stack} summary={project.data.summary}>
-          <p><strong>What it demonstrates:</strong> {project.data.demonstrates}</p>
-        </Card>
-      ))}
-    </div>
-  </Section>
-
-  <Section title="Reading path">
+  <section class="section">
     <div class="rows">
-      {["How to think about inference latency", "Serving stack map", "Benchmarking methodology", "Cost/latency calculator", "AI factory implications"].map((item, index) => (
-        <article class="row-card"><span class="meta">{index + 1}</span><h3>{item}</h3></article>
+      {areas.map((item, index) => (
+        <article class="row-card"><span class="meta">{String(index + 1).padStart(2, "0")}</span><h3>{item}</h3></article>
       ))}
     </div>
-  </Section>
+  </section>
 </BaseLayout>

@@ -1,51 +1,31 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Section from "@/components/Section.astro";
-import Card from "@/components/Card.astro";
+import { withBase } from "@/lib/links";
 
-const projects = (await getCollection("projects")).filter((project) => ["agents", "domain", "security"].includes(project.data.area));
+const areas = [
+  "Memory, state, and forgetting policies",
+  "Durable execution and long-running workflows",
+  "Tool boundaries, MCP, and approval gates",
+  "Evals, replay, and run-trace observability",
+  "Governance and enterprise deployment",
+];
 ---
 
-<BaseLayout title="AI Agents" description="Agent memory, long-running workflows, durable harnesses, tool boundaries, evals, replay, and governance.">
+<BaseLayout title="AI Agents" description="AI agent notes are grouped under the Build Log as durable software and deployment patterns.">
   <section class="hero">
-    <p class="eyebrow">Core area</p>
-    <h1>AI Agents</h1>
-    <p class="lede">Agent memory, long-running workflows, durable harnesses, tool boundaries, evals, replay, and governance.</p>
+    <p class="eyebrow">Moved section</p>
+    <h1>AI <em>Agents</em></h1>
+    <p class="lede">The AI Agents material now lives under the Build Log as a grouped public section rather than a page of individual repositories.</p>
+    <div class="button-row">
+      <a class="button primary" href={withBase("build-log/#ai-agents")}>AI agents in build log</a>
+    </div>
   </section>
 
-  <Section title="Thesis">
-    <div class="prose">
-      <p>Useful agents are not prompts in a loop. They need memory policy, bounded execution, tool mediation, durable state, approval points, replay, evals, and clear failure handling.</p>
-    </div>
-  </Section>
-
-  <Section title="Core areas">
-    <div class="grid three">
-      <Card title="Agent Memory" summary="Short-term context, long-term memory, retrieval, state stores, summarization, compaction, and forgetting policies." />
-      <Card title="Long-Running Agents" summary="Durable execution, checkpoints, resume, async work, approval pauses, and failure recovery." />
-      <Card title="Agent Harnesses" summary="Planning loops, tool mediation, skills, hooks, MCP configs, cross-harness support, and security boundaries." />
-      <Card title="Tool Use and MCP" summary="Tool schemas, auth boundaries, MCP servers, approval gates, sandboxing, and audit logs." />
-      <Card title="Evals and Replay" summary="Run traces, eval workflows, replay, policy checks, cost/latency monitoring, and PII/safety controls." />
-      <Card title="Enterprise Deployment" summary="Azure AI Foundry, Agent Framework, backend runtimes, SSE, ops consoles, observability, and role-based workflows." />
-    </div>
-  </Section>
-
-  <Section title="Projects and artifacts">
-    <div class="grid two">
-      {projects.map((project) => (
-        <Card title={project.data.title} href={project.data.url} status={project.data.status} tags={project.data.stack} summary={project.data.summary}>
-          <p><strong>What it demonstrates:</strong> {project.data.demonstrates}</p>
-        </Card>
-      ))}
-    </div>
-  </Section>
-
-  <Section title="Reading path">
+  <section class="section">
     <div class="rows">
-      {["Agent harnesses before agent demos", "Memory and state", "Long-running agents", "Tool boundaries and MCP", "Evaluation and replay", "Enterprise deployment"].map((item, index) => (
-        <article class="row-card"><span class="meta">{index + 1}</span><h3>{item}</h3></article>
+      {areas.map((item, index) => (
+        <article class="row-card"><span class="meta">{String(index + 1).padStart(2, "0")}</span><h3>{item}</h3></article>
       ))}
     </div>
-  </Section>
+  </section>
 </BaseLayout>

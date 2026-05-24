@@ -11,6 +11,6 @@ Visual language: RAG pipelines, knowledge graph structure, context windows, ente
 Style: modern editorial, high-end technical publisher, restrained colors, lots of negative space, no stock-photo look, no cartoon robots, no generic neon brain.
 
 Include title text clearly: "AI and Data Integration Patterns".
-Include author: "Ozgur Guler".
+Include author: "Özgür Güler".
 Aspect ratio: 2:3.
 Output should work as a book cover thumbnail and as a website card.

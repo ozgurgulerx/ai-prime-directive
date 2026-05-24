@@ -39,6 +39,8 @@ Create the following public routes:
 - `/prime-directive/`
 - `/about/`
 
+`/agents/` and `/inference/` are retained as legacy entry points, but the active AI Agents and LLM Inference material now lives as grouped sections under `/build-log/`.
+
 Use content collections for:
 
 - `blog`
@@ -52,23 +54,28 @@ Use content collections for:
 
 The homepage must contain, in order:
 
-1. Crisp hero with Ozgur Guler and the primary AI systems builder tagline.
-2. Two primary wedges: AI Agents and AI Inference.
-3. Current/recent work cards.
-4. Build log preview with latest five entries.
-5. Technical blog preview with latest five entries.
-6. Books preview.
-7. Talks/workshops preview.
-8. Selected startup work preview.
-9. Contact links in the footer.
+1. Crisp hero with Özgür Güler and the current "by day / by night" AI systems builder framing.
+2. One real speaking/workshop photo.
+3. Compact profile facts: based, by day, by night, and focus.
+4. A short "Start here" guidance index linking to Build Log, Books, Blog, Talks, Startups, and Consulting.
+5. Contact links in the colophon/footer.
 
-Startup and investment content must not appear in the hero.
+The homepage must stay simple, neat, and non-duplicative. Do not re-add book shelves, recent-post lists, startup cards, or detailed previews that repeat the subpages. Startup and investment content must not dominate the hero.
 
 ## Phase 4: Core Pages
 
-### Agents
+### Build Log
 
-Cover:
+The Build Log is now the public home for grouped project/work areas. It should start with:
+
+1. Personal projects / fun projects.
+2. AI agents.
+3. LLM inference.
+4. Recent build-log entries.
+
+Do not list every GitHub repository here. Mention project families, systems themes, and what the work demonstrates.
+
+### AI Agents Group
 
 - agent memory
 - long-running agents
@@ -78,16 +85,7 @@ Cover:
 - governance and observability
 - enterprise deployment
 
-Include local/public-safe project cards with:
-
-- name
-- status
-- summary
-- what it demonstrates
-- stack
-- public link only when safe
-
-### Inference
+### LLM Inference Group
 
 Cover:
 
@@ -100,8 +98,6 @@ Cover:
 - benchmarking methodology
 - reliability and observability
 
-Include local/public-safe inference and infrastructure project cards.
-
 ## Phase 5: Supporting Pages
 
 - Build Log: compact dated rows with tags and one-sentence summaries.
@@ -109,7 +105,7 @@ Include local/public-safe inference and infrastructure project cards.
 - Books: seven book cards with status, description, links where provided, and cover assets/placeholders.
 - Talks: preserve My Talks and Book a Talk, with request details listed.
 - Consulting: occasional, sober technical formats only.
-- Startup Work: Enlighty.ai and Eachlabs.ai with public-safe relationship wording.
+- Startup Work: the public nav label is Startups, the route remains `/investments/`, and Enlighty.ai / Eachlabs.ai use public-safe relationship wording.
 - Startup Notes: technical and market notes, not investment advice or a VC brand.
 - AI Prime Directive: archive landing page, no longer homepage-dominant.
 - About: concise technical background.
@@ -204,7 +200,8 @@ Accept matches only in negative guardrails, environment variable names, or non-p
 
 - Astro static site builds successfully.
 - Homepage feels simple, personal, technical, and credible.
-- Agents and Inference are the two primary sections.
+- Homepage acts as a front door and does not duplicate the detailed subpages.
+- AI Agents and LLM Inference are grouped under Build Log, while `/agents/` and `/inference/` remain lightweight legacy entry points.
 - Blog and build-log lists are visually improved.
 - Books page contains all seven books.
 - Nano Banana Pro prompt files exist.

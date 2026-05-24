@@ -2,22 +2,32 @@
 import { withBase } from "@/lib/links";
 
 const nav = [
-  ["Agents", "agents/"],
-  ["Inference", "inference/"],
   ["Build Log", "build-log/"],
   ["Blog", "blog/"],
   ["Books", "books/"],
   ["Talks", "talks/"],
   ["Consulting", "consulting/"],
-  ["Investments", "investments/"],
+  ["Startups", "investments/"],
 ];
+
+const current = Astro.url.pathname.replace(/\/+$/, "/") || "/";
+const isCurrent = (href: string) => {
+  const target = href.replace(/\/+$/, "/") || "/";
+  return target === current;
+};
+const homeHref = withBase();
 ---
 
 <header class="site-header">
   <nav class="nav" aria-label="Primary">
-    <a class="brand" href={withBase()}>Ozgur Guler</a>
+    <a class="brand" href={homeHref} aria-current={isCurrent(homeHref) ? "page" : undefined}>Özgür Güler</a>
     <div class="nav-links">
-      {nav.map(([label, href]) => <a href={withBase(href)}>{label}</a>)}
+      {nav.map(([label, href]) => {
+        const target = withBase(href);
+        return (
+          <a href={target} aria-current={isCurrent(target) ? "page" : undefined}>{label}</a>
+        );
+      })}
     </div>
   </nav>
 </header>

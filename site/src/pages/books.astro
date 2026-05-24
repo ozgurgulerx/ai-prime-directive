@@ -11,11 +11,12 @@ const books = bookDraftLinks.map((book) => ({
 }));
 ---
 
-<BaseLayout title="Books" description="Book drafts from the Safari Books- bookmarks folder.">
+<BaseLayout title="Books" description="Books currently in progress, available for free access and feedback.">
   <section class="hero">
     <p class="eyebrow">Books</p>
     <h1>Books</h1>
-    <p class="lede">Book drafts from the Safari Books- bookmark folder. Each link opens the source Google Doc.</p>
+    <p class="lede">These books are currently in progress and available for free access. Each link opens the source Google Doc for reading and feedback.</p>
+    <p class="lede">I strongly believe books in the AI era should be continuously rewritten, much like the continual learning paradigm. These drafts are my attempt to write continual-learning books: living technical references that stay open, improve over time, and invite feedback as the field changes.</p>
   </section>
 
   <section class="section">
@@ -36,7 +37,7 @@ const books = bookDraftLinks.map((book) => ({
           <div>
             <span class="status">{book.status}</span>
             <h3><a href={book.url} target="_blank" rel="noopener">{book.title}</a></h3>
-            <p class="meta">Safari bookmark: {book.bookmarkTitle}</p>
+            <p class="meta">Open Google Doc</p>
             <p>{book.summary}</p>
             <div class="chips">
               {book.tags.map((tag) => <span class="chip">{tag}</span>)}

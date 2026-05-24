@@ -35,6 +35,7 @@ Custom properties: `--serif`, `--sans`, `--mono`. Never hard-code font names in 
 - Body — 16.5px, line-height 1.6.
 - Lede — 1.18rem, `--ink-soft`, max 64ch.
 - Eyebrow — mono, 0.72rem, 0.14em tracking, uppercase, `--muted`.
+- Public-facing page titles, section titles, card titles, workshop titles, book titles, and project titles use title case / initial capital letters. Preserve acronyms and product casing. Mono UI labels may stay lowercase or uppercase by design.
 - Never use uppercase on serif text. Uppercase belongs to monospace meta only.
 
 ## Colour — Cambridge Press
@@ -94,21 +95,36 @@ Every homepage section follows: marker → eyebrow → h2 → optional lead. Sub
 | -------------- | --------------------------------------------------------------------------------------------------------- |
 | `.masthead`    | Publication banner above the hero on the homepage. Mono uppercase: era · place/role · hairline · contact. |
 | `.colophon`    | Editorial closer at the foot of the homepage. Serif italic mark + mono meta + mono lowercase reach grid.  |
-| `.now-strip`   | Three-key dated focus strip directly under the hero (`Now` / `Building` / `Open to`).                     |
+| `.now-strip`   | Compact profile facts directly under the homepage image (`Based` / `By day` / `By night` / `Focus`).     |
+| `.home-portrait` | Single homepage speaking/workshop image. Use the existing Infobip/Zagreb image unless the user provides a better one. |
 | `.site-header` | Sticky thin nav, present on every page.                                                                   |
 | `.site-footer` | Single-line global trailing bar, present on every page (slimmed when colophon is present).                |
 
+### Homepage rule
+
+The homepage is a simple front door, not a compressed version of every menu page. Keep it to:
+
+1. Masthead.
+2. One concise hero using the "by day / by night" personal framing.
+3. One speaking/workshop image.
+4. Compact profile facts.
+5. One "Start here" guidance index linking to the real subpages.
+6. Colophon.
+
+Do not add the books shelf, recent-post lists, startup cards, project grids, or detailed section previews back to the homepage unless the user explicitly reverses this direction. Detailed work belongs on the subpages.
+
 ### Primitives
 
-| Primitive                | Use for                              | Notes                                                                                                                                                                                                                            |
-| ------------------------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `.index-list`            | Curated, ranked artefacts            | Numbered `№ 01` mono marks, hairline rows, hover wash + 12px slide-in                                                                                                                                                            |
-| `.dated-list`            | Time-ordered essays / build log      | Mono date column, two-line title + subtitle                                                                                                                                                                                      |
-| `.practice`              | Two text-only columns with a divider | Used for Agents / Inference dual-track, startup work, anything that should not be a card                                                                                                                                         |
-| `.shelf`                 | Books or visual artefacts            | Four-up grid; typographic CSS covers (`.cover-typo`) by default; serif title + mono status                                                                                                                                       |
-| `.grid.two/.three/.four` | Card overview pages                  | Hairline-bordered grid; cards are flat, no shadows                                                                                                                                                                               |
-| `.row-card`              | Cross-cutting items inside `.rows`   | 132px meta column + body                                                                                                                                                                                                         |
-| `.cover-typo`            | Book covers without generated art    | Cream gradient surface, inset hairline frame, mono `Vol. N` series mark, serif italic title, mono author mark. Lifts 3px on hover. Use when book cover art is unavailable; never mix with photographic covers on the same shelf. |
+| Primitive                | Use for                                  | Notes                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------ | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.index-list`            | Curated, ranked artefacts                | Numbered `№ 01` mono marks, hairline rows, hover wash + 12px slide-in                                                                                                                                                                                                                                                                     |
+| `.dated-list`            | Time-ordered essays / build log          | Mono date column, two-line title + subtitle                                                                                                                                                                                                                                                                                               |
+| `.practice`              | Two text-only columns with a divider     | Used for Agents / Inference dual-track, startup work, anything that should not be a card                                                                                                                                                                                                                                                  |
+| `.shelf`                 | Books or visual artefacts                | Four-up grid; typographic CSS covers (`.cover-typo`) by default; serif title + mono status                                                                                                                                                                                                                                                |
+| `.grid.two/.three/.four` | Card overview pages                      | Hairline-bordered grid; cards are flat, no shadows                                                                                                                                                                                                                                                                                        |
+| `.row-card`              | Cross-cutting items inside `.rows`       | 132px meta column + body                                                                                                                                                                                                                                                                                                                  |
+| `.cover-typo`            | Book covers without generated art        | Cream gradient surface, inset hairline frame, mono `Vol. N` series mark, serif italic title, mono author mark. Lifts 3px on hover. Use when book cover art is unavailable; never mix with photographic covers on the same shelf.                                                                                                          |
+| `.logo-mark`             | Startup / publisher / sponsor thumbnails | 48×48 square with a 1px `--line` border, 3px radius, `--paper-tint` background, `object-fit: contain`. Sits above the H3 it labels. Never larger than 56px (would tip into "trusted by" territory). Add `.inline` for inline-with-text placement. Logos render at their native colours — do **not** wash, tint, or grayscale-filter them. |
 
 Cards (`.card`) sit on `--paper`, divided by a 1px hairline grid. They never get rounded shadows, never get more than 8px radius, and never use coloured backgrounds. The accent variant uses a 2px left rule only.
 
@@ -122,9 +138,9 @@ Cards (`.card`) sit on `--paper`, divided by a 1px hairline grid. They never get
 
 When adding or modifying components in `site/src/components/`, follow these rules.
 
-- `Header.astro` — sticky, hairline bottom border, serif italic brand on the left, monospace lowercase links on the right. Do not introduce a dropdown or hamburger; mobile collapses to a column.
-- `Footer.astro` — single hairline top, one slim monospace line (`Ozgur Guler · MMXXIV — YYYY` on the left, `London · Built with Astro · No tracking` on the right). Deliberately tiny because the homepage carries the rich closer in `.colophon`. Do not re-introduce link rows here.
-- `Section.astro` — keep the API `eyebrow / title / intro / href / linkLabel`. Always render the eyebrow above the title.
+- `Header.astro` — sticky, hairline bottom border, serif italic brand on the left, monospace lowercase links on the right (0.86rem, `--ink`, no letter-spacing — present without shouting). Renders `aria-current="page"` on the matching link; CSS draws a 1px `--accent` underline under hover **and** current-page links (sliding in from the left in 180ms on hover, static on current). Do not introduce a dropdown, hamburger, pill chrome, or background tint; mobile collapses to a column.
+- `Footer.astro` — single hairline top, one slim monospace line (`Özgür Güler · MMXXIV — YYYY` on the left, `Privacy-first analytics` on the right). Deliberately tiny because the homepage carries the rich closer in `.colophon`. Do not re-introduce link rows here.
+- `Section.astro` — keep the API `id / eyebrow / title / intro / href / linkLabel`. Always render the eyebrow above the title.
 - `Card.astro` — keep API stable. Status renders as a mono uppercase mark in `--accent`. Chips render with a `· ` separator, not pill chrome.
 - `BookCard.astro` and `.shelf-item` — cover gets a subtle dropshadow only on `.shelf`. Inline cards stay flat.
 - `PostList.astro` — hairline rows, mono date, two-line title + summary.
@@ -143,10 +159,10 @@ When adding or modifying components in `site/src/components/`, follow these rule
 
 ## Don't
 
-- Don't add a hero photograph, animated gradient, or background pattern.
+- Don't add an animated gradient or background pattern. The homepage may use one real speaking/workshop photograph in `.home-portrait`; avoid decorative stock-like imagery.
 - Don't introduce a second accent colour. If a section needs differentiation, use mono eyebrows and hairline framing.
 - Don't add cards to the homepage. The homepage uses indices and lists; cards live on sub-pages where overview density is genuinely needed.
-- Don't write CTA copy. Buttons read as lowercase mono labels (`agents`, `inference`, `email`), not verbs.
+- Don't write CTA copy. Buttons read as lowercase mono labels (`build log`, `books`, `talks`, `email`), not verbs.
 - Don't add libraries. The site is plain global CSS and small Astro components, on purpose.
 
 ## When in doubt

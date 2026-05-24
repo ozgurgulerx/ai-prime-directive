@@ -1,16 +1,14 @@
 /*
-  Extra styles for gentle gradients, cards, forms, and focus.
+  Extra styles for cards, forms, and focus.
   Keep accessible contrast and visible focus rings.
 */
 
 :root {
   --apd-accent: #10b981; /* emerald */
-  --apd-hero-start: #EEF2FF; /* indigo-50 */
-  --apd-hero-end: #ECFDF5;   /* emerald-50 */
 }
 
 .hero {
-  background: linear-gradient(135deg, var(--apd-hero-start), var(--apd-hero-end));
+  background: color-mix(in oklab, var(--md-default-bg-color), var(--md-default-fg-color) 3%);
   padding: 4rem 1rem;
   border-radius: 0.75rem;
   margin: 0 0 1rem 0;
@@ -107,10 +105,6 @@
 /* Focus styles */
 *:focus { outline: 2px solid var(--apd-accent); outline-offset: 2px; }
 
-/* Dark mode tweaks */
-[data-md-color-scheme="slate"] .hero {
-  background: linear-gradient(135deg, #0b1220, #0e1a14);
-}
 /* ---------- Base scale & container ---------- */
 /* Slightly larger body text (~16.8px if base is 16px) */
 :root {

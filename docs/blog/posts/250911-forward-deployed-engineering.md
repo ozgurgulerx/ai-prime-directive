@@ -29,5 +29,5 @@ Ultimately FDE is about doing things that don't scale and turning them into scal
 
 FDE talk from Bob McGrew *(Check it out: [FDE talk from Bob McGrew](https://www.youtube.com/watch?v=KZJZJZJZJZJ))* really resonated with me as it aligns well with my earlier "Frontier Labs" initative at Microsoft Digital Natives org which was mostly about working with customer product as well as engineering managers to inspire them with quick but functional prototypes that demonstrate the potential and value with a product-led approach. 
 
-- Ozgur
+- Özgür
 Istanbul, September 11th 2025

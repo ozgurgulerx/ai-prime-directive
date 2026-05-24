@@ -14,6 +14,8 @@ const blog = defineCollection({
     sourceUrl: z.string().optional(),
     publication: z.string().optional(),
     pinned: z.boolean().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
   }),
 });
 
@@ -77,7 +79,7 @@ const investments = defineCollection({
     title: z.string(),
     url: z.string(),
     summary: z.string(),
-    relationship: z.string(),
+    logo: z.string().optional(),
     tags,
   }),
 });

@@ -1,5 +1,6 @@
 ---
 interface Props {
+  id?: string;
   eyebrow?: string;
   title: string;
   intro?: string;
@@ -7,10 +8,10 @@ interface Props {
   linkLabel?: string;
 }
 
-const { eyebrow, title, intro, href, linkLabel = "View all" } = Astro.props;
+const { id, eyebrow, title, intro, href, linkLabel = "View all" } = Astro.props;
 ---
 
-<section class="section">
+<section class="section" id={id}>
   <div class="section-head">
     <div>
       {eyebrow && <p class="eyebrow">{eyebrow}</p>}

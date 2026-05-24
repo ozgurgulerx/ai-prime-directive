@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Özgür Güler technical record thumbnail">
+  <rect width="1200" height="630" fill="#f3efe5"/>
+  <rect x="42" y="42" width="1116" height="546" fill="none" stroke="#ccd0c4" stroke-width="2"/>
+  <rect x="90" y="90" width="162" height="162" rx="22" fill="#14201a"/>
+  <path d="M126 178c18-38 39-48 63-30 18 13 30 9 42-34" fill="none" stroke="#f3efe5" stroke-width="12" stroke-linecap="round"/>
+  <path d="M126 178l38 27 45-104 22 13" fill="none" stroke="#2f5b3c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="126" cy="178" r="13" fill="#f3efe5"/>
+  <circle cx="164" cy="205" r="11" fill="#f3efe5"/>
+  <circle cx="209" cy="101" r="11" fill="#f3efe5"/>
+  <circle cx="231" cy="114" r="13" fill="#f3efe5"/>
+  <text x="90" y="366" fill="#14201a" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="400">Özgür Güler</text>
+  <text x="94" y="424" fill="#2c3a32" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">AI agents / inference systems / technical record</text>
+  <line x1="92" y1="484" x2="484" y2="484" stroke="#b1924c" stroke-width="4"/>
+  <text x="94" y="528" fill="#6b7570" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="20" letter-spacing="3">OZGURGULER.ORG</text>
+  <path d="M806 174c54 0 78 54 46 96l-68 90c-34 45-9 112 48 116l74 5c67 5 107-73 64-126l-184-228" fill="none" stroke="#ccd0c4" stroke-width="2"/>
+  <circle cx="806" cy="174" r="8" fill="#2f5b3c"/>
+  <circle cx="784" cy="360" r="8" fill="#2f5b3c"/>
+  <circle cx="906" cy="481" r="8" fill="#2f5b3c"/>
+  <circle cx="786" cy="127" r="8" fill="#2f5b3c"/>
+</svg>

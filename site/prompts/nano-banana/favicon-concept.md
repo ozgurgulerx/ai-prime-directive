@@ -2,7 +2,7 @@
 
 Recommended model: `gemini-3-pro-image-preview`
 
-Create a small square icon concept for Ozgur Guler's personal technical website.
+Create a small square icon concept for Özgür Güler's personal technical website.
 
 Theme: AI agents, inference traces, and technical records.
 

@@ -1,14 +1,27 @@
 ---
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import Analytics from "@/components/Analytics.astro";
 import "@/styles/global.css";
 
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
-const { title, description = "Field notes and artifacts on AI agents, inference systems, EvalOps, and AI infrastructure." } = Astro.props;
+const {
+  title,
+  description = "Field notes and artifacts on AI agents, inference systems, EvalOps, and AI infrastructure.",
+  image = "/og-image.png",
+  imageAlt = "Özgür Güler technical record thumbnail",
+} = Astro.props;
+
+const site = Astro.site ?? new URL("https://ozgurguler.org");
+const pageTitle = `${title} | Özgür Güler`;
+const canonicalUrl = new URL(Astro.url.pathname, site);
+const imageUrl = new URL(image, site);
 ---
 
 <!doctype html>
@@ -18,13 +31,36 @@ const { title, description = "Field notes and artifacts on AI agents, inference 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f3efe5" />
+    <meta name="application-name" content="Özgür Güler" />
+    <link rel="canonical" href={canonicalUrl.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:site_name" content="Özgür Güler" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:image" content={imageUrl.href} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl.href} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap"
     />
-    <title>{title} | Ozgur Guler</title>
+    <Analytics />
+    <title>{pageTitle}</title>
   </head>
   <body>
     <div class="site-shell">

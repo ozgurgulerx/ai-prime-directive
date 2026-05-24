@@ -2,9 +2,9 @@
 
 Recommended model: `gemini-3-pro-image-preview`
 
-Create a 16:9 Open Graph image for Ozgur Guler's homepage.
+Create a 16:9 Open Graph image for Özgür Güler's homepage.
 
-Text to include: "Ozgur Guler" and "AI systems builder focused on agents, inference, and production deployment."
+Text to include: "Özgür Güler" and "AI systems builder focused on agents, inference, and production deployment."
 
 Visual language: compact technical record, agents and inference as two primary tracks, subtle system diagram. No portrait, no stock image, no hype.
 

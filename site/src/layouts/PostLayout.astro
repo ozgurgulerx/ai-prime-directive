@@ -8,24 +8,67 @@ interface Props {
   tags?: string[];
   sourceUrl?: string;
   publication?: string;
+  image?: string;
+  imageAlt?: string;
   pinned?: boolean;
+  artifact?: string;
+  repo?: string;
 }
 
-const { title, date, summary, tags = [], sourceUrl, publication, pinned = false } = Astro.props;
+const {
+  title,
+  date,
+  summary,
+  tags = [],
+  sourceUrl,
+  publication,
+  image,
+  imageAlt,
+  pinned = false,
+  artifact,
+  repo,
+} = Astro.props;
+const external = (url: string) => url.startsWith("http");
+const resolvedImageAlt = imageAlt ?? `Thumbnail for ${title}`;
 ---
 
-<BaseLayout title={title} description={summary}>
+<BaseLayout title={title} description={summary} image={image} imageAlt={image ? resolvedImageAlt : undefined}>
   <article class="prose">
     <p class="eyebrow">{date ? date.toISOString().slice(0, 10) : "Note"}</p>
     <h1>{title}</h1>
     {summary && <p class="lede">{summary}</p>}
     {tags.length > 0 && <div class="chips">{tags.map((tag) => <span class="chip">{tag}</span>)}</div>}
-    {(sourceUrl || publication || pinned) && (
+    {(sourceUrl || publication || pinned || artifact || repo) && (
       <p>
         {pinned && <span class="status">Pinned</span>}
         {publication && <span class="status">{publication}</span>}
         {sourceUrl && <a class="button primary" href={sourceUrl} target="_blank" rel="noopener">Read on Medium</a>}
+        {artifact && (
+          <a
+            class="button primary plausible-event-name=download_or_artifact_click"
+            href={artifact}
+            target={external(artifact) ? "_blank" : null}
+            rel={external(artifact) ? "noopener" : null}
+          >
+            Related artifact
+          </a>
+        )}
+        {repo && (
+          <a
+            class="button plausible-event-name=download_or_artifact_click"
+            href={repo}
+            target={external(repo) ? "_blank" : null}
+            rel={external(repo) ? "noopener" : null}
+          >
+            Repository
+          </a>
+        )}
       </p>
+    )}
+    {image && (
+      <figure class="post-hero-image">
+        <img class="post-hero-img" src={image} alt={resolvedImageAlt} loading="eager" decoding="async" />
+      </figure>
     )}
     <slot />
   </article>

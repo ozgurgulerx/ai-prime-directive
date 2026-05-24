@@ -77,7 +77,7 @@ Mental pattern:
 
 ### Context compaction vs summarization
 
-Good question to zoom in on, Ozgur.
+Good question to zoom in on, Özgür.
 
 **Short answer**
 

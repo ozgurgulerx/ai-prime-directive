@@ -2,7 +2,7 @@
 
 Recommended model: `gemini-3-pro-image-preview`
 
-Create a restrained abstract systems visual for Ozgur Guler's personal technical website.
+Create a restrained abstract systems visual for Özgür Güler's personal technical website.
 
 Theme: production AI systems, agents, inference, EvalOps, cloud deployment, and infrastructure patterns.
 

@@ -1,10 +1,12 @@
-# Ozgur Guler Personal Technical Website
+# Özgür Güler Personal Technical Website
 
 This repository hosts a static Astro personal website deployed to GitHub Pages. The active site lives in `site/`; the earlier MkDocs content remains in `docs/` as archive/source material.
 
 ## Goals
 
-- Make Ozgur Guler's work legible through AI agents, AI inference, build logs, technical writing, books, talks, consulting, selected startup work, and the AI Prime Directive archive.
+- Make Özgür Güler's work legible through a simple personal landing page and focused subpages for build logs, technical writing, books, talks, consulting, selected startup work, and the AI Prime Directive archive.
+- Keep the homepage as a clean front door: brief positioning, one speaking/workshop image, compact facts, and guidance links to the subpages.
+- Keep AI Agents and LLM Inference material grouped under Build Log rather than as primary navigation sections.
 - Keep the site static, fast, readable, and easy to operate.
 - Keep startup and investment-adjacent material public-safe, sober, and technical.
 - Preserve GitHub Pages as the default deployment target.
@@ -96,6 +98,6 @@ Matches should only appear in negative guardrails, environment variable names, o
 
 ## Hosting Policy
 
-Default target: GitHub Pages at `https://cloudatlas.blog/`.
+Default target: GitHub Pages at `https://ozgurguler.org/`.
 
 Do not migrate this version to Azure App Service. Azure Static Web Apps is only a future option if the site adds serverless APIs, gated resources, form backends, preview environments, calculators, authentication, or explicit Azure architecture demo value.
