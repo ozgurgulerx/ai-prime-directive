@@ -22,7 +22,19 @@ const formatDate = new Intl.DateTimeFormat("en", { month: "short", year: "numeri
       {
         talks.map((talk) => (
           <article class="card talk-card">
-            {talk.data.image && (
+            {talk.data.video ? (
+              <video
+                class="card-media"
+                controls
+                muted
+                playsinline
+                preload="metadata"
+                poster={talk.data.image}
+                aria-label={talk.data.imageAlt ?? `${talk.data.title} talk video`}
+              >
+                <source src={talk.data.video} type="video/mp4" />
+              </video>
+            ) : talk.data.image && (
               <img
                 class="card-media"
                 src={talk.data.image}
@@ -76,6 +88,10 @@ const formatDate = new Intl.DateTimeFormat("en", { month: "short", year: "numeri
     object-fit: cover;
     border-bottom: 1px solid var(--line);
     background: var(--paper-tint);
+  }
+
+  video.card-media {
+    aspect-ratio: 16 / 9;
   }
 
   .talk-body {

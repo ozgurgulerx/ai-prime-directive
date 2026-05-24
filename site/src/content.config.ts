@@ -52,6 +52,7 @@ const talks = defineCollection({
     type: z.string().optional(),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
+    video: z.string().optional(),
     tags,
   }),
 });
