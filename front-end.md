@@ -95,7 +95,6 @@ Every homepage section follows: marker → eyebrow → h2 → optional lead. Sub
 | -------------- | --------------------------------------------------------------------------------------------------------- |
 | `.masthead`    | Publication banner above the hero on the homepage. Mono uppercase: era · place/role · hairline · contact. |
 | `.colophon`    | Editorial closer at the foot of the homepage. Serif italic mark + mono meta + mono lowercase reach grid.  |
-| `.now-strip`   | Compact profile facts directly under the homepage image (`Based` / `By day` / `By night` / `Focus`).     |
 | `.home-portrait` | Single homepage speaking/workshop image. Use the existing Infobip/Zagreb image unless the user provides a better one. |
 | `.site-header` | Sticky thin nav, present on every page.                                                                   |
 | `.site-footer` | Single-line global trailing bar, present on every page (slimmed when colophon is present).                |
@@ -107,9 +106,8 @@ The homepage is a simple front door, not a compressed version of every menu page
 1. Masthead.
 2. One concise hero using the "by day / by night" personal framing.
 3. One speaking/workshop image.
-4. Compact profile facts.
-5. One "Start here" guidance index linking to the real subpages.
-6. Colophon.
+4. One "Start here" guidance index linking to the real subpages.
+5. Colophon.
 
 Do not add the books shelf, recent-post lists, startup cards, project grids, or detailed section previews back to the homepage unless the user explicitly reverses this direction. Detailed work belongs on the subpages.
 

@@ -56,9 +56,8 @@ The homepage must contain, in order:
 
 1. Crisp hero with Özgür Güler and the current "by day / by night" AI systems builder framing.
 2. One real speaking/workshop photo.
-3. Compact profile facts: based, by day, by night, and focus.
-4. A short "Start here" guidance index linking to Build Log, Books, Blog, Talks, Startups, and Consulting.
-5. Contact links in the colophon/footer.
+3. A short "Start here" guidance index linking to Build Log, Books, Blog, Talks, Startups, and Consulting.
+4. Contact links in the colophon/footer.
 
 The homepage must stay simple, neat, and non-duplicative. Do not re-add book shelves, recent-post lists, startup cards, or detailed previews that repeat the subpages. Startup and investment content must not dominate the hero.
 

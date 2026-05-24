@@ -5,7 +5,7 @@ This repository hosts a static Astro personal website deployed to GitHub Pages. 
 ## Goals
 
 - Make Özgür Güler's work legible through a simple personal landing page and focused subpages for build logs, technical writing, books, talks, consulting, selected startup work, and the AI Prime Directive archive.
-- Keep the homepage as a clean front door: brief positioning, one speaking/workshop image, compact facts, and guidance links to the subpages.
+- Keep the homepage as a clean front door: brief positioning, one speaking/workshop image, and guidance links to the subpages.
 - Keep AI Agents and LLM Inference material grouped under Build Log rather than as primary navigation sections.
 - Keep the site static, fast, readable, and easy to operate.
 - Keep startup and investment-adjacent material public-safe, sober, and technical.

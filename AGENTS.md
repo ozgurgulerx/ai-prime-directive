@@ -56,7 +56,7 @@ Do not put startup or investment content in the homepage hero.
 
 ## Current Public Positioning
 
-The homepage is a simple personal front door, not a content mirror. It should stay inspired by the compact personal-homepage pattern of `https://yoheinakajima.com/`: a clear identity line, a "by day / by night" frame, a short public bio, one strong speaking/workshop photo, compact facts, and a small guide to the subpages.
+The homepage is a simple personal front door, not a content mirror. It should stay inspired by the compact personal-homepage pattern of `https://yoheinakajima.com/`: a clear identity line, a short public bio, one strong speaking/workshop photo, and a small guide to the subpages.
 
 Current public facts that may be used in homepage or about-page copy:
 
