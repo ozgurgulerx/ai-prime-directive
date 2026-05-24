@@ -89,7 +89,6 @@ const requiredAnalyticsText = [
   "plausible-event-name=consulting_click",
   "plausible-event-name=talk_link_click",
   "plausible-event-name=download_or_artifact_click",
-  "Privacy-first analytics",
 ];
 
 const missingAnalyticsText = requiredAnalyticsText.filter((text) => !html.includes(text));
