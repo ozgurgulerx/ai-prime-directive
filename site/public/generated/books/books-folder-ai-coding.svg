@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848 1264" role="img" aria-labelledby="title desc">
+  <title id="title">AI Coding</title>
+  <desc id="desc">Cambridge-style technical book cover for AI Coding by Ozgur Guler.</desc>
+  <rect width="848" height="1264" fill="#f3efe5"/>
+  <rect x="0" y="0" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="1132" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="132" width="848" height="8" fill="#b89a57"/>
+  <rect x="0" y="1124" width="848" height="8" fill="#b89a57"/>
+  <g fill="none" stroke="#18342d" stroke-width="4" opacity=".74">
+    <rect x="210" y="350" width="428" height="358" rx="8"/>
+    <path d="M210 426h428M282 504h254M282 576h192M282 648h284"/>
+    <path d="M300 382h28M352 382h28M404 382h28"/>
+    <path d="M566 780c-88 68-196 68-284 0" stroke="#b89a57" stroke-width="8"/>
+    <path d="M282 780l78-12-28 74" stroke="#b89a57" stroke-width="8"/>
+  </g>
+  <g fill="#18342d" text-anchor="middle">
+    <text x="424" y="83" font-family="Menlo, monospace" font-size="31" letter-spacing="9">BOOK 07</text>
+    <text x="424" y="920" font-family="Georgia, serif" font-size="86" font-style="italic">
+      <tspan x="424">AI</tspan><tspan x="424" dy="98">Coding</tspan>
+    </text>
+    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Ozgur Guler</text>
+    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">GOOGLE DOC</text>
+  </g>
+</svg>

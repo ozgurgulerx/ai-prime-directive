@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848 1264" role="img" aria-labelledby="title desc">
+  <title id="title">Inference Engineering</title>
+  <desc id="desc">Cambridge-style technical book cover for Inference Engineering by Ozgur Guler.</desc>
+  <rect width="848" height="1264" fill="#f3efe5"/>
+  <rect x="0" y="0" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="1132" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="132" width="848" height="8" fill="#b89a57"/>
+  <rect x="0" y="1124" width="848" height="8" fill="#b89a57"/>
+  <g fill="none" stroke="#18342d" stroke-width="4" opacity=".72">
+    <path d="M170 330h212c58 0 92 38 92 86v38c0 52 38 88 92 88h118"/>
+    <path d="M170 472h166c68 0 104 42 104 96v56c0 58 42 94 104 94h140"/>
+    <path d="M170 614h118c84 0 128 46 128 118v42c0 70 48 110 128 110h140"/>
+    <circle cx="170" cy="330" r="18"/><circle cx="170" cy="472" r="18"/><circle cx="170" cy="614" r="18"/>
+    <circle cx="684" cy="542" r="18"/><circle cx="684" cy="718" r="18"/><circle cx="684" cy="884" r="18"/>
+  </g>
+  <g fill="#18342d" text-anchor="middle">
+    <text x="424" y="83" font-family="Menlo, monospace" font-size="31" letter-spacing="9">BOOK 01</text>
+    <text x="424" y="920" font-family="Georgia, serif" font-size="82" font-style="italic">
+      <tspan x="424">Inference</tspan><tspan x="424" dy="96">Engineering</tspan>
+    </text>
+    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Ozgur Guler</text>
+    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">GOOGLE DOC</text>
+  </g>
+</svg>

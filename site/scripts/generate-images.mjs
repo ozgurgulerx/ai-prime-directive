@@ -40,6 +40,11 @@ const jobs = [
   ["favicon-concept.md", "visuals/favicon-concept.png", "1:1"],
 ];
 
+const requestedPrompts = new Set(process.argv.slice(2));
+const selectedJobs = requestedPrompts.size > 0
+  ? jobs.filter(([promptFile, relativeOutput]) => requestedPrompts.has(promptFile) || requestedPrompts.has(relativeOutput))
+  : jobs;
+
 if (!apiKey) {
   console.log("No GEMINI_API_KEY or GOOGLE_API_KEY found. Prompt files are ready; skipping image generation.");
   process.exit(0);
@@ -47,7 +52,7 @@ if (!apiKey) {
 
 const ai = new GoogleGenAI({ apiKey });
 
-for (const [promptFile, relativeOutput, aspectRatio] of jobs) {
+for (const [promptFile, relativeOutput, aspectRatio] of selectedJobs) {
   const promptPath = new URL(promptFile, promptDir);
   if (!existsSync(promptPath)) {
     console.warn(`Missing prompt: ${promptFile}`);

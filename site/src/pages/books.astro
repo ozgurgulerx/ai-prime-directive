@@ -1,6 +1,14 @@
 ---
+import { existsSync } from "node:fs";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { bookDraftLinks } from "@/lib/bookmarks";
+
+const publicDir = new URL("../../public/", import.meta.url);
+const assetExists = (assetPath: string) => existsSync(new URL(assetPath.replace(/^\//, ""), publicDir));
+const books = bookDraftLinks.map((book) => ({
+  ...book,
+  displayCover: assetExists(book.cover) ? book.cover : book.fallbackCover,
+}));
 ---
 
 <BaseLayout title="Books" description="Book drafts from the Safari Books- bookmarks folder.">
@@ -12,17 +20,18 @@ import { bookDraftLinks } from "@/lib/bookmarks";
 
   <section class="section">
     <div class="grid two">
-      {bookDraftLinks.map((book) => (
+      {books.map((book) => (
         <article class="card book-card">
           <a class="cover-link" href={book.url} target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-            <div class="cover-typo">
-              <div class="cv-series">{book.series}</div>
-              <div class="cv-title">
-                {book.title}
-                <span class="cv-author-name">Ozgur Guler</span>
-              </div>
-              <div class="cv-author">{book.status.toUpperCase()}</div>
-            </div>
+            <img
+              class="book-cover"
+              src={book.displayCover}
+              data-fallback={book.fallbackCover}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              onerror="this.onerror=null;this.src=this.dataset.fallback"
+            />
           </a>
           <div>
             <span class="status">{book.status}</span>

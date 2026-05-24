@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848 1264" role="img" aria-labelledby="title desc">
+  <title id="title">Prod Agents</title>
+  <desc id="desc">Cambridge-style technical book cover for Prod Agents by Ozgur Guler.</desc>
+  <rect width="848" height="1264" fill="#f3efe5"/>
+  <rect x="0" y="0" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="1132" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="132" width="848" height="8" fill="#b89a57"/>
+  <rect x="0" y="1124" width="848" height="8" fill="#b89a57"/>
+  <g fill="none" stroke="#18342d" stroke-width="4" opacity=".74">
+    <rect x="206" y="314" width="436" height="104" rx="4"/>
+    <rect x="206" y="510" width="436" height="104" rx="4"/>
+    <rect x="206" y="706" width="436" height="104" rx="4"/>
+    <path d="M424 418v92M424 614v92"/>
+    <path d="M292 366h264M292 562h264M292 758h264"/>
+    <circle cx="292" cy="366" r="14"/><circle cx="556" cy="562" r="14"/><circle cx="292" cy="758" r="14"/>
+  </g>
+  <g fill="#18342d" text-anchor="middle">
+    <text x="424" y="83" font-family="Menlo, monospace" font-size="31" letter-spacing="9">BOOK 02</text>
+    <text x="424" y="920" font-family="Georgia, serif" font-size="86" font-style="italic">
+      <tspan x="424">Prod</tspan><tspan x="424" dy="98">Agents</tspan>
+    </text>
+    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Ozgur Guler</text>
+    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">GOOGLE DOC</text>
+  </g>
+</svg>

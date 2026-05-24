@@ -1,4 +1,5 @@
 ---
+import { existsSync } from "node:fs";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -12,6 +13,8 @@ const blog = (await getCollection("blog")).sort(byDate);
 const buildLog = (await getCollection("build-log")).sort(byDate);
 const books = await getCollection("books");
 const projects = await getCollection("projects");
+const publicDir = new URL("../../public/", import.meta.url);
+const assetExists = (assetPath: string) => existsSync(new URL(assetPath.replace(/^\//, ""), publicDir));
 
 const bookBy = (id: string) => books.find((b) => b.id.replace(/\.md$/, "") === id);
 const projectBy = (id: string) => projects.find((p) => p.id.replace(/\.md$/, "") === id);
@@ -73,6 +76,8 @@ type ShelfBook = {
   title: string;
   status: string;
   href: string;
+  cover: string;
+  fallbackCover: string;
 };
 
 const shelf: ShelfBook[] = [
@@ -81,6 +86,8 @@ const shelf: ShelfBook[] = [
     title: book.title,
     status: book.status,
     href: book.url,
+    cover: assetExists(book.cover) ? book.cover : book.fallbackCover,
+    fallbackCover: book.fallbackCover,
   })),
 ];
 
@@ -207,14 +214,15 @@ const postExternal = (post: CollectionEntry<"blog">) => postHref(post).startsWit
       {shelf.map((book) => (
         <article class="shelf-item">
           <a href={book.href} target={book.href.startsWith("http") ? "_blank" : null} rel={book.href.startsWith("http") ? "noopener" : null}>
-            <div class="cover-typo" aria-hidden="true">
-              <div class="cv-series">{book.series}</div>
-              <div class="cv-title">
-                {book.title}
-                <span class="cv-author-name">Ozgur Guler</span>
-              </div>
-              <div class="cv-author">{book.status.toUpperCase()}</div>
-            </div>
+            <img
+              class="book-cover"
+              src={book.cover}
+              data-fallback={book.fallbackCover}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              onerror="this.onerror=null;this.src=this.dataset.fallback"
+            />
             <h3 class="shelf-title">{book.title}</h3>
           </a>
         </article>
@@ -278,6 +286,7 @@ const postExternal = (post: CollectionEntry<"blog">) => postHref(post).startsWit
     </div>
     <div class="practice">
       <div>
+        <img class="logo-mark" src={withBase("logos/enlighty.png")} alt="Enlighty.ai logo" loading="lazy" width="48" height="48" />
         <h3>Enlighty.ai</h3>
         <p style="color: var(--ink-soft); margin: 0;">
           AI-native consumer intelligence platform turning fragmented data into trusted insight.
@@ -285,6 +294,7 @@ const postExternal = (post: CollectionEntry<"blog">) => postHref(post).startsWit
         <p style="margin: 12px 0 0;"><a href="https://enlighty.ai/" target="_blank" rel="noopener">enlighty.ai</a></p>
       </div>
       <div>
+        <img class="logo-mark" src={withBase("logos/eachlabs.png")} alt="Eachlabs.ai logo" loading="lazy" width="48" height="48" />
         <h3>Eachlabs.ai</h3>
         <p style="color: var(--ink-soft); margin: 0;">
           AI workflow and model platform for app builders, with curated image, video, voice, and text models.

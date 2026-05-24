@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848 1264" role="img" aria-labelledby="title desc">
+  <title id="title">AI Security</title>
+  <desc id="desc">Cambridge-style technical book cover for AI Security by Ozgur Guler.</desc>
+  <rect width="848" height="1264" fill="#f3efe5"/>
+  <rect x="0" y="0" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="1132" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="132" width="848" height="8" fill="#b89a57"/>
+  <rect x="0" y="1124" width="848" height="8" fill="#b89a57"/>
+  <g fill="none" stroke="#18342d" stroke-width="4" opacity=".76">
+    <path d="M424 316 608 390v148c0 126-72 238-184 292-112-54-184-166-184-292V390z"/>
+    <path d="M322 538h204M322 620h204M322 702h204"/>
+    <path d="M424 386v416"/>
+    <circle cx="322" cy="538" r="15"/><circle cx="526" cy="620" r="15"/><circle cx="322" cy="702" r="15"/>
+  </g>
+  <g fill="#18342d" text-anchor="middle">
+    <text x="424" y="83" font-family="Menlo, monospace" font-size="31" letter-spacing="9">BOOK 04</text>
+    <text x="424" y="920" font-family="Georgia, serif" font-size="86" font-style="italic">
+      <tspan x="424">AI</tspan><tspan x="424" dy="98">Security</tspan>
+    </text>
+    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Ozgur Guler</text>
+    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">GOOGLE DOC</text>
+  </g>
+</svg>

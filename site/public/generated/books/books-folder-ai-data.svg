@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848 1264" role="img" aria-labelledby="title desc">
+  <title id="title">AI &amp; Data</title>
+  <desc id="desc">Cambridge-style technical book cover for AI and Data by Ozgur Guler.</desc>
+  <rect width="848" height="1264" fill="#f3efe5"/>
+  <rect x="0" y="0" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="1132" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="132" width="848" height="8" fill="#b89a57"/>
+  <rect x="0" y="1124" width="848" height="8" fill="#b89a57"/>
+  <g fill="none" stroke="#18342d" stroke-width="4" opacity=".76">
+    <circle cx="424" cy="548" r="172"/>
+    <circle cx="424" cy="548" r="82"/>
+    <path d="M424 376v344M252 548h344M306 430l236 236M542 430 306 666"/>
+    <circle cx="424" cy="376" r="18"/><circle cx="596" cy="548" r="18"/><circle cx="424" cy="720" r="18"/><circle cx="252" cy="548" r="18"/>
+    <circle cx="306" cy="430" r="14"/><circle cx="542" cy="430" r="14"/><circle cx="542" cy="666" r="14"/><circle cx="306" cy="666" r="14"/>
+  </g>
+  <g fill="#18342d" text-anchor="middle">
+    <text x="424" y="83" font-family="Menlo, monospace" font-size="31" letter-spacing="9">BOOK 03</text>
+    <text x="424" y="922" font-family="Georgia, serif" font-size="92" font-style="italic">
+      <tspan x="424">AI &amp; Data</tspan>
+    </text>
+    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Ozgur Guler</text>
+    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">GOOGLE DOC</text>
+  </g>
+</svg>

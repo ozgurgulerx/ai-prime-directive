@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848 1264" role="img" aria-labelledby="title desc">
+  <title id="title">RL</title>
+  <desc id="desc">Cambridge-style technical book cover for RL by Ozgur Guler.</desc>
+  <rect width="848" height="1264" fill="#f3efe5"/>
+  <rect x="0" y="0" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="1132" width="848" height="132" fill="#18342d"/>
+  <rect x="0" y="132" width="848" height="8" fill="#b89a57"/>
+  <rect x="0" y="1124" width="848" height="8" fill="#b89a57"/>
+  <g fill="none" stroke="#18342d" stroke-width="4" opacity=".76">
+    <path d="M252 420h344v344H252z"/>
+    <path d="M252 534h344M252 650h344M366 420v344M482 420v344"/>
+    <path d="M310 764c54 82 174 94 254 24" stroke="#b89a57" stroke-width="8"/>
+    <path d="M564 788l-78-10 32 72" stroke="#b89a57" stroke-width="8"/>
+    <circle cx="366" cy="534" r="18"/><circle cx="482" cy="650" r="18"/><circle cx="596" cy="420" r="18"/>
+  </g>
+  <g fill="#18342d" text-anchor="middle">
+    <text x="424" y="83" font-family="Menlo, monospace" font-size="31" letter-spacing="9">BOOK 06</text>
+    <text x="424" y="936" font-family="Georgia, serif" font-size="126" font-style="italic">RL</text>
+    <text x="424" y="1082" font-family="Georgia, serif" font-size="32" letter-spacing="2">Ozgur Guler</text>
+    <text x="424" y="1212" fill="#f3efe5" font-family="Menlo, monospace" font-size="24" letter-spacing="8">GOOGLE DOC</text>
+  </g>
+</svg>

@@ -6,6 +6,8 @@ export type BookLink = {
   status: string;
   tags: string[];
   series: string;
+  cover: string;
+  fallbackCover: string;
 };
 
 export const bookDraftLinks: BookLink[] = [
@@ -17,6 +19,8 @@ export const bookDraftLinks: BookLink[] = [
     status: "Google Doc",
     tags: ["inference", "serving", "gpu"],
     series: "Book 01",
+    cover: "/generated/books/books-folder-inference-engineering.png",
+    fallbackCover: "/generated/books/books-folder-inference-engineering.svg",
   },
   {
     title: "Prod Agents",
@@ -26,6 +30,8 @@ export const bookDraftLinks: BookLink[] = [
     status: "Google Doc",
     tags: ["agents", "memory", "evals"],
     series: "Book 02",
+    cover: "/generated/books/books-folder-prod-agents.png",
+    fallbackCover: "/generated/books/books-folder-prod-agents.svg",
   },
   {
     title: "AI & Data",
@@ -35,6 +41,8 @@ export const bookDraftLinks: BookLink[] = [
     status: "Google Doc",
     tags: ["data", "rag", "knowledge graphs"],
     series: "Book 03",
+    cover: "/generated/books/books-folder-ai-data.png",
+    fallbackCover: "/generated/books/books-folder-ai-data.svg",
   },
   {
     title: "AI Security",
@@ -44,6 +52,8 @@ export const bookDraftLinks: BookLink[] = [
     status: "Google Doc",
     tags: ["security", "governance", "agents"],
     series: "Book 04",
+    cover: "/generated/books/books-folder-ai-security.png",
+    fallbackCover: "/generated/books/books-folder-ai-security.svg",
   },
   {
     title: "LLM's",
@@ -53,6 +63,8 @@ export const bookDraftLinks: BookLink[] = [
     status: "Google Doc",
     tags: ["llms", "reasoning", "multimodal"],
     series: "Book 05",
+    cover: "/generated/books/books-folder-llms.png",
+    fallbackCover: "/generated/books/books-folder-llms.svg",
   },
   {
     title: "RL",
@@ -62,6 +74,8 @@ export const bookDraftLinks: BookLink[] = [
     status: "Google Doc",
     tags: ["reinforcement learning", "agents", "evals"],
     series: "Book 06",
+    cover: "/generated/books/books-folder-rl.png",
+    fallbackCover: "/generated/books/books-folder-rl.svg",
   },
   {
     title: "AI Coding",
@@ -71,5 +85,7 @@ export const bookDraftLinks: BookLink[] = [
     status: "Google Doc",
     tags: ["ai coding", "developer tools", "agents"],
     series: "Book 07",
+    cover: "/generated/books/books-folder-ai-coding.png",
+    fallbackCover: "/generated/books/books-folder-ai-coding.svg",
   },
 ];
