@@ -52,17 +52,20 @@ Do not publish:
 - hype language such as "visionary founders" unless quoting a public source
 - "I invest in the future" style language
 
-Do not put startup or investment content in the homepage hero.
+Do not make startup or investment content the homepage hero theme. A single public-safe
+career-history sentence may mention selected technical advisory work for startups and VC
+teams when it supports the bio rather than reads as fundraising or investment positioning.
 
 ## Current Public Positioning
 
-The homepage is a simple personal front door, not a content mirror. It should stay inspired by the compact personal-homepage pattern of `https://yoheinakajima.com/`: a clear identity line, a short public bio, one strong speaking/workshop photo, and a small guide to the subpages.
+The homepage is a simple personal front door, not a content mirror. It should stay inspired by the compact personal-homepage pattern of `https://yoheinakajima.com/`: a clear identity line, a short public bio, one compact career-history note, one strong speaking/workshop photo, and a small guide to the subpages.
 
 Current public facts that may be used in homepage or about-page copy:
 
 - Özgür is the MS Innovation Hub technical lead in Istanbul.
-- Public technical focus: production AI systems, agentic workflows, LLM inference/model serving, EvalOps, governance, and AI infrastructure.
-- Side/public work: continual-learning AI book drafts, public build experiments, technical writing, talks/workshops, ENA.VC AI technology and technical diligence advisory, and selected startup architecture work.
+- Public technical focus: enterprise AI transformation, productionising AI agents, context engineering, data integration patterns, AI governance, AI infrastructure, LLM inference systems, EvalOps, and cloud architecture.
+- Public career arc that may be used as supporting homepage/about-page context: service provider and telco networks at Cisco Systems UK; high-frequency trading infrastructure in London; startup cloud architecture at AWS; and production AI work at Microsoft.
+- Side/public work: continual-learning AI book drafts, public build experiments, technical writing, talks/workshops, ENA.VC AI technology and technical diligence advisory, selected startup architecture work, and selected technical advisory work for startups and VC teams.
 
 Do not duplicate the detailed contents of `/build-log/`, `/books/`, `/blog/`, `/talks/`, `/investments/`, or `/consulting/` on the homepage. The homepage should only guide visitors toward those sections.
 
