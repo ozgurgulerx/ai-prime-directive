@@ -30,6 +30,8 @@ const {
 } = Astro.props;
 const external = (url: string) => url.startsWith("http");
 const resolvedImageAlt = imageAlt ?? `Thumbnail for ${title}`;
+const sourceLinkLabel =
+  publication === "Medium" ? "Read on Medium" : publication ? `Open ${publication}` : "Open source";
 ---
 
 <BaseLayout title={title} description={summary} image={image} imageAlt={image ? resolvedImageAlt : undefined}>
@@ -42,7 +44,7 @@ const resolvedImageAlt = imageAlt ?? `Thumbnail for ${title}`;
       <p>
         {pinned && <span class="status">Pinned</span>}
         {publication && <span class="status">{publication}</span>}
-        {sourceUrl && <a class="button primary" href={sourceUrl} target="_blank" rel="noopener">Read on Medium</a>}
+        {sourceUrl && <a class="button primary" href={sourceUrl} target="_blank" rel="noopener">{sourceLinkLabel}</a>}
         {artifact && (
           <a
             class="button primary plausible-event-name=download_or_artifact_click"
